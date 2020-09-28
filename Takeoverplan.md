@@ -17,7 +17,7 @@ referenced in tasks due the the feedback given in the Project 1 review.
 Coding tasks:
 
 Coding issues have been imported form the previous groups project and have been assigned to team members to take care of. 
-- ???? and ???? who have data science backgrounds will focus on issues related to the machine learning and data science aspects of the codebase
-- ???? and ???? will work on issues related to front end user designs
-- Matthew will handel areas relatated to security and user authentication
+- ???? and ???? who have data science backgrounds will focus on issues related to the machine learning and data science backend of the codebase
+- Suyash and Matthew will work on issues related to front end user designs
+- Matthew will handel areas relatated to security and user authentication.
 - ???? will serve as the Testing czar
