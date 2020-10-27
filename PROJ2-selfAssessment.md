@@ -30,9 +30,9 @@
 ||Use of  style checkers |4|
 ||Extensive Use of  style checkers |4|
 || Use of code  formatters. |4|
-|| Extensive Use of code  formatters. |2|
-|| Use of syntax checkers. |0|
-|| Extensive use of syntax checkers. |0|
+|| Extensive Use of code  formatters. |4|
+|| Use of syntax checkers. |4|
+|| Extensive use of syntax checkers. |4|
 || Use of code coverage |4|
 || Extensive use of code coverage |4|
 || other automated analysis tools|0|
