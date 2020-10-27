@@ -57,5 +57,15 @@ Enhance the analysis by taking into consideration the number of users rated for 
 Extend the analysis to the Facebook, Twitter and LinkedIn Posts
 
 ## Team Members
+
+Matt Pudlo
+
+Prasanth Yadla
+
+Abhi Joshi
+
+Mita Gavade
+
+Suyash Jain
 				
 
