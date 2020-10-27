@@ -11,7 +11,7 @@ from .utilityFunctions import *
 import os
 import json
 import speech_recognition as sr
-
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 def pdfparser(data):
 
@@ -182,6 +182,24 @@ def audioanalysis(request):
     else:
         note = "Please Enter the file you want to analyze"
         return render(request, 'realworld/audio.html', {'note': note})
+
+def speech_to_text(self, filename):
+    r = sr.Recognizer()
+
+    with sr.AudioFile(filename) as source:
+        # listen for the data (load audio to memory)
+        audio_data = r.record(source)
+        # recognize (convert from speech to text)
+        text = r.recognize_google(audio_data)
+        # print(text)
+        return text
+
+def sentiment_analyzer_scores(self, sentence):
+    analyser = SentimentIntensityAnalyzer()
+
+    score = analyser.polarity_scores(sentence)
+    # print("{:-<40} {}".format(sentence, str(score)))
+    return score
 
 
 
