@@ -177,13 +177,19 @@ def audioanalysis(request):
         extension_name = extension_name[len(extension_name)-3:]
         path = pathname+file.name
         result = {}
+        print(path)
+        text = speech_to_text(path)
+        result = sentiment_analyzer_scores(text)
+        print("Result")
+        print(result)
+        # Sentiment Analysis
         os.system('cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
     else:
         note = "Please Enter the file you want to analyze"
         return render(request, 'realworld/audio.html', {'note': note})
 
-def speech_to_text(self, filename):
+def speech_to_text(filename):
     r = sr.Recognizer()
 
     with sr.AudioFile(filename) as source:
@@ -191,12 +197,13 @@ def speech_to_text(self, filename):
         audio_data = r.record(source)
         # recognize (convert from speech to text)
         text = r.recognize_google(audio_data)
-        # print(text)
+        print("TExt")
+        print(text)
         return text
 
-def sentiment_analyzer_scores(self, sentence):
+def sentiment_analyzer_scores(sentence):
     analyser = SentimentIntensityAnalyzer()
-
+    print("Scores analysed")
     score = analyser.polarity_scores(sentence)
     # print("{:-<40} {}".format(sentence, str(score)))
     return score
