@@ -21,7 +21,7 @@ notifications:
       - mrpudlo@ncsu.edu
       - magavade@ncsu.edu
       - sjain26@ncsu.edu
-      - pyadla22@ncsu.edu
+      - pyadla2@ncsu.edu
     
     on_success: never
     on_failure: always
