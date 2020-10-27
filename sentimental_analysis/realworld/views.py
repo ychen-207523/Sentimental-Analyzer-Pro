@@ -41,7 +41,7 @@ def pdfparser(data):
     return final_comment
 
 def analysis(request):
-    return render(request,'realworld/analysis.html')
+    return render(request,'realworld/index.html')
 
 def get_clean_text(text):
     text = removeLinks(text)
@@ -126,24 +126,27 @@ def input(request):
         os.system('cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
     else:
-        note = "Please Enter the file you want to analyze"
+        note = "Please Enter the Document you want to analyze"
         return render(request, 'realworld/home.html', {'note': note})
 
 def productanalysis(request):
-    if request.method=='POST':
+    if request.method == 'POST':
         blogname = request.POST.get("blogname", "")
-        text_file = open("/Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
+        text_file = open(
+            "/Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt",
+            "w")
         text_file.write(blogname)
         text_file.close()
-        os.system('scrapy runspider /Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
+        os.system(
+            'scrapy runspider /Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
         final_comment = []
         with open('/Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/reviews.json') as json_file:
             data = json.load(json_file)
-            for p in range(1,len(data)-1):
+            for p in range(1, len(data) - 1):
                 a = data[p]['comment']
                 final_comment.append(a)
 
-        #final_comment is a list of strings!
+        # final_comment is a list of strings!
         result = detailed_analysis(final_comment)
         print(result)
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
@@ -164,7 +167,7 @@ def textanalysis(request):
         print(result)
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
     else:
-        note = "Text to be analysed!"
+        note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
 
 def audioanalysis(request):
@@ -186,7 +189,7 @@ def audioanalysis(request):
         os.system('cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
     else:
-        note = "Please Enter the file you want to analyze"
+        note = "Please Enter the audio file you want to analyze"
         return render(request, 'realworld/audio.html', {'note': note})
 
 def speech_to_text(filename):

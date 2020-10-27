@@ -33,16 +33,26 @@ Although we have used HTML and CSS for the FrontEnd, the users can merge the bac
 3. Execute manage.py using the command `python3 manage.py runserver` at `/SE_Project1/sentimental_analaysis`. This runs the Django server such that we can open the webUI for the project on the browser.
 4. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.
 5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
-![Capture](https://user-images.githubusercontent.com/65666095/93840913-00e09680-fc60-11ea-8ef6-428e1ad5b46e.PNG)
+
+![First](https://user-images.githubusercontent.com/43075652/97276268-31ce6100-17f4-11eb-8b57-7741069bf311.png)
+![second](https://user-images.githubusercontent.com/43075652/97276507-82de5500-17f4-11eb-88e0-0ea41bc9b424.png)
 
 The UI for URL input is as shown below:
-![Product](https://user-images.githubusercontent.com/65666095/93841969-405cb200-fc63-11ea-96a3-26be6a36a24d.png)
+![product](https://user-images.githubusercontent.com/43075652/97276542-925d9e00-17f4-11eb-910f-103be084ad13.png)
 
 The UI for file input is as shown below:
-![File](https://user-images.githubusercontent.com/65666095/93841890-02f82480-fc63-11ea-94c9-c3226cb321bb.png)
+![docum](https://user-images.githubusercontent.com/43075652/97277008-2891c400-17f5-11eb-901a-1ebd3da5a32b.png)
 
 The UI for text input is as shown below:
-![Text](https://user-images.githubusercontent.com/65666095/93841936-24f1a700-fc63-11ea-9b07-8e685e4ebbf1.png)
+![text](https://user-images.githubusercontent.com/43075652/97277038-33e4ef80-17f5-11eb-8fbc-76bad26adcc9.png)
+
+The UI for audio input is as shown below:
+![audio](https://user-images.githubusercontent.com/43075652/97277059-3d6e5780-17f5-11eb-8dcf-a5935d6613ae.png)
+
+The Output as below:
+![output](https://user-images.githubusercontent.com/43075652/97277225-74446d80-17f5-11eb-89f5-2b27c957827e.png)
+![out](https://user-images.githubusercontent.com/43075652/97277310-8e7e4b80-17f5-11eb-8910-03ec42ea0ff7.png)
+
 
 ## FUTURE SCOPE
 
