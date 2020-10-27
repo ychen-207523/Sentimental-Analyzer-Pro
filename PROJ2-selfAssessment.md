@@ -34,7 +34,7 @@
 || Use of syntax checkers. |0|
 || Extensive use of syntax checkers. |0|
 || Use of code coverage |4|
-|| Extensive use of code coverage |2|
+|| Extensive use of code coverage |4|
 || other automated analysis tools|0|
 || Extensive use of  other automated analysis tools|0|
 || test cases exist|4|
