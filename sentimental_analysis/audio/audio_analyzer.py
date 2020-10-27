@@ -1,13 +1,13 @@
 import speech_recognition as sr
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-
+## Audio Analyzer class for Audio Sentiment Analysis
 class AudioAnalyzer:
 
     def __init__(self):
         pass
 
-
+    ## method takes in param file path of .wav audio file and returns corresponding text
     def speech_to_text(self, filename):
         r = sr.Recognizer()
 
@@ -19,7 +19,7 @@ class AudioAnalyzer:
             # print(text)
             return text
 
-
+    ## methods takes in param sentence text and returns python dictionary containing pos, neg, neutral sentiment
     def sentiment_analyzer_scores(self, sentence):
         analyser = SentimentIntensityAnalyzer()
 
