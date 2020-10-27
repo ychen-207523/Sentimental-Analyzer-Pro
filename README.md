@@ -4,7 +4,7 @@
 
 ### YouTube Link: 
 
-[![Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://www.youtube.com/watch?v=zvme9ARshD8)
+[![Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 
@@ -58,13 +58,4 @@ Extend the analysis to the Facebook, Twitter and LinkedIn Posts
 
 ## Team Members
 				
-Mangalnathan Vijayagopal (mvijaya2)
-
-Nischal Badarinath Kashyap (nkashya)
-
-Amogh Rameshappa Devapura (arames22)
-
-Niranjan Pandeshwar (nrpandes)
-
-Sharath Bangalore Ramesh Kumar (sbangal2)
 
