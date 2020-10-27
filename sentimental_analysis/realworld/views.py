@@ -12,7 +12,9 @@ import os
 import json
 import speech_recognition as sr
 
+
 def pdfparser(data):
+
 
     fp = open(data, 'rb')
     rsrcmgr = PDFResourceManager()
@@ -121,7 +123,7 @@ def input(request):
                 value = text.split('.')
                 result = detailed_analysis(value)
         # Sentiment Analysis
-        os.system('cd /Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/sentimental_analysis/media/ && rm -rf *')
+        os.system('cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
     else:
         note = "Please Enter the file you want to analyze"
@@ -130,12 +132,12 @@ def input(request):
 def productanalysis(request):
     if request.method=='POST':
         blogname = request.POST.get("blogname", "")
-        text_file = open("/Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
+        text_file = open("/Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
         text_file.write(blogname)
         text_file.close()
-        os.system('scrapy runspider /Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
+        os.system('scrapy runspider /Users/sj941/Documents/GitHub/SE_Project1/Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
         final_comment = []
-        with open('/Users/nischalkashyap/Downloads/Projects/CELT/SE_Project1/sentimental_analysis/reviews.json') as json_file:
+        with open('/Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/reviews.json') as json_file:
             data = json.load(json_file)
             for p in range(1,len(data)-1):
                 a = data[p]['comment']
@@ -164,6 +166,25 @@ def textanalysis(request):
     else:
         note = "Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
+
+def audioanalysis(request):
+    if request.method == 'POST':
+        file = request.FILES['document']
+        fs = FileSystemStorage()
+        fs.save(file.name,file)
+        pathname = "media/"
+        extension_name = file.name
+        extension_name = extension_name[len(extension_name)-3:]
+        path = pathname+file.name
+        result = {}
+        os.system('cd /Users/sj941/Documents/GitHub/SE_Project1/sentimental_analysis/media/ && rm -rf *')
+        return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
+    else:
+        note = "Please Enter the file you want to analyze"
+        return render(request, 'realworld/audio.html', {'note': note})
+
+
+
 
 @register.filter(name='get_item')
 def get_item(dictionary, key):
