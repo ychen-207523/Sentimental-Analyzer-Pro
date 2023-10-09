@@ -7,13 +7,10 @@
 [![Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
-![Python](https://img.shields.io/badge/python-v3.7+-brightgreen.svg)
-![GitHub issues](https://img.shields.io/github/issues/amit-99/SE_Project2)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/amit-99/SE_Project2)
-![Lines of code](https://tokei.rs/b1/github/amit-99/SE_Project2)
+
 [![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## INTRODUCTION
 
