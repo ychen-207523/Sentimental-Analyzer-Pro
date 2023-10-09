@@ -95,7 +95,7 @@ def input(request):
         file = request.FILES['document']
         fs = FileSystemStorage()
         fs.save(file.name,file)
-        pathname = ".//sentimental_analysis/media/"
+        pathname = "./sentimental_analysis/media/"
         extension_name = file.name
         extension_name = extension_name[len(extension_name)-3:]
         path = pathname+file.name
@@ -123,7 +123,7 @@ def input(request):
                 value = text.split('.')
                 result = detailed_analysis(value)
         # Sentiment Analysis
-        os.system('cd .//sentimental_analysis/media/ && rm -rf *')
+        os.system('cd ./sentimental_analysis/media/ && rm -rf *')
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
     else:
         note = "Please Enter the Document you want to analyze"
@@ -133,14 +133,14 @@ def productanalysis(request):
     if request.method == 'POST':
         blogname = request.POST.get("blogname", "")
         text_file = open(
-            ".//Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt",
+            "./Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt",
             "w")
         text_file.write(blogname)
         text_file.close()
         os.system(
-            'scrapy runspider .//Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
+            'scrapy runspider ./Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py -o reviews.json')
         final_comment = []
-        with open('.//sentimental_analysis/reviews.json') as json_file:
+        with open('./sentimental_analysis/reviews.json') as json_file:
             data = json.load(json_file)
             for p in range(1, len(data) - 1):
                 a = data[p]['comment']
@@ -175,7 +175,7 @@ def audioanalysis(request):
         file = request.FILES['document']
         fs = FileSystemStorage()
         fs.save(file.name,file)
-        pathname = ".//sentimental_analysis/media/"
+        pathname = "./sentimental_analysis/media/"
         extension_name = file.name
         extension_name = extension_name[len(extension_name)-3:]
         path = pathname+file.name
@@ -186,7 +186,7 @@ def audioanalysis(request):
         print("Result")
         print(result)
         # Sentiment Analysis
-        os.system('cd .//sentimental_analysis/media/ && rm -rf *')
+        os.system('cd ./sentimental_analysis/media/ && rm -rf *')
         return render(request, 'realworld/sentiment_graph.html', {'sentiment': result})
     else:
         note = "Please Enter the audio file you want to analyze"
