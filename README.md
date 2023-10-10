@@ -31,12 +31,26 @@ Although we have used HTML and CSS for the FrontEnd, the users can merge the bac
 
 
 ## Steps for execution
-1. Run `pip install -r requirements.txt` followed by `python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"`
-2. Make sure you change the path accordingly in the files.  (Refer to the issue: https://github.com/bsharathramesh/SE_Project1/issues/31 to get the list of files where changes are needed)
-3. Execute manage.py using the command `python3 manage.py runserver` at `/SE_Project1/sentimental_analaysis`. This runs the Django server such that we can open the webUI for the project on the browser.
-4. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.
-5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
-
+1. Clone this project into your system
+```
+git clone https://github.com/amit-99/SE_Project2.git
+```
+2. Make sure you are using Python 3.11 or higher
+3. Intall dependencies for the project from root directory of the project:
+    a. To install python library dependencies use requirements.txt 
+    b. We also need install and import nltk and supporting libraries
+```
+cd <your_download_dir>\SE_Project2\
+pip install -r requirements.txt
+python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
+```
+4. Run Django Server using manage.py (Note: Make sure you are in root directory of the project)
+```
+python .\sentimental_analysis\manage.py runserver
+```
+5. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
+6. Great!! Now you are into the application
+  
 ![First](https://user-images.githubusercontent.com/43075652/97276268-31ce6100-17f4-11eb-8b57-7741069bf311.png)
 ![second](https://user-images.githubusercontent.com/43075652/97276507-82de5500-17f4-11eb-88e0-0ea41bc9b424.png)
 
