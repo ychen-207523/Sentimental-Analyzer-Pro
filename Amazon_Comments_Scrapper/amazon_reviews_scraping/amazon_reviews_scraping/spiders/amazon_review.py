@@ -1,42 +1,97 @@
-# -*- coding: utf-8 -*-
-# Reference: https://blog.datahut.co/scraping-amazon-reviews-python-scrapy/
-# Importing Scrapy Library
-import os
 import scrapy
+from scrapy import Request
+import re
+import os
+import secret
+reviews_base_url = 'https://www.amazon.com/product-reviews/{}'
+asin_list = []
 
+def extract_asin_from_url(url):
+    pattern = r'/([A-Z0-9]{10})(?:[/?]|$)'
+    match = re.search(pattern, url)
+    if match:
+        return match.group(1)
+    else:
+        return None
 
-# Creating a new class to implement Spide
-class AmazonReviewsSpider(scrapy.Spider):
-    # Spider name
-    name = 'amazon_reviews'
+def get_date_place(param):
+    date_part, place = None, None
+    if not param:
+        date_part, place
+    expression = r'([\w]+ \d+, \d+)'
+    result = re.search(expression, param)
+    if result:
+        date_part = result.group(0)
+        place = param.replace(date_part, '').replace('Reviewed in', '').replace('on', '').strip()
+    return date_part, place
 
-    # Domain names to scrape
-    allowed_domains = ['amazon.com']
+class ReviewsSpider(scrapy.Spider):
+    name = 'reviews'
+    custom_settings = {
+    'BOT_NAME': 'amazon_reviews_scraping',
+    'SPIDER_MODULES': ['amazon_reviews_scraping.spiders'],
+    'NEWSPIDER_MODULE': 'amazon_reviews_scraping.spiders',
+    'ROBOTSTXT_OBEY': True,
+    'AUTOTHROTTLE_ENABLED': True,
+    'CONCURRENT_REQUESTS': 1,
+    'SCRAPEOPS_API_KEY': secret,
+    'SCRAPEOPS_PROXY_ENABLED': True,
+    'DOWNLOADER_MIDDLEWARES': {
+        'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
+    },
+    'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+    'DOWNLOAD_DELAY': 1,
+    'CONCURRENT_REQUESTS': 1,
+    'RETRY_TIMES': 3,
+    'RETRY_HTTP_CODES': [500, 503, 504, 400, 403, 404, 408],
+    }
 
-    os.system("rm ./sentimental_analysis/reviews.json")
-    my_file_handle = open('./Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt')
+    # Assign the custom settings to the default Scrapy settings
+    settings = {k: v for k, v in custom_settings.items()}
+
+    file_path = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json'
+    if os.path.exists(file_path):   
+        os.remove(file_path)
+    else:
+        print(f"File not found: {file_path}")
+    my_file_handle = open('Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt')
     myBaseUrl = my_file_handle.read()
-    # myBaseUrl = "https://www.amazon.in/Apple-MacBook-Air-13-3-inch-MQD32HN/product-reviews/B073Q5R6VR/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&amp;amp;reviewerType=all_reviews&amp;amp;pageNumber="
-    start_urls = []
+    asin = extract_asin_from_url(myBaseUrl)
+    
+    if asin:
+        asin_list.append(asin)
+    
+    def start_requests(self):
+        for asin in asin_list:
+            yield Request(reviews_base_url.format(asin), meta={'asin': asin})
 
-    # Creating list of urls to be scraped by appending page number a the end of base url
-    for i in range(1, 121):
-        start_urls.append(myBaseUrl + str(i))
-
-    # Defining a Scrapy parser
     def parse(self, response):
-        data = response.css('#cm_cr-review_list')
+        asin = response.meta.get('asin')
+        for review in response.css('#cm_cr-review_list [data-hook="review"]'):
+            item = {}
+            stars = review.css('[data-hook="review-star-rating"] ::text').get()
+            stars = stars.replace('out of 5 stars', '').strip() if stars else None
+            review_date_text = review.css('[data-hook="review-date"] ::text').get()
+            date_part, place = get_date_place(review_date_text)
+            item['ASIN'] = asin
+            for att in review.xpath('.//a[@data-hook="format-strip"]/text()').getall():
+                item[att.split(':')[0]] = att.split(':')[1]
+            item['ProfileName'] = review.css('.a-profile-name ::text').get()
+            item['Stars'] = stars
+            item['StarsText'] = review.css('[data-hook="review-star-rating"] ::text').get()
+            item['Title'] = review.css('[data-hook="review-title"] span ::text').get()
+            item['ReviewDate'] = date_part
+            item['ReviewedAt'] = place
 
-        # Collecting product star ratings
-        star_rating = data.css('.review-rating')
+            item['URL'] = response.url
+            review_text = review.css('[data-hook="review-body"] span::text').getall()
+            for i, text in enumerate(review_text):
+                review_text[i] = text.strip('\n').strip('\r').strip('\t').strip()
+            item['Review'] = '\n'.join(review_text)
 
-        # Collecting user reviews
-        comments = data.css('.review-text')
-        count = 0
 
-        # Combining the results
-        for review in star_rating:
-            yield {'stars': ''.join(review.xpath('./text()').extract()),
-                   'comment': ''.join(comments[count].xpath("./text()").extract())
-                   }
-            count = count + 1
+            yield item
+
+        next_page = response.xpath('//a[contains(text(),"Next page")]/@href').get()
+        if next_page:
+            yield scrapy.Request(response.urljoin(next_page), meta={'asin': asin})
