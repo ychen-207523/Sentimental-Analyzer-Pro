@@ -17,7 +17,7 @@ itemloaders==1.0.3
 jmespath==0.10.0
 joblib==0.16.0
 lxml==4.9.3
-nltk==3.2.4
+nltk==3.8.1
 parsel==1.6.0
 pdfminer==20191125
 Protego==0.1.16
@@ -32,7 +32,7 @@ pytz==2020.1
 queuelib==1.5.0
 regex==2023.8.8
 requests==2.24.0
-Scrapy==2.3.0
+Scrapy==2.11.0
 service-identity==18.1.0
 six==1.15.0
 SpeechRecognition==3.8.1
