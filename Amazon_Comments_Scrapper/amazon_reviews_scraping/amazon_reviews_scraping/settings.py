@@ -2,7 +2,7 @@
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
-import secret
+
 BOT_NAME = 'amazon_reviews_scraping'
 
 SPIDER_MODULES = ['amazon_reviews_scraping.spiders']
@@ -14,7 +14,7 @@ AUTOTHROTTLE_ENABLED = True
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 1
 
-SCRAPEOPS_API_KEY = secret
+SCRAPEOPS_API_KEY = '941be743-6bdc-4f27-907c-dca04b5001%%'
 SCRAPEOPS_PROXY_ENABLED = True
 DOWNLOADER_MIDDLEWARES = {
     'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
