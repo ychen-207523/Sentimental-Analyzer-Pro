@@ -43,5 +43,5 @@ urllib3==1.25.10
 vaderSentiment==3.3.2
 w3lib==1.22.0
 zope.interface==5.1.0
-scrapeops-scrapy==0.5.3
-scrapeops-scrapy-proxy-sdk==1.0
+scrapeops-scrapy==0.3.0
+scrapeops-scrapy-proxy-sdk==0.22
