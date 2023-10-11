@@ -4,7 +4,7 @@ Automat==20.2.0
 certifi==2020.6.20
 cffi==1.15.1
 chardet==3.0.4
-click==7.1.2
+click==8.0.0
 constantly==15.1.0
 cryptography==3.1
 cssselect==1.1.0
@@ -12,12 +12,12 @@ Django==3.1.1
 hyperlink==20.0.1
 idna==2.10
 incremental==22.10.0
-itemadapter==0.1.0
+itemadapter==0.4.0
 itemloaders==1.0.3
 jmespath==0.10.0
 joblib==0.16.0
 lxml==4.9.3
-nltk==3.5
+nltk==3.8.1
 parsel==1.6.0
 pdfminer==20191125
 Protego==0.1.16
@@ -32,7 +32,7 @@ pytz==2020.1
 queuelib==1.5.0
 regex==2023.8.8
 requests==2.24.0
-Scrapy==2.3.0
+Scrapy==2.11.0
 service-identity==18.1.0
 six==1.15.0
 SpeechRecognition==3.8.1

@@ -6,14 +6,21 @@
 
 [![Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
 
+---
+
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
+[![GitHub Release](https://img.shields.io/github/release/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2/releases)
 ![Python](https://img.shields.io/badge/python-v3.7+-brightgreen.svg)
+![GitHub language count](https://img.shields.io/github/languages/count/amit-99/SE_Project2)
 ![GitHub issues](https://img.shields.io/github/issues/amit-99/SE_Project2)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/amit-99/SE_Project2)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
 ![Lines of code](https://tokei.rs/b1/github/amit-99/SE_Project2)
+[![GitHub-size](https://img.shields.io/github/languages/code-size/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
 [![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+---
 
 ## INTRODUCTION
 
@@ -29,6 +36,7 @@ Vader Analysis Tool
 
 Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
 
+---
 
 ## Steps for execution
 1. Clone this project into your system
@@ -70,6 +78,8 @@ The Output as below:
 ![output](https://user-images.githubusercontent.com/43075652/97277225-74446d80-17f5-11eb-89f5-2b27c957827e.png)
 ![out](https://user-images.githubusercontent.com/43075652/97277310-8e7e4b80-17f5-11eb-8910-03ec42ea0ff7.png)
 
+---
+
 ## Case Study: Amazon Product Review Sentiment and Text Analysis
 
 ### WordCloud of Reviews
@@ -84,7 +94,7 @@ The Output as below:
 ### Confusion Matrix
 ![conf](https://user-images.githubusercontent.com/9015214/97310260-631d5000-1839-11eb-9a3b-102fa9737439.png)
 
-
+---
 
 ## FUTURE SCOPE
 
@@ -97,6 +107,8 @@ Live speech to text sentiment analysis.
 Enhance the analysis by taking into consideration the number of users rated for each product!
 
 Extend the analysis to the Facebook, Twitter and LinkedIn Posts
+
+---
 
 ## Team Members
 
