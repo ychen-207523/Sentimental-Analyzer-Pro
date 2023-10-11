@@ -145,8 +145,8 @@ def productanalysis(request):
         text_file.write(blogname)
         text_file.close()
 
-        spider_path = r'Amazon_Comments_Scrapper\amazon_reviews_scraping\amazon_reviews_scraping\spiders\amazon_review.py'
-        output_file = r'Amazon_Comments_Scrapper\amazon_reviews_scraping\amazon_reviews_scraping\spiders\reviews.json'
+        spider_path = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py'
+        output_file = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json'
         command = f"scrapy runspider \"{spider_path}\" -o \"{output_file}\" "
         result = subprocess.run(command, shell=True)
         
@@ -157,7 +157,7 @@ def productanalysis(request):
         
         final_comment = []
         # Open the JSON file for reading
-        with open(r'Amazon_Comments_Scrapper\amazon_reviews_scraping\amazon_reviews_scraping\spiders\reviews.json', 'r') as json_file:
+        with open(r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json', 'r') as json_file:
             json_data = json.load(json_file)
         reviews = []
         # Open the file with UTF-16 encoding and error handling

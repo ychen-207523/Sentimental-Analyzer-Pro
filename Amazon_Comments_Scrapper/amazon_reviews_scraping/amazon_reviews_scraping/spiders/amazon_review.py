@@ -31,7 +31,7 @@ class ReviewsSpider(scrapy.Spider):
     'BOT_NAME': 'amazon_reviews_scraping',
     'SPIDER_MODULES': ['amazon_reviews_scraping.spiders'],
     'NEWSPIDER_MODULE': 'amazon_reviews_scraping.spiders',
-    'ROBOTSTXT_OBEY': True,
+    'ROBOTSTXT_OBEY': False,
     'AUTOTHROTTLE_ENABLED': True,
     'CONCURRENT_REQUESTS': 1,
     'SCRAPEOPS_API_KEY': '941be743-6bdc-4f27-907c-dca04b5001%%',
