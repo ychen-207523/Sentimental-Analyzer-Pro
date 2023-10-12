@@ -10,6 +10,7 @@
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 [![GitHub Release](https://img.shields.io/github/release/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2/releases)
+![GitHub contributors](https://img.shields.io/github/contributors/amit-99/SE_Project2)
 ![Python](https://img.shields.io/badge/python-v3.7+-brightgreen.svg)
 ![GitHub language count](https://img.shields.io/github/languages/count/amit-99/SE_Project2)
 ![GitHub issues](https://img.shields.io/github/issues/amit-99/SE_Project2)
@@ -17,6 +18,7 @@
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
 ![Lines of code](https://tokei.rs/b1/github/amit-99/SE_Project2)
 [![GitHub-size](https://img.shields.io/github/languages/code-size/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
+![Build](https://github.com/amit-99/SE_Project2/actions/workflows/main.yml/badge.svg)
 [![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
