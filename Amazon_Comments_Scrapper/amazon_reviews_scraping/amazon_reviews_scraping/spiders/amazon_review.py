@@ -1,7 +1,7 @@
-import scrapy
-from scrapy import Request
 import re
 import os
+import scrapy
+from scrapy import Request
 
 reviews_base_url = 'https://www.amazon.com/product-reviews/{}'
 asin_list = []
@@ -33,7 +33,6 @@ class ReviewsSpider(scrapy.Spider):
     'NEWSPIDER_MODULE': 'amazon_reviews_scraping.spiders',
     'ROBOTSTXT_OBEY': False,
     'AUTOTHROTTLE_ENABLED': True,
-    'CONCURRENT_REQUESTS': 1,
     'SCRAPEOPS_API_KEY': '941be743-6bdc-4f27-907c-dca04b5001e9',
     'SCRAPEOPS_PROXY_ENABLED': True,
     'DOWNLOADER_MIDDLEWARES': {

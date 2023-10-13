@@ -19,8 +19,8 @@
 ![Lines of code](https://tokei.rs/b1/github/amit-99/SE_Project2)
 [![GitHub-size](https://img.shields.io/github/languages/code-size/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
 ![Build](https://github.com/amit-99/SE_Project2/actions/workflows/main.yml/badge.svg)
-[![Build Status](https://travis-ci.org/bsharathramesh/SE_Project1.svg?branch=master)](https://travis-ci.org/bsharathramesh/SE_Project1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amit-99/SE_Project2)
 
 ---
 
