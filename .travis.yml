@@ -1,6 +1,6 @@
 language: python
 python:
-  - 3.6
+  - 3.11
 
     # Write install command after writing requirements.md file
 install: 
@@ -17,13 +17,12 @@ uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
 notifications:
   email:
     recipients: 
-      - ajoshi23@ncsu.edu
-      - mrpudlo@ncsu.edu
-      - magavade@ncsu.edu
-      - sjain26@ncsu.edu
-      - pyadla2@ncsu.edu
+      - abhujba@ncsu.edu
+      - aakore@ncsu.edu
+      - srpate27@ncsu.edu
+      - yhasabe@ncsu.edu
     
-    on_success: never
+    on_success: always
     on_failure: always
     
    
