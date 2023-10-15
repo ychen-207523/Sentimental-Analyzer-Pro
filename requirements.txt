@@ -48,5 +48,4 @@ scrapeops-scrapy-proxy-sdk==1.0
 pylint==3.0.1
 pytest==7.4.2
 pydub==0.25.1
-GoogleNews==1.6.10
 newspaper3k==0.2.8
