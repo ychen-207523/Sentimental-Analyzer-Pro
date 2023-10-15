@@ -207,6 +207,12 @@ def livespeechanalysis(request):
         result = {}
         text = speech_to_text(audioFile)
         result = sentiment_analyzer_scores(text)
+        folder_path = 'sentimental_analysis/media/recordedAudio/' 
+        files = os.listdir(folder_path)
+        for file in files:
+            file_path = os.path.join(folder_path, file)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
         return render(request, 'realworld/results.html', {'sentiment': result})
     
 @csrf_exempt
@@ -223,15 +229,16 @@ def recordaudio(request):
         extension_name = extension_name[len(extension_name)-3:]
         path = pathname+audio_file.name
         audioName = audio_file.name
-
-        folder_path = 'sentimental_analysis/media/recordedAudio/' 
-        files = os.listdir(folder_path)
+        destination_folder = 'sentimental_analysis/media/recordedAudio/'
+        shutil.copy(path, destination_folder)
+        useFile = destination_folder+audioName
         for file in files:
             file_path = os.path.join(folder_path, file)
             if os.path.isfile(file_path):
                 os.remove(file_path)
+
         output_file_path = "sentimental_analysis/media/recordedAudio/" +  audioName[0:len(audioName)-4] +"_output.wav"
-        audio = AudioSegment.from_file(path)
+        audio = AudioSegment.from_file(useFile)
         audio = audio.set_sample_width(2)
         audio = audio.set_frame_rate(44100)
         audio = audio.set_channels(1)
@@ -240,10 +247,6 @@ def recordaudio(request):
         text_file = open("sentimental_analysis/realworld/recordedAudio.txt", "w")
         text_file.write(output_file_path)
         text_file.close()
-        for file in files:
-            file_path = os.path.join(folder_path, file)
-            if os.path.isfile(file_path):
-                os.remove(file_path)
         response = HttpResponse('Success! This is a 200 response.', content_type='text/plain', status=200)
         return response
         

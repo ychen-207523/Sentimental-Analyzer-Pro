@@ -185,13 +185,9 @@
 
                 <div class="section-heading">
                     <h1>Sentiment Analysis</h1>
-                    <h2>Have you Ever wondered what sentiments are behind the reviews on amazon or maybe what some says or what someone writes. Here we have created an elegant solution to such queries by having analysis of these sentiments from the given input</h2>
+                    <h2><br>Have you Ever wondered what sentiments are behind the reviews on amazon or maybe what some says or what someone writes. Here we have created an elegant solution to such queries by having analysis of these sentiments from the given input. <br><br> Try our app. It takes all types of inputs: audio, text, pdfs, live text, live audio, amazon url.</h2>
+                    
                 </div>
-
-                <!--Call to Action-->
-                <a href="#" class="button">Get Insights</a>
-                <!--End Call to Action-->
-
             </div>
 
         </div><!--End of Row-->
@@ -366,7 +362,9 @@
                         <h2 class="section-title">Live Speech Analysis</h2>
                         <form action = "{% url "live speech analysis" %}" method = "post" enctype="multipart/form-data">
                             {% csrf_token %}
-                            <input type="file" name="liveaudioFile" accept="audio/*" capture="microphone" id="audio-input">
+                            <input type="file" name="liveaudioFile" accept="audio/*" capture="microphone" id="audio-input" style="display: none">
+                            <h4> <label id="labelForRecording"></label></h4>
+                            
                             <button type="button" id="recordButton" class="button">Start Recording</button>
                             <button type="submit" id = "submitButton" class="button">Analyze</button>
                             <!-- <button type="button" id="stop-button" style="display: none;">Stop Recording</button> -->
@@ -377,9 +375,6 @@
             </div>
         </section>
         <!--End of Content Section-->
-
-
-
     </main>
     <!--End Main Content Area-->
 
@@ -442,7 +437,7 @@
 
     let mediaRecorder;
     const audioChunks = [];
-
+    var label = document.getElementById('labelForRecording')
     document.getElementById('recordButton').addEventListener('click', async () => {
         if (recordButton.textContent === 'Start Recording') {
             try {
@@ -461,12 +456,14 @@
                 };
 
                 mediaRecorder.start();
+                label.textContent = "Recording has started."
                 recordButton.textContent = 'Stop Recording';
             } catch (error) {
                 console.error('Error accessing microphone:', error);
             }
         } else {
             audioChunks.length = 0;
+            label.textContent = "Recording is completed. Kindly, press analyze to do sentimental analysis"
             mediaRecorder.stop();
             recordButton.textContent = 'Start Recording';
         }
