@@ -16,6 +16,7 @@ from django.views.decorators.csrf import csrf_exempt
 from pydub import AudioSegment
 from django.http import HttpResponse
 import shutil
+from .newsScraper import *
 
 def pdfparser(data):
     
@@ -250,6 +251,22 @@ def recordaudio(request):
         response = HttpResponse('Success! This is a 200 response.', content_type='text/plain', status=200)
         return response
         
+def newsanalysis(request):
+    if request.method == 'POST':
+        topicname = request.POST.get("topicname", "")
+        scrapNews(topicname)
+      
+        final_comment = []
+        with open(r'sentimental_analysis/realworld/news.json', 'r') as json_file:
+            json_data = json.load(json_file)
+        news = []
+        for item in json_data:
+            news.append(item['Summary'])
+        result = detailed_analysis(news)
+        return render(request, 'realworld/results.html', {'sentiment': result})
+    else:
+        return render(request, 'realworld/index.html')    
+
 def speech_to_text(filename):
     r = sr.Recognizer()
     with sr.AudioFile(filename) as source:
