@@ -12,6 +12,10 @@ import json
 import speech_recognition as sr
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import subprocess
+from django.views.decorators.csrf import csrf_exempt
+import soundfile
+from pydub import AudioSegment
+from django.http import HttpResponse
 
 def pdfparser(data):
     
@@ -170,8 +174,6 @@ def productanalysis(request):
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
 
-# Custom template filter to retrieve a dictionary value by key.
-
 def textanalysis(request):
     if request.method == 'POST':
         text_data = request.POST.get("textField", "")
@@ -197,7 +199,7 @@ def audioanalysis(request):
         result = {}
         text = speech_to_text(path)
         result = sentiment_analyzer_scores(text)
-        # Sentiment Analysis
+
         folder_path = 'sentimental_analysis/media/'
         files = os.listdir(folder_path)
         for file in files:
@@ -209,13 +211,44 @@ def audioanalysis(request):
         note = "Please Enter the audio file you want to analyze"
         return render(request, 'realworld/audio.html', {'note': note})
 
+def livespeechanalysis(request):
+    if request.method == 'POST':
+        my_file_handle = open('sentimental_analysis/realworld/recordedAudio.txt')
+        audioFile = my_file_handle.read()
+        result = {}
+        text = speech_to_text(audioFile)
+        result = sentiment_analyzer_scores(text)
+        return render(request, 'realworld/results.html', {'sentiment': result})
+    
+@csrf_exempt
+def recordaudio(request):
+    if request.method == 'POST':
+        audio_file = request.FILES['liveaudioFile']
+        fs = FileSystemStorage()
+        fs.save(audio_file.name, audio_file)
+
+        pathname = "sentimental_analysis/media/"
+        extension_name = audio_file.name
+        extension_name = extension_name[len(extension_name)-3:]
+        path = pathname+audio_file.name
+        audioName = audio_file.name
+        output_file_path = "sentimental_analysis/media/recordedAudio/" +  audioName[0:len(audioName)-4] +"_output.wav"
+        audio = AudioSegment.from_file(path)
+        audio = audio.set_sample_width(2)
+        audio = audio.set_frame_rate(44100)
+        audio = audio.set_channels(1)
+        audio.export(output_file_path, format='wav')
+
+        text_file = open("sentimental_analysis/realworld/recordedAudio.txt", "w")
+        text_file.write(output_file_path)
+        text_file.close()
+        response = HttpResponse('Success! This is a 200 response.', content_type='text/plain', status=200)
+        return response
+        
 def speech_to_text(filename):
     r = sr.Recognizer()
-
     with sr.AudioFile(filename) as source:
-        # listen for the data (load audio to memory)
         audio_data = r.record(source)
-        # recognize (convert from speech to text)
         text = r.recognize_google(audio_data)
         return text
 
