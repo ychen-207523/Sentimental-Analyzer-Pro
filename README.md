@@ -54,12 +54,16 @@ cd <your_download_dir>\SE_Project2\
 pip install -r requirements.txt
 python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 ```
-4. Run Django Server using manage.py (Note: Make sure you are in root directory of the project)
+4. Install ffmpeg:
+    a. For windows: ```winget install ffmpeg```
+    b. For linux (Ubuntu): ```sudo apt install ffmpeg```
+    c. For Mac: ```brew install ffmpeg```   
+5. Run Django Server using manage.py (Note: Make sure you are in root directory of the project)
 ```
 python .\sentimental_analysis\manage.py runserver
 ```
-5. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
-6. Great!! Now you are into the application
+6. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
+7. Great!! Now you are into the application
   
 ![First](https://user-images.githubusercontent.com/43075652/97276268-31ce6100-17f4-11eb-8b57-7741069bf311.png)
 ![second](https://user-images.githubusercontent.com/43075652/97276507-82de5500-17f4-11eb-88e0-0ea41bc9b424.png)
