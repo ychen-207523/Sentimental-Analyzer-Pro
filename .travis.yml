@@ -9,7 +9,7 @@ install:
 
 script: 
   - pwd
-  - python sentimental_analysis/realworld/functional_testing.py
+  - pytest test
   
 name: Python Syntax Checker
 uses: cclauss/Find-Python-syntax-errors-action@v0.2.0

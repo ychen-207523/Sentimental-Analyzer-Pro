@@ -27,13 +27,7 @@ class AudioAnalyzer:
         # print("{:-<40} {}".format(sentence, str(score)))
         return score
 
-
-
-
-
 ## Usage
-'''
 aa = AudioAnalyzer()
-text = aa.speech_to_text("test_wv.wav")
+text = aa.speech_to_text("./sentimental_analysis/audio/test_wv.wav")
 print(aa.sentiment_analyzer_scores(text))
-'''

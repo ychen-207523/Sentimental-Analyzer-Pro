@@ -49,17 +49,17 @@ class ReviewsSpider(scrapy.Spider):
     settings = {k: v for k, v in custom_settings.items()}
 
     file_path = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json'
-    if os.path.exists(file_path):   
+    if os.path.exists(file_path):
         os.remove(file_path)
     else:
         print(f"File not found: {file_path}")
     my_file_handle = open('Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt')
     myBaseUrl = my_file_handle.read()
     asin = extract_asin_from_url(myBaseUrl)
-    
+
     if asin:
         asin_list.append(asin)
-    
+
     def start_requests(self):
         for asin in asin_list:
             yield Request(reviews_base_url.format(asin), meta={'asin': asin})
