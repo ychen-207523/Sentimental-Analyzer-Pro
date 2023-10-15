@@ -10,36 +10,44 @@
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 [![GitHub Release](https://img.shields.io/github/release/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2/releases)
-![GitHub contributors](https://img.shields.io/github/contributors/amit-99/SE_Project2)
-![Python](https://img.shields.io/badge/python-v3.7+-brightgreen.svg)
-![GitHub language count](https://img.shields.io/github/languages/count/amit-99/SE_Project2)
-![GitHub issues](https://img.shields.io/github/issues/amit-99/SE_Project2)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/amit-99/SE_Project2)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
-![Lines of code](https://tokei.rs/b1/github/amit-99/SE_Project2)
-[![GitHub-size](https://img.shields.io/github/languages/code-size/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
 ![Build](https://github.com/amit-99/SE_Project2/actions/workflows/main.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![Python](https://img.shields.io/badge/python-v3.11+-brightgreen.svg)  
+![GitHub contributors](https://img.shields.io/github/contributors/amit-99/SE_Project2)
+![GitHub issues](https://img.shields.io/github/issues/amit-99/SE_Project2)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/amit-99/SE_Project2)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)  
+![GitHub language count](https://img.shields.io/github/languages/count/amit-99/SE_Project2)
+![Lines of code](https://tokei.rs/b1/github/amit-99/SE_Project2)
+[![GitHub-size](https://img.shields.io/github/languages/code-size/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
 [![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amit-99/SE_Project2)
 
 ---
 
+## Contents
+1. [ Introduction ](#intro)
+2. [ Steps for execution ](#exec)
+3. [ Team Members ](#team)
+
+---
+<a name="intro"></a>
 ## INTRODUCTION
 
-Sentiment analysis is one of the fastest growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project we aim to achieve our goal in accurately predicting a users sentiment by analysing the data provided in any of the four different methods. They are Document Analysis, Text Analysis, Product Analysis and Audio Analysis. This project though currently in the initial stages of development, can be further applied to numerous domains which can be useful for the society. This document provides a major perspective for the users to understand and take up the project as an Open source software and add on multiple features before releasing to the market. Also, the document aids the developers in understanding the code and acts as a reference point for starting the project.
+Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided in any of the four different methods. They are Document Analysis, Text Analysis, Product Analysis, and Audio Analysis. This project though currently in the initial stages of development, can be further applied to numerous domains that can be useful for society. This document provides a major perspective for the users to understand and take up the project as an Open source software and add on multiple features before releasing it to the market. Also, the document aids the developers in understanding the code and acts as a reference point for starting the project.
 
 The complete development was achieved using the following technologies and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
-Python3
-Django
-HTML
-CSS
-Scrappy
-Vader Analysis Tool
+- Python3
+- Django
+- HTML
+- CSS
+- Scrappy
+- Vader Analysis Tool
 
 Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
 
 ---
 
+<a name="exec"></a>
 ## Steps for execution
 1. Clone this project into your system
 ```
@@ -112,16 +120,10 @@ Extend the analysis to the Facebook, Twitter and LinkedIn Posts
 
 ---
 
+<a name="team"></a>
 ## Team Members
 
-Matt Pudlo
-
-Prasanth Yadla
-
-Abhi Joshi
-
-Mita Gavade
-
-Suyash Jain
-				
-
+- Akash Kore
+- Amit Bhujbal
+- Sohamkumar Patel
+- Yogesh Hasabe
