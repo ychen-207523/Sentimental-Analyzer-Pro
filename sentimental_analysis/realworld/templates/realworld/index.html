@@ -356,7 +356,28 @@
             </div>
         </section>
         <!--End of Content Section-->
-    
+
+        <!--Content Section-->
+        <section id="clients" class="scrollto clearfix">
+            <div class="row no-padding-bottom clearfix">
+                <!--Content Left Side-->
+                <div class="col-1" style="padding-left: 0px;">
+                    <div class="section-heading">
+                        <h2 class="section-title">Live Speech Analysis</h2>
+                        <form action = "{% url "live speech analysis" %}" method = "post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="file" name="liveaudioFile" accept="audio/*" capture="microphone" id="audio-input">
+                            <button type="button" id="recordButton" class="button">Start Recording</button>
+                            <button type="submit" id = "submitButton" class="button">Analyze</button>
+                            <!-- <button type="button" id="stop-button" style="display: none;">Stop Recording</button> -->
+                        </form>
+                    </div>
+                </div>
+                <!--End Content Left Side-->
+            </div>
+        </section>
+        <!--End of Content Section-->
+
 
 
     </main>
@@ -418,6 +439,62 @@
         dropContainer.classList.remove("drag-active")
         fileInput.files = e.dataTransfer.files
     })
+
+    let mediaRecorder;
+    const audioChunks = [];
+
+    document.getElementById('recordButton').addEventListener('click', async () => {
+        if (recordButton.textContent === 'Start Recording') {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        audioChunks.push(event.data);
+                    }
+                };
+
+                mediaRecorder.onstop = () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    sendDataToDjango(audioBlob);
+                };
+
+                mediaRecorder.start();
+                recordButton.textContent = 'Stop Recording';
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+            }
+        } else {
+            mediaRecorder.stop();
+            recordButton.textContent = 'Start Recording';
+        }
+    });
+    let count = 1;
+    function sendDataToDjango(audioBlob) {
+        const formData = new FormData();
+        const filename = `${count}.wav`;
+        formData.append('liveaudioFile', audioBlob, filename);
+
+        fetch('/recordAudio/', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => {
+            if (response.status === 200) {
+                console.log('Audio sent to Django successfully.');
+            } else {
+                console.error('Failed to send audio to Django.');
+                // Handle error
+            }
+        })
+        .catch(error => {
+            console.error('Error sending audio to Django:', error);
+        });
+
+        count++;
+    }
+
 </script>
 </body>
 </html>
