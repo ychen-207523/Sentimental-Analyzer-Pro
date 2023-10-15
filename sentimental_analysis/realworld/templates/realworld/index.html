@@ -466,6 +466,7 @@
                 console.error('Error accessing microphone:', error);
             }
         } else {
+            audioChunks.length = 0;
             mediaRecorder.stop();
             recordButton.textContent = 'Start Recording';
         }

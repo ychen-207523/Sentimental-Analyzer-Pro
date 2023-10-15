@@ -13,9 +13,9 @@ import speech_recognition as sr
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import subprocess
 from django.views.decorators.csrf import csrf_exempt
-import soundfile
 from pydub import AudioSegment
 from django.http import HttpResponse
+import shutil
 
 def pdfparser(data):
     
@@ -93,19 +93,19 @@ def input(request):
         file = request.FILES['document']
         fs = FileSystemStorage()
         fs.save(file.name,file)
-        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        MEDIA_ROOT = os.path.join(BASE_DIR,'media\\')
-        pathname = MEDIA_ROOT
+        pathname = 'sentimental_analysis/media/'
         extension_name = file.name
         extension_name = extension_name[len(extension_name)-3:]
         path = pathname+file.name
-        print(path)
+        destination_folder = 'sentimental_analysis/media/document/'
+        shutil.copy(path, destination_folder)
+        useFile = destination_folder+file.name
         result = {}
         if extension_name == 'pdf':
-            value = pdfparser(path)
+            value = pdfparser(useFile)
             result = detailed_analysis(value)
         elif extension_name == 'txt':
-            text_file = open(path, 'r', encoding="utf-8")
+            text_file = open(useFile, 'r', encoding="utf-8")
             a = ""
             for x in text_file:
                 if len(x) > 2:
@@ -115,22 +115,8 @@ def input(request):
             final_comment = a.split('.')
             text_file.close()
             result = detailed_analysis(final_comment)
-        # elif extension_name=='wav':
-        #     r = sr.Recognizer()
-        #     with sr.AudioFile(path) as source:
-        #         # listen for the data (load audio to memory)
-        #         audio_data = r.record(source)
-        #         # recognize (convert from speech to text)
-        #         text = r.recognize_google(audio_data)
-        #         value = text.split('.')
-        #         result = detailed_analysis(value)
-        # Sentiment Analysis
         folder_path = 'sentimental_analysis/media/'
-
-        # List all files in the media folder
         files = os.listdir(folder_path)
-
-        # Iterate through the files and delete them
         for file in files:
             file_path = os.path.join(folder_path, file)
             if os.path.isfile(file_path):
@@ -197,7 +183,10 @@ def audioanalysis(request):
         extension_name = extension_name[len(extension_name)-3:]
         path = pathname+file.name
         result = {}
-        text = speech_to_text(path)
+        destination_folder = 'sentimental_analysis/media/audio/'
+        shutil.copy(path, destination_folder)
+        useFile = destination_folder+file.name
+        text = speech_to_text(useFile)
         result = sentiment_analyzer_scores(text)
 
         folder_path = 'sentimental_analysis/media/'
@@ -226,12 +215,21 @@ def recordaudio(request):
         audio_file = request.FILES['liveaudioFile']
         fs = FileSystemStorage()
         fs.save(audio_file.name, audio_file)
+        folder_path = 'sentimental_analysis/media/' 
+        files = os.listdir(folder_path)
 
         pathname = "sentimental_analysis/media/"
         extension_name = audio_file.name
         extension_name = extension_name[len(extension_name)-3:]
         path = pathname+audio_file.name
         audioName = audio_file.name
+
+        folder_path = 'sentimental_analysis/media/recordedAudio/' 
+        files = os.listdir(folder_path)
+        for file in files:
+            file_path = os.path.join(folder_path, file)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
         output_file_path = "sentimental_analysis/media/recordedAudio/" +  audioName[0:len(audioName)-4] +"_output.wav"
         audio = AudioSegment.from_file(path)
         audio = audio.set_sample_width(2)
@@ -242,6 +240,10 @@ def recordaudio(request):
         text_file = open("sentimental_analysis/realworld/recordedAudio.txt", "w")
         text_file.write(output_file_path)
         text_file.close()
+        for file in files:
+            file_path = os.path.join(folder_path, file)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
         response = HttpResponse('Success! This is a 200 response.', content_type='text/plain', status=200)
         return response
         

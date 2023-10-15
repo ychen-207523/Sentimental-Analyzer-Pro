@@ -149,7 +149,7 @@ if __name__ == "__main__":
         count+=1
         flg2 = 1
 
-    test3_output = input("sentimental_analysis/media/Nischal_Badarinath_Kashyap.pdf")
+    test3_output = input("sentimental_analysis/media/document/Nischal_Badarinath_Kashyap.pdf")
     expected_output3 = {'pos': 0.06118918918918917, 'neu': 0.9232432432432431, 'neg': 0.015567567567567567}
 
     if expected_output3==test3_output:
