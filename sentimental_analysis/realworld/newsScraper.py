@@ -1,6 +1,6 @@
-from newspaper import Article, Config
 import json
 import requests
+from newspaper import Article, Config
 
 def scrapNews(topicName):
     api_key = "AIzaSyAOVoIz59KfO726SCDfccLnBw7BOq-ogWs"
@@ -17,7 +17,7 @@ def scrapNews(topicName):
     article_list = []
     response = requests.get(base_url, params=params)
     results = response.json().get("items", [])
-    
+
     for result in results:
         link = result.get("link")
 
@@ -33,9 +33,8 @@ def scrapNews(topicName):
         if article.summary[:2] != "Ad":
             dict['Summary'] = article.summary
             article_list.append(dict)
-        
+
     with open('sentimental_analysis/realworld/news.json', 'w') as json_file:
         json.dump(article_list, json_file)
 
     print("Articles saved to news.json")
-
