@@ -1,10 +1,10 @@
-# SE Project 1
+# SE Project 2
 
 # C.E.L.T: The Sentimental Analyser 
 
 ### YouTube Link: 
 
-[![Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
+[![Demo Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
 
 ---
 
@@ -86,19 +86,43 @@ The Output as below:
 
 ---
 
+## Roadmap and Progress
+### Past Achievement(Previous Work)
+- [x] Creating C.E.L.T. Django Project/Website
+- [x] Sentiment Analysis Model's Algorithm addition
+- [x] Text Analysis and Document Analysis Feature inclusion
+- [x] Audio Analysis Feature inclusion
+- [x] Amazon Product Analysis Feature addition
+- [x] Case Study done for Amazon Product Review Sentiment Analysis 
+- [x] Simple Documentation, Unit tests addition
+
+### Current Achievements
+☑️  Live Sentiment Analysis Feature inclusion<br>
+☑️  News Analysis Feature inclusion<br>
+☑️  UI Improvement for enriching User interaction with the Application<br>
+☑️  Documentation Improvement for reflecting project's value accurately<br>
+☑️  Addition of Builds and Workflows for better development activities<br>
+☑️  Unit Tests were written and Test Coverage was improved<br>
+☑️  <br>
+☑️  <br>
+☑️  <be>
+
+### Future Scope
+- [ ] Implement User Authentication to store the history of each User
+- [ ] Recommendation System based on Product Analysis Results 
+- [ ] Enhance the Product Analysis by considering the number of users rated for each Product!
+- [ ] Extend the Sentiment Analysis to Facebook, Twitter, LinkedIn Posts
+- [ ] To Be Added..
+
+---  
+
 ## Case Study: Amazon Product Review Sentiment and Text Analysis
+We have done a Case Study for our Sentiment Analysis Project. It can be found [here](https://github.com/amit-99/SE_Project2/blob/develop/Case_Study.md).
 
-### WordCloud of Reviews
-![wc](https://user-images.githubusercontent.com/9015214/97310439-9e1f8380-1839-11eb-8060-0944d7e4d7d9.png)
+---
 
-### Reviews Summary
-<img width="896" alt="Screen Shot 2020-10-27 at 9 49 08 AM" src="https://user-images.githubusercontent.com/9015214/97310491-aaa3dc00-1839-11eb-97ef-e2e27fd6fad2.png">
-
-### Sentiment Summary
-<img width="864" alt="Screen Shot 2020-10-27 at 9 48 02 AM" src="https://user-images.githubusercontent.com/9015214/97310362-834d0f00-1839-11eb-97db-f32a3d1f9eed.png">
-
-### Confusion Matrix
-![conf](https://user-images.githubusercontent.com/9015214/97310260-631d5000-1839-11eb-9a3b-102fa9737439.png)
+## Eager to Contribute?
+To Contribute to our application, please refer to [CONTRIBUTING.md](https://github.com/amit-99/SE_Project2/blob/develop/CONTRIBUTING.md)
 
 ---
 
