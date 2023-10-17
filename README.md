@@ -27,7 +27,10 @@
 ## Contents
 1. [ Introduction ](#intro)
 2. [ Steps for execution ](#exec)
-3. [ Team Members ](#team)
+3. [Roadmap and Progress](#roadmap)
+4. [Case Study](#casestudy)
+5. [Contributing to the product](#contribute)
+6. [ Team Members ](#team)
 
 ---
 <a name="intro"></a>
@@ -93,7 +96,7 @@ The Output as below:
 ![out](https://user-images.githubusercontent.com/43075652/97277310-8e7e4b80-17f5-11eb-8910-03ec42ea0ff7.png)
 
 ---
-
+<a name="roadmap"></a>
 ## Roadmap and Progress
 ### Past Achievement(Previous Work)
 - [x] Creating C.E.L.T. Django Project/Website
@@ -123,12 +126,12 @@ The Output as below:
 - [ ] To Be Added..
 
 ---  
-
+<a name="casestudy"></a>
 ## Case Study: Amazon Product Review Sentiment and Text Analysis
 We have done a Case Study for our Sentiment Analysis Project. It can be found [here](https://github.com/amit-99/SE_Project2/blob/develop/Case_Study.md).
 
 ---
-
+<a name="contribute"></a>
 ## Eager to Contribute?
 To Contribute to our application, please refer to [CONTRIBUTING.md](https://github.com/amit-99/SE_Project2/blob/develop/CONTRIBUTING.md)
 
