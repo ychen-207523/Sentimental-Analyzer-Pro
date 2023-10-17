@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import re_path
-import realworld.views
+
 # from django.conf.urls import url
 
-from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+import realworld.views
 
 urlpatterns = [
     re_path('admin/', admin.site.urls),
@@ -28,7 +28,10 @@ urlpatterns = [
     re_path(r'^input',realworld.views.input,name = 'input'),
     re_path(r'^productanalysis',realworld.views.productanalysis,name = 'product analysis'),
     re_path(r'^textanalysis',realworld.views.textanalysis,name = 'text analysis'),
-    re_path(r'^audioanalysis',realworld.views.audioanalysis,name = 'audio analysis')
+    re_path(r'^audioanalysis',realworld.views.audioanalysis,name = 'audio analysis'),
+    re_path(r'^livespeechanalysis',realworld.views.livespeechanalysis,name = 'live speech analysis'),
+    re_path(r'^recordAudio', realworld.views.recordaudio, name = 'recordAudio'),
+    re_path(r'^newsanalysis',realworld.views.newsanalysis,name = 'news analysis')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
