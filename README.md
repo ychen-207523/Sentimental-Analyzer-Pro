@@ -25,16 +25,17 @@
 ---
 
 ## Contents
-1. [ Introduction ](#intro)
-2. [ Steps for execution ](#exec)
-3. [Roadmap and Progress](#roadmap)
-4. [Case Study](#casestudy)
-5. [Contributing to the product](#contribute)
-6. [ Team Members ](#team)
+1. [Introduction](#intro)
+2. [Steps for execution](#exec)
+3. [Product Walkthrough](#usecases)
+4. [Roadmap and Progress](#roadmap)
+5. [Case Study](#casestudy)
+6. [Contributing to the product](#contribute)
+7. [Team Members](#team)
 
 ---
 <a name="intro"></a>
-## INTRODUCTION
+## Introduction
 
 Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided in any of the four different methods. They are Document Analysis, Text Analysis, Product Analysis, and Audio Analysis. This project though currently in the initial stages of development, can be further applied to numerous domains that can be useful for society. This document provides a major perspective for the users to understand and take up the project as an Open source software and add on multiple features before releasing it to the market. Also, the document aids the developers in understanding the code and acts as a reference point for starting the project.
 
@@ -51,7 +52,7 @@ Although we have used HTML and CSS for the FrontEnd, the users can merge the bac
 ---
 
 <a name="exec"></a>
-## Steps for execution
+## Steps for Execution
 1. Clone this project into your system
 ```
 git clone https://github.com/amit-99/SE_Project2.git
@@ -65,17 +66,29 @@ cd <your_download_dir>\SE_Project2\
 pip install -r requirements.txt
 python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 ```
-4. Install ffmpeg:
-    a. For windows: ```winget install ffmpeg```
-    b. For linux (Ubuntu): ```sudo apt install ffmpeg```
-    c. For Mac: ```brew install ffmpeg```   
-5. Run Django Server using manage.py (Note: Make sure you are in root directory of the project)
+4. Install ffmpeg:  
+   For Windows:  
+   ```
+   winget install ffmpeg
+   ```  
+   For Linux (Ubuntu):  
+   ```
+   sudo apt install ffmpeg
+   ```  
+   For Mac:  
+   ```
+   brew install ffmpeg
+   ```   
+6. Run Django Server using manage.py (Note: Make sure you are in root directory of the project)
 ```
 python .\sentimental_analysis\manage.py runserver
 ```
 6. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
 7. Great!! Now you are into the application
-  
+
+---
+
+<a name="usecases"></a>
 ![First](https://user-images.githubusercontent.com/43075652/97276268-31ce6100-17f4-11eb-8b57-7741069bf311.png)
 ![second](https://user-images.githubusercontent.com/43075652/97276507-82de5500-17f4-11eb-88e0-0ea41bc9b424.png)
 
