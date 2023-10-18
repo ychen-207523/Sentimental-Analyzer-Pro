@@ -14,13 +14,11 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
-
+import nltk
 from pydub import AudioSegment
 from .newsScraper import *
 from .utilityFunctions import *
-
-
-
+import stopwords
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -253,14 +251,12 @@ def recordaudio(request):
         audio = audio.set_sample_width(2)
         audio = audio.set_frame_rate(44100)
         audio = audio.set_channels(1)
-        audio.export(output_file_path, format='wav')
+        audio.export(useFile, format='wav')
 
-        text_file = open(
-            "sentimental_analysis/realworld/recordedAudio.txt", "w")
-        text_file.write(output_file_path)
+        text_file = open("sentimental_analysis/realworld/recordedAudio.txt", "w")
+        text_file.write(useFile)
         text_file.close()
-        response = HttpResponse(
-            'Success! This is a 200 response.', content_type='text/plain', status=200)
+        response = HttpResponse('Success! This is a 200 response.', content_type='text/plain', status=200)
         return response
 
 def newsanalysis(request):
