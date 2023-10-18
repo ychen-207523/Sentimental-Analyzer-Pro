@@ -54,15 +54,10 @@ def get_clean_text(text):
     text = removeSpecialChar(text)
     text = stripPunctuations(text)
     text = stripExtraWhiteSpaces(text)
-
-    # Tokenize using nltk
     tokens = nltk.word_tokenize(text)
-
-    # Import stopwords
     stop_words = set(stopwords.words('english'))
     stop_words.add('rt')
     stop_words.add('')
-    # Remove tokens which are in stop_words
     newtokens = [item for item in tokens if item not in stop_words]
 
     textclean = ' '.join(newtokens)
