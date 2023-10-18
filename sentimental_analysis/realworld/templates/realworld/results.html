@@ -117,16 +117,24 @@
         <!--Introduction-->
         <section id="banner-content" class="introduction scrollto">
             <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px;">
+                <h2 class="section-title">Input Text</h2> <!-- Added heading for input text -->
+                <div>
+                    <!-- Add your input text field here -->
+                    <textarea id="inputText" class="line-edit" rows="4" placeholder="Enter your text here" style="height: 165px"></textarea>
+                    <!-- End of input text field -->
+                </div>
+            </div>
+            <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
                 <h2 class="section-title">Sentiments Distribution</h2>
             </div>
             <div>
-                <div id="chartContainer" style="height: 600px; width: 70%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                <div id="chartContainer" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
             </div>
-            <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px;">
+            <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
                 <h2 class="section-title">Sentiments Graph</h2>
             </div>
             <div>
-                <div id="chartContainer2" style="height: 600px; width: 70%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                <div id="chartContainer2" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
             </div>
         </section>
         <!--End of Introduction-->
@@ -158,41 +166,44 @@
 <script src="{% static "js/site.js" %}"></script>
 <script type="text/javascript">
     window.onload = function () {
-        CanvasJS.addColorSet("piechartColors",
-                    [ 
-                    "#2F4F4F",   
-                    "#b5190b",
-                    "#b39032"       
-                    ]);
+            CanvasJS.addColorSet("piechartColors",
+            [ 
+            "#2F4F4F",   
+            "#b5190b",
+            "#b39032"       
+            ]);
 
-                    var chart = new CanvasJS.Chart("chartContainer", {
-                    theme: "light2",
-                    backgroundColor: "white",
-                    animationEnabled: true,
-                    exportEnabled: false,
-                    borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
-                    legend: {
-                        
-                        fontSize: 16,
-                        horizontalAlign: "right",
-                        verticalAlign: "center"
-                    },
-                    data: [{
-                        type: "doughnut",
-                        innerRadius: "60%",
-                        showInLegend: true,
-                        legendText: "{label}",
-                        indexLabelFontSize: 16,
-                        indexLabel: "{label}: #percent%",
-                        toolTipContent: "{y}%",
-                        dataPoints: [
-                            { y: {{sentiment | get_item:'pos'}} * 100, label: "Positive", color: "#4CAF50" },
-                            { y: {{sentiment | get_item:'neg'}} * 100, label: "Negative", color: "#F44336" },
-                            { y: {{sentiment | get_item:'neu'}} * 100, label: "Neutral", color: "#FFC107" }
-                        ]
-                    }]
-                });
-                chart.render();
+            var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light2",
+            backgroundColor: "white",
+            animationEnabled: true,
+            exportEnabled: false,
+            borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
+            legend: {
+                
+                fontSize: 16,
+                horizontalAlign: "right",
+                verticalAlign: "center"
+            },
+            data: [{
+                type: "doughnut",
+                innerRadius: "60%",
+                showInLegend: true,
+                legendText: "{label}",
+                indexLabelFontSize: 16,
+                indexLabel: "{label}: #percent%",
+                toolTipContent: "{y}%",
+                dataPoints: [
+                    { y: {{sentiment | get_item:'pos'}} * 100, label: "Positive", color: "#4CAF50" },
+                    { y: {{sentiment | get_item:'neg'}} * 100, label: "Negative", color: "#F44336" },
+                    { y: {{sentiment | get_item:'neu'}} * 100, label: "Neutral", color: "#FFC107" }
+                ]
+            }]
+        });
+        chart.render();
+        
+        var textContent = "{{ text }}";
+        document.getElementById("inputText").value = textContent;
 
         var chart2 = new CanvasJS.Chart("chartContainer2",{
         theme: "light2",
@@ -201,20 +212,21 @@
         exportEnabled: false,
         borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
         data: [{
-        type: "column",
-            explodeOnClick: true,
-            toolTipContent: "{y} %",
-            
-            dataPoints: [
-                {label: "Positive" , y: {{sentiment | get_item:'pos'}} * 100},
-                {label: "Negative", y: {{sentiment | get_item:'neg'}} * 100 },
-                {label: "Neutral" , y: {{sentiment | get_item:'neu'}} * 100  }
-            ]
-        }]
-    });
-    chart2.render();
+            type: "column",
+                explodeOnClick: true,
+                toolTipContent: "{y} %",
+                
+                dataPoints: [
+                    {label: "Positive" , y: {{sentiment | get_item:'pos'}} * 100},
+                    {label: "Negative", y: {{sentiment | get_item:'neg'}} * 100 },
+                    {label: "Neutral" , y: {{sentiment | get_item:'neu'}} * 100  }
+                ]
+            }]
+        });
+        chart2.render();
     }
- </script>
+ 
+    </script>
  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 </body>
