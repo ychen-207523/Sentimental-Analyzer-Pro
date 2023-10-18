@@ -127,7 +127,7 @@ The Output as below:
 ☑️  Documentation Improvement for reflecting project's value accurately<br>
 ☑️  Addition of Builds and Workflows for better development activities<br>
 ☑️  Unit Tests were written and Test Coverage was improved<br>
-☑️  <br>
+☑️  Public facing webpage to get feedbacks, Raise and handle issues, Discuss & Grow with enthusiasts and supportive community<br>
 ☑️  <br>
 ☑️  <be>
 
@@ -162,6 +162,13 @@ Enhance the analysis by taking into consideration the number of users rated for 
 
 Extend the analysis to the Facebook, Twitter and LinkedIn Posts
 
+---
+### Connect with us 
+- Want to share you feedback or raise any issue
+- Need instant help ? discuss over community chat to get help from other community members
+- Join our mailing list for regular updates
+- Or just want to be part of our journey and get to know more about the C.E.L.T and it's team
+Visit our web page to be part of [C.E.L.T. community](https://factual-squash-083.notion.site/C-E-L-T-The-Sentiment-Analyzer-f771d9e92c494c9b85a4faeb6e3621a1?pvs=4)
 ---
 
 <a name="team"></a>
