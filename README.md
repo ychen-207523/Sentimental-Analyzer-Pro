@@ -1,12 +1,10 @@
-# SE Project 2
-
-# C.E.L.T: The Sentimental Analyser 
-
-### YouTube Link: 
-
-[![Demo Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
-
----
+# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/> C.E.L.T: The Sentimental Analyser 
+## Software Engineering Project for CSC 510
+<p>
+  <a href="https://www.youtube.com/watch?v=VLoJCemCdHg">
+    👨🏻‍💻 YouTube
+  </a> 
+</p>
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 [![GitHub Release](https://img.shields.io/github/release/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2/releases)
@@ -36,19 +34,48 @@
 
 ---
 <a name="intro"></a>
-## Introduction
+## Introduction - Sentimental Analysis
 
-Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided in any of the four different methods. They are Document Analysis, Text Analysis, Product Analysis, and Audio Analysis. This project though currently in the initial stages of development, can be further applied to numerous domains that can be useful for society. This document provides a major perspective for the users to understand and take up the project as an Open source software and add on multiple features before releasing it to the market. Also, the document aids the developers in understanding the code and acts as a reference point for starting the project.
+Sentiment analysis, also known as opinion mining, is the process of determining the sentiment or emotional tone in a piece of text, audio, or other forms of data. It involves identifying whether the sentiment expressed is positive, negative, or neutral. 
 
-The complete development was achieved using the following technologies and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
+### Why is it important?
+<ul>
+  <li>Sentiment analysis can help businesses and organizations understand how their customers or users feel about their products, services, or experiences. </li>
+  <li>Companies can gauge public opinion about their products or services, track trends, and identify emerging issues or opportunities in the market.</li>
+  <li>News agencies and media companies use sentiment analysis to analyze public sentiment towards news articles or events. This helps in generating content that aligns with the interests of the audience.</li>
+  <li>Sentiment analysis is used in politics to understand public sentiment towards political candidates, parties, or policies. It is also used to gauge public opinion on social issues.</li>
+</ul>
+
+### Why use C.E.L.T.?
+C.E.L.T. is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. It is important because:
+<ul>
+  <li><b>Comprehensive Insights: </b>Different types of data sources provide diverse perspectives. An all-encompassing tool can provide a more comprehensive understanding of public sentiment.</li>
+  <li><b>Multichannel Data Analysis:</b> In today's world, opinions and sentiments are expressed across various channels, including social media, customer reviews, audio recordings, and news articles. A tool that can analyze these diverse data sources offers a more accurate picture of public sentiment.</li>
+  <li><b>Cost-Efficiency:</b> Instead of using multiple specialized tools, a single tool that can handle multiple data types is cost-effective and streamlines the analysis process.</li>
+</ul>
+
+### How was C.E.L.T. developed?
+The complete development was achieved using the following technologies, and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
 - Python3
 - Django
 - HTML
 - CSS
-- Scrappy
+- Scrapy
 - Vader Analysis Tool
+Although, HTML and CSS are used for the front end, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, and AngularJS.
 
-Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
+---
+
+<a name="feat"></a>
+## What can C.E.L.T. do?
+|Feature|Description  |
+|--|--|
+|Product Analysis |```Sentimental analysis of Amazon product reviews```|
+|News Analysis  |```Sentimental analysis of any recent news topic```|
+|Text Analysis | ```Sentimental analysis of text input```|
+|Audio Analysis   |``` Sentimental analysis of audio file``` |
+|File Analysis   |``` Sentimental analysis of text file``` |
+|Live Sentimental Analysis   |``` Sentimental analysis of live recorded audio``` |
 
 ---
 
