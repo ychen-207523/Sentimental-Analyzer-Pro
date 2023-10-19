@@ -120,24 +120,14 @@ python .\sentimental_analysis\manage.py runserver
 ### Usage
 
 <a name="usecases"></a>
-![First](https://user-images.githubusercontent.com/43075652/97276268-31ce6100-17f4-11eb-8b57-7741069bf311.png)
-![second](https://user-images.githubusercontent.com/43075652/97276507-82de5500-17f4-11eb-88e0-0ea41bc9b424.png)
+- Start the django server to get to the homepage
+![First](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/1.gif)
 
-The UI for URL input is as shown below:
-![product](https://user-images.githubusercontent.com/43075652/97276542-925d9e00-17f4-11eb-910f-103be084ad13.png)
+- Amazon Product sentiment Analysis
+![second](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/2.gif)
 
-The UI for file input is as shown below:
-![docum](https://user-images.githubusercontent.com/43075652/97277008-2891c400-17f5-11eb-901a-1ebd3da5a32b.png)
-
-The UI for text input is as shown below:
-![text](https://user-images.githubusercontent.com/43075652/97277038-33e4ef80-17f5-11eb-8fbc-76bad26adcc9.png)
-
-The UI for audio input is as shown below:
-![audio](https://user-images.githubusercontent.com/43075652/97277059-3d6e5780-17f5-11eb-8dcf-a5935d6613ae.png)
-
-The Output as below:
-![output](https://user-images.githubusercontent.com/43075652/97277225-74446d80-17f5-11eb-89f5-2b27c957827e.png)
-![out](https://user-images.githubusercontent.com/43075652/97277310-8e7e4b80-17f5-11eb-8910-03ec42ea0ff7.png)
+- News Sentiment Analysis
+![third](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/3.gif)
 
 ---
 <a name="roadmap"></a>
