@@ -21,8 +21,10 @@
 [![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amit-99/SE_Project2)
 
 ---
+![sentiment](https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/sentiment.png)
+C.E.L.T. is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles.
 
-## Contents
+## Table of Contents
 1. [Introduction](#intro)
 2. [Features](#feat)
 3. [Steps for execution](#exec)
@@ -34,9 +36,10 @@
 
 ---
 <a name="intro"></a>
-## Introduction - Sentimental Analysis
+## Introduction
 
-Sentiment analysis, also known as opinion mining, is the process of determining the sentiment or emotional tone in a piece of text, audio, or other forms of data. It involves identifying whether the sentiment expressed is positive, negative, or neutral. 
+### What is Sentimental Analysis?
+Sentiment analysis, also known as opinion mining, is the process of determining the sentiment or emotional tone in a piece of text, audio, or other forms of data. It involves identifying whether the sentiment expressed is positive, negative, or neutral.
 
 ### Why is it important?
 <ul>
@@ -47,7 +50,7 @@ Sentiment analysis, also known as opinion mining, is the process of determining 
 </ul>
 
 ### Why use C.E.L.T.?
-C.E.L.T. is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. It is important because:
+C.E.L.T. provides the following:
 <ul>
   <li><b>Comprehensive Insights: </b>Different types of data sources provide diverse perspectives. An all-encompassing tool can provide a more comprehensive understanding of public sentiment.</li>
   <li><b>Multichannel Data Analysis:</b> In today's world, opinions and sentiments are expressed across various channels, including social media, customer reviews, audio recordings, and news articles. A tool that can analyze these diverse data sources offers a more accurate picture of public sentiment.</li>
@@ -55,7 +58,7 @@ C.E.L.T. is a versatile tool that can perform sentiment analysis on different ty
 </ul>
 
 ### How was C.E.L.T. developed?
-The complete development was achieved using the following technologies, and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
+The complete development was achieved using the following technologies:
 - Python3
 - Django
 - HTML
