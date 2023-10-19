@@ -94,7 +94,6 @@ pip install -r requirements.txt
 ```
 4. Install ffmpeg for audio analysis:
 
-```
 For Windows:  
 ```
 winget install ffmpeg
