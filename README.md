@@ -1,6 +1,5 @@
 # <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/> C.E.L.T: The Sentimental Analyser 
 ## Software Engineering Project for CSC 510
-### YouTube Link:
 <p>
   <a href="https://www.youtube.com/watch?v=VLoJCemCdHg">
     👨🏻‍💻 YouTube
