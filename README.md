@@ -24,25 +24,15 @@
 
 ## Contents
 1. [Introduction](#intro)
-2. [Steps for execution](#exec)
-3. [Product Walkthrough](#usecases)
-4. [Roadmap and Progress](#roadmap)
-5. [Case Study](#casestudy)
-6. [Contributing to the product](#contribute)
-7. [Team Members](#team)
+2. [Features](#feat)
+3. [Steps for execution](#exec)
+4. [Product Walkthrough](#usecases)
+5. [Roadmap and Progress](#roadmap)
+6. [Case Study](#casestudy)
+7. [Contributing to the product](#contribute)
+8. [Team Members](#team)
 
 ---
-## Features
-|Feature|Description  |
-|--|--|
-|Product Analysis |```Sentimental analysis of Amazon product reviews```|
-|News Analysis  |```Sentimental analysis of any recent news topic```|
-|Text Analysis | ```Sentimental analysis of text input```|
-|Audio Analysis   |``` Sentimental analysis of audio file``` |
-|File Analysis   |``` Sentimental analysis of text file``` |
-|Live Sentimental Analysis   |``` Sentimental analysis of live recorded audio``` |
-
-
 <a name="intro"></a>
 ## Introduction
 
@@ -57,6 +47,19 @@ The complete development was achieved using the following technologies and it is
 - Vader Analysis Tool
 
 Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
+
+---
+
+<a name="feat"></a>
+## Features
+|Feature|Description  |
+|--|--|
+|Product Analysis |```Sentimental analysis of Amazon product reviews```|
+|News Analysis  |```Sentimental analysis of any recent news topic```|
+|Text Analysis | ```Sentimental analysis of text input```|
+|Audio Analysis   |``` Sentimental analysis of audio file``` |
+|File Analysis   |``` Sentimental analysis of text file``` |
+|Live Sentimental Analysis   |``` Sentimental analysis of live recorded audio``` |
 
 ---
 
