@@ -63,6 +63,7 @@ The complete development was achieved using the following technologies:
 - CSS
 - Scrapy
 - Vader Analysis Tool
+
 Although HTML and CSS are used for the front end, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, and AngularJS.
 
 ---
