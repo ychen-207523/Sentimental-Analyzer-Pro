@@ -54,6 +54,7 @@ C.E.L.T. is a versatile tool that can perform sentiment analysis on different ty
   <li><b>Cost-Efficiency:</b> Instead of using multiple specialized tools, a single tool that can handle multiple data types is cost-effective and streamlines the analysis process.</li>
 </ul>
 
+### How was C.E.L.T. developed?
 The complete development was achieved using the following technologies, and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
 - Python3
 - Django
@@ -61,13 +62,12 @@ The complete development was achieved using the following technologies, and it i
 - CSS
 - Scrapy
 - Vader Analysis Tool
-
-Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
+Although, HTML and CSS are used for the front end, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, and AngularJS.
 
 ---
 
 <a name="feat"></a>
-## Features
+## What can C.E.L.T. do?
 |Feature|Description  |
 |--|--|
 |Product Analysis |```Sentimental analysis of Amazon product reviews```|
