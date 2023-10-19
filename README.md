@@ -26,12 +26,12 @@ C.E.L.T. is a versatile tool that can perform sentiment analysis on different ty
 
 ## Table of Contents
 1. [Introduction](#intro)
-2. [Features](#feat)
-3. [Steps for execution](#exec)
-4. [Product Walkthrough](#usecases)
-5. [Roadmap and Progress](#roadmap)
-6. [Case Study](#casestudy)
-7. [Contributing to the product](#contribute)
+2. [Steps for execution](#exec)
+3. [Product Walkthrough](#usecases)
+4. [Roadmap and Progress](#roadmap)
+5. [Case Study](#casestudy)
+6. [Contributing to the product](#contribute)
+7. [Connect with us](#Connectwithus)
 8. [Team Members](#team)
 
 ---
@@ -158,7 +158,7 @@ The Output as below:
 ☑️  Documentation Improvement for reflecting project's value accurately<br>
 ☑️  Addition of Builds and Workflows for better development activities<br>
 ☑️  Unit Tests were written and Test Coverage was improved<br>
-☑️  <br>
+☑️  Public facing webpage to get feedbacks, Raise and handle issues, Discuss & Grow with enthusiasts and supportive community<br>
 ☑️  <br>
 ☑️  <be>
 
@@ -192,6 +192,16 @@ Live speech to text sentiment analysis.
 Enhance the analysis by taking into consideration the number of users rated for each product!
 
 Extend the analysis to the Facebook, Twitter and LinkedIn Posts
+
+---
+<a name="Connectwithus"></a>
+## Connect with us 
+- Want to share you feedback or raise any issue [click here](https://noteforms.com/forms/query-form-i4mw2s)
+- Need instant help ? discuss over community chat to get help from other community members
+- Join our mailing list for regular updates
+- Or just want to be part of our journey and get to know more about the C.E.L.T and it's team
+
+**Visit our web page to be part of [C.E.L.T. community](https://factual-squash-083.notion.site/C-E-L-T-The-Sentiment-Analyzer-f771d9e92c494c9b85a4faeb6e3621a1)**
 
 ---
 
