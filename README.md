@@ -2,14 +2,12 @@
 
 # C.E.L.T: The Sentimental Analyser 
 
-### YouTube Link: 
+### YouTube Link:
 <p>
-  【
   <a href="https://www.youtube.com/watch?v=VLoJCemCdHg">
     👨🏻‍💻 YouTube
   </a> 
 </p>
----
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 [![GitHub Release](https://img.shields.io/github/release/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2/releases)
