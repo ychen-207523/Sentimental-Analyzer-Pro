@@ -42,10 +42,10 @@ Sentiment analysis, also known as opinion mining, is the process of determining 
 <ul>
   <li>Sentiment analysis can help businesses and organizations understand how their customers or users feel about their products, services, or experiences. </li>
   <li>Companies can gauge public opinion about their products or services, track trends, and identify emerging issues or opportunities in the market.</li>
+  <li>News agencies and media companies use sentiment analysis to analyze public sentiment towards news articles or events. This helps in generating content that aligns with the interests of the audience.</li>
+  <li>Sentiment analysis is used in politics to understand public sentiment towards political candidates, parties, or policies. It is also used to gauge public opinion on social issues.</li>
 </ul>
 
-
-They are document analysis, text analysis, product analysis, and audio analysis. This project, though currently in the initial stages of development, can be further applied to numerous domains that can be useful for society. This document provides a major perspective for the users to understand and take up the project as open-source software and add on multiple features before releasing it to the market. Also, the document aids the developers in understanding the code and acts as a reference point for starting the project.
 
 The complete development was achieved using the following technologies, and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
 - Python3
