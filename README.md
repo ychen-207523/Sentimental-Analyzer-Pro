@@ -25,12 +25,11 @@ C.E.L.T. is a versatile tool that can perform sentiment analysis on different ty
 ## Table of Contents
 1. [Introduction](#intro)
 2. [How to use C.E.L.T.?](#exec)
-3. [Product Walkthrough](#usecases)
-4. [Roadmap and Progress](#roadmap)
-5. [Case Study](#casestudy)
-6. [Contributing to the product](#contribute)
-7. [Connect with us](#Connectwithus)
-8. [Team Members](#team)
+3. [Roadmap and Progress](#roadmap)
+4. [Case Study](#casestudy)
+5. [Contributing to the product](#contribute)
+6. [Connect with us](#Connectwithus)
+7. [Team Members](#team)
 
 ---
 <a name="intro"></a>
@@ -94,18 +93,18 @@ cd <your_download_dir>\SE_Project2\
 pip install -r requirements.txt
 ```
 4. Install ffmpeg for audio analysis:
-   For Windows:  
-   ```
-   winget install ffmpeg
-   ```  
-   For Linux (Ubuntu):  
-   ```
-   sudo apt install ffmpeg
-   ```  
-   For Mac:  
-   ```
-   brew install ffmpeg
-   ```   
+For Windows:  
+```
+winget install ffmpeg
+```  
+For Linux (Ubuntu):  
+```
+sudo apt install ffmpeg
+```  
+For Mac:  
+```
+brew install ffmpeg
+```   
 6. Run Django Server using manage.py (Note: Make sure you are in root directory of the project.)
 ```
 cd <your_download_dir>\SE_Project2\
@@ -113,7 +112,7 @@ python .\sentimental_analysis\manage.py runserver
 ```
 6. Next, open your browser and type in `localhost:8000` in the search bar to open the user interface of the application.
 
----
+### Usage
 
 <a name="usecases"></a>
 ![First](https://user-images.githubusercontent.com/43075652/97276268-31ce6100-17f4-11eb-8b57-7741069bf311.png)
