@@ -48,12 +48,15 @@ Sentiment analysis, also known as opinion mining, is the process of determining 
 </ul>
 
 ### Why use C.E.L.T.?
+
 C.E.L.T. provides the following:
 <ul>
   <li><b>Comprehensive Insights: </b>Different types of data sources provide diverse perspectives. An all-encompassing tool can provide a more comprehensive understanding of public sentiment.</li>
   <li><b>Multichannel Data Analysis:</b> In today's world, opinions and sentiments are expressed across various channels, including social media, customer reviews, audio recordings, and news articles. A tool that can analyze these diverse data sources offers a more accurate picture of public sentiment.</li>
   <li><b>Cost-Efficiency:</b> Instead of using multiple specialized tools, a single tool that can handle multiple data types is cost-effective and streamlines the analysis process.</li>
 </ul>
+
+![meme](https://github.com/amit-99/SE_Project2/blob/develop/assets/images/meme.jpg?raw=true)
 
 ### How was C.E.L.T. developed?
 The complete development was achieved using the following technologies:
