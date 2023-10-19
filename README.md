@@ -21,7 +21,7 @@
 [![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amit-99/SE_Project2)
 
 ---
-![sentiment](https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/sentiment.png)
+![sentiment](https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/sentiment_2.png)
 C.E.L.T. is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles.
 
 ## Table of Contents
