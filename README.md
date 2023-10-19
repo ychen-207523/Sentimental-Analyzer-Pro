@@ -24,12 +24,13 @@ C.E.L.T. is a versatile tool that can perform sentiment analysis on different ty
 
 ## Table of Contents
 1. [Introduction](#intro)
-2. [How to use C.E.L.T.?](#exec)
-3. [Roadmap and Progress](#roadmap)
-4. [Case Study](#casestudy)
-5. [Contributing to the product](#contribute)
-6. [Connect with us](#Connectwithus)
-7. [Team Members](#team)
+2. [C.E.L.T. Features](#feat)
+3. [How to use C.E.L.T.?](#exec)
+4. [Roadmap and Progress](#roadmap)
+5. [Case Study](#casestudy)
+6. [Contributing to the product](#contribute)
+7. [Connect with us](#Connectwithus)
+8. [Team Members](#team)
 
 ---
 <a name="intro"></a>
@@ -92,21 +93,20 @@ git clone https://github.com/amit-99/SE_Project2.git
 cd <your_download_dir>\SE_Project2\
 pip install -r requirements.txt
 ```
-4. Install ffmpeg for audio analysis:
-
-For Windows:  
-```
-winget install ffmpeg
-```  
-For Linux (Ubuntu):  
-```
-sudo apt install ffmpeg
-```  
-For Mac:  
-```
-brew install ffmpeg
-```   
-6. Run Django Server using manage.py (Note: Make sure you are in root directory of the project.)
+4. Install ffmpeg:  
+   For Windows:  
+   ```
+   winget install ffmpeg
+   ```  
+   For Linux (Ubuntu):  
+   ```
+   sudo apt install ffmpeg
+   ```  
+   For Mac:  
+   ```
+   brew install ffmpeg
+   ```   
+5. Run Django Server using manage.py (Note: Make sure you are in root directory of the project.)
 ```
 cd <your_download_dir>\SE_Project2\
 python .\sentimental_analysis\manage.py runserver
@@ -176,26 +176,13 @@ We have done a Case Study for our Sentiment Analysis Project. It can be found [h
 To Contribute to our application, please refer to [CONTRIBUTING.md](https://github.com/amit-99/SE_Project2/blob/develop/CONTRIBUTING.md)
 
 ---
-
-## FUTURE SCOPE
-
-Implement user authentication to store history for each user.
-
-Recommendation system based on analysis results.
-
-Live speech to text sentiment analysis.
-
-Enhance the analysis by taking into consideration the number of users rated for each product!
-
-Extend the analysis to the Facebook, Twitter and LinkedIn Posts
-
----
 <a name="Connectwithus"></a>
 ## Connect with us 
-- Want to share you feedback or raise any issue [click here](https://noteforms.com/forms/query-form-i4mw2s)
-- Need instant help ? discuss over community chat to get help from other community members
+- Want to share your feedback or raise any issue [click here](https://noteforms.com/forms/query-form-i4mw2s)
+- Need instant help? discuss over community chat to get help from other community members
 - Join our mailing list for regular updates
-- Or just want to be part of our journey and get to know more about the C.E.L.T and it's team
+- Join our discord forum for updates or support or discussions. [Join Here!](https://discord.gg/WsDzsyB2X)
+- Or just want to be part of our journey and get to know more about the C.E.L.T and its team
 
 **Visit our web page to be part of [C.E.L.T. community](https://factual-squash-083.notion.site/C-E-L-T-The-Sentiment-Analyzer-f771d9e92c494c9b85a4faeb6e3621a1)**
 
