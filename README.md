@@ -46,6 +46,13 @@ Sentiment analysis, also known as opinion mining, is the process of determining 
   <li>Sentiment analysis is used in politics to understand public sentiment towards political candidates, parties, or policies. It is also used to gauge public opinion on social issues.</li>
 </ul>
 
+### Why use C.E.L.T.?
+C.E.L.T. is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. It is important because:
+<ul>
+  <li><b>Comprehensive Insights: </b>Different types of data sources provide diverse perspectives. An all-encompassing tool can provide a more comprehensive understanding of public sentiment.</li>
+  <li><b>Multichannel Data Analysis:</b> In today's world, opinions and sentiments are expressed across various channels, including social media, customer reviews, audio recordings, and news articles. A tool that can analyze these diverse data sources offers a more accurate picture of public sentiment.</li>
+  <li><b>Cost-Efficiency:</b> Instead of using multiple specialized tools, a single tool that can handle multiple data types is cost-effective and streamlines the analysis process.</li>
+</ul>
 
 The complete development was achieved using the following technologies, and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
 - Python3
@@ -56,14 +63,6 @@ The complete development was achieved using the following technologies, and it i
 - Vader Analysis Tool
 
 Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
-
----
-
-<a name="use"></a>
-## Why C.E.L.T.?
-Different types of data sources provide diverse perspectives. An all-encompassing tool can provide a more comprehensive understanding of public sentiment.
-In today's world, opinions and sentiments are expressed across various channels, including social media, customer reviews, audio recordings, and news articles. A tool that can analyze these diverse data sources offers a more accurate picture of public sentiment.
-Instead of using multiple specialized tools, a single tool that can handle multiple data types is cost-effective and streamlines the analysis process.
 
 ---
 
