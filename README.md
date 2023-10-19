@@ -124,10 +124,10 @@ python .\sentimental_analysis\manage.py runserver
 ![First](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/1.gif)
 
 - Amazon Product sentiment Analysis
-![second](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/2.gif)
+![second](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/3.gif)
 
 - News Sentiment Analysis
-![third](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/3.gif)
+![third](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/2.gif)
 
 ---
 <a name="roadmap"></a>
