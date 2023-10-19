@@ -5,7 +5,7 @@
 ### YouTube Link: 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-[![Demo Video]<i class="fab fa-github"></i>(https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
+[![Demo Video]<i class="fab fa-github"></i>](https://youtu.be/VLoJCemCdHg)
 
 ---
 
