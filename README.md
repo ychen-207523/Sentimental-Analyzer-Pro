@@ -1,4 +1,4 @@
-# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black.png" height="42" width="42"/> C.E.L.T: The Sentimental Analyser 
+# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black.png" height="30" width="100"/> C.E.L.T: The Sentimental Analyser 
 ## SE Project 2
 ### YouTube Link:
 <p>
