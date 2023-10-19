@@ -1,10 +1,5 @@
 # <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/> C.E.L.T: The Sentimental Analyser 
 ## Software Engineering Project for CSC 510
-<p>
-  <a href="https://www.youtube.com/watch?v=VLoJCemCdHg">
-    👨🏻‍💻 YouTube
-  </a> 
-</p>
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 [![GitHub Release](https://img.shields.io/github/release/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2/releases)
@@ -21,7 +16,7 @@
 [![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amit-99/SE_Project2)
 
 ---
-![sentiment](https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/sentiment_3.png)
+[![sentiment](https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/sentiment_3.png)](https://www.youtube.com/watch?v=VLoJCemCdHg)
 C.E.L.T. is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles.
 
 ## Table of Contents
