@@ -24,7 +24,7 @@ C.E.L.T. is a versatile tool that can perform sentiment analysis on different ty
 
 ## Table of Contents
 1. [Introduction](#intro)
-2. [Steps for execution](#exec)
+2. [How to use C.E.L.T.?](#exec)
 3. [Product Walkthrough](#usecases)
 4. [Roadmap and Progress](#roadmap)
 5. [Case Study](#casestudy)
@@ -82,20 +82,18 @@ Although HTML and CSS are used for the front end, the users can merge the backen
 
 <a name="exec"></a>
 ## How to use C.E.L.T.?
-1. Clone this project into your system
+### Installation
+1. Clone this project:
 ```
 git clone https://github.com/amit-99/SE_Project2.git
 ```
-2. Make sure you are using Python 3.11 or higher
+2. Make sure you are using Python 3.11 or higher. You can get it here: https://www.python.org/downloads/release/python-3115/
 3. Install dependencies for the project from the root directory of the project:
-    a. To install python library dependencies, use requirements.txt 
-    b. We also need to install and import nltk and supporting libraries
 ```
 cd <your_download_dir>\SE_Project2\
 pip install -r requirements.txt
-python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 ```
-4. Install ffmpeg:
+4. Install ffmpeg for audio analysis:
    For Windows:  
    ```
    winget install ffmpeg
@@ -108,12 +106,12 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
    ```
    brew install ffmpeg
    ```   
-6. Run Django Server using manage.py (Note: Make sure you are in root directory of the project)
+6. Run Django Server using manage.py (Note: Make sure you are in root directory of the project.)
 ```
+cd <your_download_dir>\SE_Project2\
 python .\sentimental_analysis\manage.py runserver
 ```
-6. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.5. The UI typically looks as shown below and here you have a choice between URL, file, or normal text input.
-7. Great!! Now you can use the application.
+6. Next, open your browser and type in `localhost:8000` in the search bar to open the user interface of the application.
 
 ---
 
