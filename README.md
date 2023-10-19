@@ -32,6 +32,17 @@
 7. [Team Members](#team)
 
 ---
+## Features
+|Feature|Description  |
+|--|--|
+|Product Analysis |```Sentimental analysis of Amazon product reviews```|
+|News Analysis  |```Sentimental analysis of any recent news topic```|
+|Text Analysis | ```Sentimental analysis of text input```|
+|Audio Analysis   |``` Sentimental analysis of audio file``` |
+|File Analysis   |``` Sentimental analysis of text file``` |
+|Live Sentimental Analysis   |``` Sentimental analysis of live recorded audio``` |
+
+
 <a name="intro"></a>
 ## Introduction
 
