@@ -148,16 +148,13 @@ python .\sentimental_analysis\manage.py runserver
 ☑️  Documentation Improvement for reflecting project's value accurately<br>
 ☑️  Addition of Builds and Workflows for better development activities<br>
 ☑️  Unit Tests were written and Test Coverage was improved<br>
-☑️  Public facing webpage to get feedbacks, Raise and handle issues, Discuss & Grow with enthusiasts and supportive community<br>
-☑️  <br>
-☑️  <be>
+☑️  Public facing webpage to get feedbacks, Raise and handle issues, Discuss & Grow with enthusiasts and supportive community<br>  
 
 ### Future Scope
 - [ ] Implement User Authentication to store the history of each User
 - [ ] Recommendation System based on Product Analysis Results 
 - [ ] Enhance the Product Analysis by considering the number of users rated for each Product!
 - [ ] Extend the Sentiment Analysis to Facebook, Twitter, LinkedIn Posts
-- [ ] To Be Added..
 
 ---  
 <a name="casestudy"></a>
