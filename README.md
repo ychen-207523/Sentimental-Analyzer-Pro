@@ -144,6 +144,7 @@ python .\sentimental_analysis\manage.py runserver
 ### Current Achievements
 ☑️  Live Sentiment Analysis Feature inclusion<br>
 ☑️  News Analysis Feature inclusion<br>
+☑️  Fixed and enhanced Amazon Product Analysis<br>
 ☑️  UI Improvement for enriching User interaction with the Application<br>
 ☑️  Documentation Improvement for reflecting project's value accurately<br>
 ☑️  Addition of Builds and Workflows for better development activities<br>
