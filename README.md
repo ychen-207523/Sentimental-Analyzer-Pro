@@ -98,18 +98,18 @@ cd <your_download_dir>\SE_Project2\
 pip install -r requirements.txt
 ```
 4. Install ffmpeg:  
-   For Windows:  
-   ```
-   winget install ffmpeg
-   ```  
-   For Linux (Ubuntu):  
-   ```
-   sudo apt install ffmpeg
-   ```  
-   For Mac:  
-   ```
-   brew install ffmpeg
-   ```   
+For Windows:  
+```
+winget install ffmpeg
+```  
+For Linux (Ubuntu):  
+```
+sudo apt install ffmpeg
+```  
+For Mac:  
+```
+brew install ffmpeg
+```   
 5. Run Django Server using manage.py (Note: Make sure you are in root directory of the project.)
 ```
 cd <your_download_dir>\SE_Project2\
