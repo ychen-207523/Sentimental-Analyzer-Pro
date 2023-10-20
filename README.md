@@ -1,12 +1,5 @@
-# SE Project 2
-
-# C.E.L.T: The Sentimental Analyser 
-
-### YouTube Link: 
-
-[![Demo Video](https://i9.ytimg.com/vi_webp/zvme9ARshD8/mqdefault.webp?sqp=CJTzs_sF&rs=AOn4CLBkjs-_C1oPtVtZgfWL2llzZA_dKw)](https://youtu.be/VLoJCemCdHg)
-
----
+# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/> C.E.L.T: The Sentimental Analyser 
+## Software Engineering Project for CSC 510
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
 [![GitHub Release](https://img.shields.io/github/release/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2/releases)
@@ -23,90 +16,118 @@
 [![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amit-99/SE_Project2)
 
 ---
+C.E.L.T. is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided using different types of input data.
 
-## Contents
+[![sentiment](https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/sentiment_3.png)](https://youtu.be/FMuVNTV_j8U)
+
+---
+
+## Table of Contents
 1. [Introduction](#intro)
-2. [Steps for execution](#exec)
-3. [Product Walkthrough](#usecases)
+2. [C.E.L.T. Features](#feat)
+3. [How to use C.E.L.T.?](#exec)
 4. [Roadmap and Progress](#roadmap)
 5. [Case Study](#casestudy)
 6. [Contributing to the product](#contribute)
-7. [Team Members](#team)
+7. [Connect with us](#Connectwithus)
+8. [Team Members](#team)
 
 ---
 <a name="intro"></a>
 ## Introduction
 
-Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided in any of the four different methods. They are Document Analysis, Text Analysis, Product Analysis, and Audio Analysis. This project though currently in the initial stages of development, can be further applied to numerous domains that can be useful for society. This document provides a major perspective for the users to understand and take up the project as an Open source software and add on multiple features before releasing it to the market. Also, the document aids the developers in understanding the code and acts as a reference point for starting the project.
+### What is Sentimental Analysis?
+Sentiment analysis, also known as opinion mining, is the process of determining the sentiment or emotional tone in a piece of text, audio, or other forms of data. It involves identifying whether the sentiment expressed is positive, negative, or neutral.
 
-The complete development was achieved using the following technologies and it is recommended that the next set of developers who take up this project have these technologies installed and keep them running before proceeding further:
+### Why is it important?
+<ul>
+  <li>Sentiment analysis can help businesses and organizations understand how their customers or users feel about their products, services, or experiences. </li>
+  <li>Companies can gauge public opinion about their products or services, track trends, and identify emerging issues or opportunities in the market.</li>
+  <li>News agencies and media companies use sentiment analysis to analyze public sentiment towards news articles or events. This helps in generating content that aligns with the interests of the audience.</li>
+  <li>Sentiment analysis is used in politics to understand public sentiment towards political candidates, parties, or policies. It is also used to gauge public opinion on social issues.</li>
+</ul>
+
+### Why use C.E.L.T.?
+
+C.E.L.T. provides the following:
+<ul>
+  <li><b>Comprehensive Insights: </b>Different types of data sources provide diverse perspectives. An all-encompassing tool can provide a more comprehensive understanding of public sentiment.</li>
+  <li><b>Multichannel Data Analysis:</b> In today's world, opinions and sentiments are expressed across various channels, including social media, customer reviews, audio recordings, and news articles. A tool that can analyze these diverse data sources offers a more accurate picture of public sentiment.</li>
+  <li><b>Cost-Efficiency:</b> Instead of using multiple specialized tools, a single tool that can handle multiple data types is cost-effective and streamlines the analysis process.</li>
+</ul>
+
+![meme](https://github.com/amit-99/SE_Project2/blob/develop/assets/images/meme.jpg?raw=true)
+
+### How was C.E.L.T. developed?
+The complete development was achieved using the following technologies:
 - Python3
 - Django
 - HTML
 - CSS
-- Scrappy
+- Scrapy
 - Vader Analysis Tool
 
-Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, angularJS, etc.
+Although HTML and CSS are used for the front end, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, and AngularJS.
+
+---
+
+<a name="feat"></a>
+## What can C.E.L.T. do?
+|Feature|Description  |
+|--|--|
+|Product Analysis |```Sentimental analysis of Amazon product reviews```|
+|News Analysis  |```Sentimental analysis of any recent news topic```|
+|Text Analysis | ```Sentimental analysis of text input```|
+|Audio Analysis   |``` Sentimental analysis of audio file``` |
+|File Analysis   |``` Sentimental analysis of text file``` |
+|Live Sentimental Analysis   |``` Sentimental analysis of live recorded audio``` |
 
 ---
 
 <a name="exec"></a>
-## Steps for Execution
-1. Clone this project into your system
+## How to use C.E.L.T.?
+### Installation
+1. Clone this project:
 ```
 git clone https://github.com/amit-99/SE_Project2.git
 ```
-2. Make sure you are using Python 3.11 or higher
-3. Intall dependencies for the project from root directory of the project:
-    a. To install python library dependencies use requirements.txt 
-    b. We also need install and import nltk and supporting libraries
+2. Make sure you are using Python 3.11 or higher. You can get it here: https://www.python.org/downloads/release/python-3115/
+3. Install dependencies for the project from the root directory of the project:
 ```
 cd <your_download_dir>\SE_Project2\
 pip install -r requirements.txt
-python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 ```
 4. Install ffmpeg:  
-   For Windows:  
-   ```
-   winget install ffmpeg
-   ```  
-   For Linux (Ubuntu):  
-   ```
-   sudo apt install ffmpeg
-   ```  
-   For Mac:  
-   ```
-   brew install ffmpeg
-   ```   
-6. Run Django Server using manage.py (Note: Make sure you are in root directory of the project)
+For Windows:  
 ```
+winget install ffmpeg
+```  
+For Linux (Ubuntu):  
+```
+sudo apt install ffmpeg
+```  
+For Mac:  
+```
+brew install ffmpeg
+```   
+5. Run Django Server using manage.py (Note: Make sure you are in root directory of the project.)
+```
+cd <your_download_dir>\SE_Project2\
 python .\sentimental_analysis\manage.py runserver
 ```
-6. Next, open your browser and type in `localhost:8000` in the search bar to open the webUI of the application.5. The UI typically looks as shown below and here you have a choice between URL, file or normal text input.
-7. Great!! Now you are into the application
+6. Next, open your browser and type in `localhost:8000` in the search bar to open the user interface of the application.
 
----
+### Usage
 
 <a name="usecases"></a>
-![First](https://user-images.githubusercontent.com/43075652/97276268-31ce6100-17f4-11eb-8b57-7741069bf311.png)
-![second](https://user-images.githubusercontent.com/43075652/97276507-82de5500-17f4-11eb-88e0-0ea41bc9b424.png)
+- Start the django server to get to the homepage
+![First](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/1.gif)
 
-The UI for URL input is as shown below:
-![product](https://user-images.githubusercontent.com/43075652/97276542-925d9e00-17f4-11eb-910f-103be084ad13.png)
+- Amazon Product sentiment Analysis
+![second](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/3.gif)
 
-The UI for file input is as shown below:
-![docum](https://user-images.githubusercontent.com/43075652/97277008-2891c400-17f5-11eb-901a-1ebd3da5a32b.png)
-
-The UI for text input is as shown below:
-![text](https://user-images.githubusercontent.com/43075652/97277038-33e4ef80-17f5-11eb-8fbc-76bad26adcc9.png)
-
-The UI for audio input is as shown below:
-![audio](https://user-images.githubusercontent.com/43075652/97277059-3d6e5780-17f5-11eb-8dcf-a5935d6613ae.png)
-
-The Output as below:
-![output](https://user-images.githubusercontent.com/43075652/97277225-74446d80-17f5-11eb-89f5-2b27c957827e.png)
-![out](https://user-images.githubusercontent.com/43075652/97277310-8e7e4b80-17f5-11eb-8910-03ec42ea0ff7.png)
+- News Sentiment Analysis
+![third](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/2.gif)
 
 ---
 <a name="roadmap"></a>
@@ -127,16 +148,13 @@ The Output as below:
 ☑️  Documentation Improvement for reflecting project's value accurately<br>
 ☑️  Addition of Builds and Workflows for better development activities<br>
 ☑️  Unit Tests were written and Test Coverage was improved<br>
-☑️  <br>
-☑️  <br>
-☑️  <be>
+☑️  Public facing webpage to get feedbacks, Raise and handle issues, Discuss & Grow with enthusiasts and supportive community<br>  
 
 ### Future Scope
 - [ ] Implement User Authentication to store the history of each User
 - [ ] Recommendation System based on Product Analysis Results 
 - [ ] Enhance the Product Analysis by considering the number of users rated for each Product!
 - [ ] Extend the Sentiment Analysis to Facebook, Twitter, LinkedIn Posts
-- [ ] To Be Added..
 
 ---  
 <a name="casestudy"></a>
@@ -149,18 +167,15 @@ We have done a Case Study for our Sentiment Analysis Project. It can be found [h
 To Contribute to our application, please refer to [CONTRIBUTING.md](https://github.com/amit-99/SE_Project2/blob/develop/CONTRIBUTING.md)
 
 ---
+<a name="Connectwithus"></a>
+## Connect with us 
+- Want to share your feedback or raise any issue [click here](https://noteforms.com/forms/query-form-i4mw2s)
+- Need instant help? discuss over community chat to get help from other community members
+- Join our mailing list for regular updates
+- Join our discord forum for updates or support or discussions. [Join Here!](https://discord.gg/WsDzsyB2X)
+- Or just want to be part of our journey and get to know more about the C.E.L.T and its team
 
-## FUTURE SCOPE
-
-Implement user authentication to store history for each user.
-
-Recommendation system based on analysis results.
-
-Live speech to text sentiment analysis.
-
-Enhance the analysis by taking into consideration the number of users rated for each product!
-
-Extend the analysis to the Facebook, Twitter and LinkedIn Posts
+**Visit our web page to be part of [C.E.L.T. community](https://factual-squash-083.notion.site/C-E-L-T-The-Sentiment-Analyzer-f771d9e92c494c9b85a4faeb6e3621a1)**
 
 ---
 
