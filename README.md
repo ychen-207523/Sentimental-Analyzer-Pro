@@ -66,6 +66,7 @@ The complete development was achieved using the following technologies:
 - CSS
 - Scrapy
 - Vader Analysis Tool
+- Tensorflow
 
 Although HTML and CSS are used for the front end, the users can merge the backend logic with any of the front end frameworks they wish to use such as React, and AngularJS.
 
@@ -140,7 +141,7 @@ python .\sentimental_analysis\manage.py runserver
 - [x] Unit Tests were written and Test Coverage was improved
 
 ### Current Achievements
-☑️  Facebook post Analysis Feature inclusion<br>
+☑️  Facebook post Analysis using Deep Learning Feature inclusion<br>
 ☑️  Twitter post Feature inclusion<br>
 ☑️  Text analysis for Spanish language inclusion<br>
 ☑️  Image analysis Feature inclusion<br>
