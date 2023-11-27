@@ -36,7 +36,7 @@ The Sentimental Analyser Pro is a versatile tool that can perform sentiment anal
 <a name="intro"></a>
 ## Introduction
 
-### What is Sentimental Analysis Pro?
+### What is Sentimental Analyser Pro?
 Sentiment analysis, also known as opinion mining, is the process of determining the sentiment or emotional tone in a piece of text, audio, or other forms of data. It involves identifying whether the sentiment expressed is positive, negative, or neutral.
 
 ### Why is it important?
@@ -47,7 +47,7 @@ Sentiment analysis, also known as opinion mining, is the process of determining 
   <li>Sentiment analysis is used in politics to understand public sentiment towards political candidates, parties, or policies. It is also used to gauge public opinion on social issues.</li>
 </ul>
 
-### Why use The Sentimental Analyser Pro?
+### Why use Sentimental Analyser Pro?
 
 The Sentimental Analyser provides the following:
 <ul>
