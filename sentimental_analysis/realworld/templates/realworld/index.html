@@ -246,6 +246,25 @@
                   </div>
                </div>
             </section>
+            <section id="services" class="scrollto clearfix">
+               <div class="row no-padding-bottom clearfix">
+                  <div class="col-1" style="padding-left: 0px;">
+                     <div class="section-heading">
+                        <h2 class="section-title">Image Analysis</h2>
+                        <form action = "{% url "inputimage" %}" method = "post" enctype="multipart/form-data">
+                        {% csrf_token %}    
+                        <label for="text" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">Drop files here</span>
+                        or
+                        <input type="file" id="file" name="document" accept="text/plain" required>
+                        </label>
+                        <button type="submit" id = "myButton"class="button">Analyze</button>
+                        <div id="message" class="hidden">Wait till the results are generated</div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </section>
             <section id="news" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1">

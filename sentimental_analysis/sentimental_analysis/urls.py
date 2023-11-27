@@ -25,6 +25,7 @@ import realworld.views
 urlpatterns = [
     re_path('admin/', admin.site.urls),
     re_path(r'^$',realworld.views.analysis,name='analysis'),
+    re_path(r'^inputimage',realworld.views.inputimage,name = 'inputimage'),
     re_path(r'^input',realworld.views.input,name = 'input'),
     re_path(r'^productanalysis',realworld.views.productanalysis,name = 'product analysis'),
     re_path(r'^textanalysis',realworld.views.textanalysis,name = 'text analysis'),
