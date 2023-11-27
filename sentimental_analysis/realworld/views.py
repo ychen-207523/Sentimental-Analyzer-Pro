@@ -1,5 +1,6 @@
 import os
 import json
+import csv
 from io import StringIO
 import subprocess
 import shutil
@@ -19,6 +20,9 @@ from pydub import AudioSegment
 from .newsScraper import *
 from .utilityFunctions import *
 from nltk.corpus import stopwords
+from .fb_scrap import *
+from .twitter_scrap import *
+
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -168,6 +172,70 @@ def textanalysis(request):
     else:
         note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
+    
+def fbanalysis(request):
+    if request.method == 'POST':       
+        current_directory = os.path.dirname(__file__)
+        result = fb_sentiment_score()
+       
+        csv_file_fb = 'fb_sentiment.csv'
+        csv_file_path = os.path.join(current_directory, csv_file_fb)
+
+        # Open the CSV file and read its content
+        with open(csv_file_path, 'r') as csv_file:
+            # Use DictReader to read CSV data into a list of dictionaries
+            csv_reader = csv.DictReader(csv_file)
+            data = [row for row in csv_reader]
+
+        text_dict = {"reviews" : data}
+        print("text_dict:",text_dict["reviews"])
+        # Convert the list of dictionaries to a JSON array
+        json_data = json.dumps(text_dict, indent=2)
+
+        reviews = []
+
+        for item in text_dict["reviews"]:
+            #print("item :",item)
+            reviews.append(item["FBPost"])
+        finalText = reviews
+
+       
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+    else:
+        note = "Please Enter the product blog link for analysis"
+        return render(request, 'realworld/productanalysis.html', {'note': note})
+
+def twitteranalysis(request):
+    if request.method == 'POST':       
+        current_directory = os.path.dirname(__file__)
+        result = twitter_sentiment_score()
+       
+        csv_file_fb = 'twitt.csv'
+        csv_file_path = os.path.join(current_directory, csv_file_fb)
+
+        # Open the CSV file and read its content
+        with open(csv_file_path, 'r') as csv_file:
+            # Use DictReader to read CSV data into a list of dictionaries
+            csv_reader = csv.DictReader(csv_file)
+            data = [row for row in csv_reader]
+
+        text_dict = {"reviews" : data}
+        print("text_dict:",text_dict["reviews"])
+        # Convert the list of dictionaries to a JSON array
+        json_data = json.dumps(text_dict, indent=2)
+
+        reviews = []
+
+        for item in text_dict["reviews"]:
+            #print("item :",item)
+            reviews.append(item["review"])
+        finalText = reviews
+
+       
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+    else:
+        note = "Please Enter the product blog link for analysis"
+        return render(request, 'realworld/productanalysis.html', {'note': note})
 
 def audioanalysis(request):
     if request.method == 'POST':
