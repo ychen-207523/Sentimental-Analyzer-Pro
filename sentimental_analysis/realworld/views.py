@@ -25,7 +25,7 @@ from .twitter_scrap import *
 import cv2
 from deepface import DeepFace
 from langdetect import detect
-from spanish_nlp import classifiers
+from spanish_nlp import classifiers
 
 def pdfparser(data):
     fp = open(data, 'rb')
