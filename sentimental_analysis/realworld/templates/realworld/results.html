@@ -192,7 +192,7 @@
                  theme: "light2",
                  backgroundColor: "white",
                  animationEnabled: true,
-                 exportEnabled: false,
+                 exportEnabled: true,
                  borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
                  legend: {
                      
@@ -216,6 +216,7 @@
                  }]
              });
              chart.render();
+             chart.exportChart({format: "jpg"});
              
              var textContent = "{{ text }}";
              var textContent = textContent.replace(/&#x27/g, '');
@@ -228,7 +229,7 @@
              theme: "light2",
              backgroundColor: "white",
              animationEnabled: true,
-             exportEnabled: false,
+             exportEnabled: true,
              borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
              data: [{
                  type: "column",
@@ -243,6 +244,7 @@
                  }]
              });
              chart2.render();
+             chart2.exportChart({format: "jpg"});
          }
       </script>
       <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
