@@ -1,7 +1,7 @@
 # <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/>The Sentimental Analyser Pro
 ## Software Engineering Project for CSC 510
 
-[![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
+[![DOI](https://zenodo.org/badge/720907878.svg)](https://zenodo.org/badge/latestdoi/720907878)
 [![GitHub Release](https://img.shields.io/github/release/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/releases)
 ![Build](https://github.com/amit-99/SE_Project2/actions/workflows/main.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
