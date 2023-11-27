@@ -56,7 +56,7 @@ The Sentimental Analyser provides the following:
   <li><b>Cost-Efficiency:</b> Instead of using multiple specialized tools, a single tool that can handle multiple data types is cost-effective and streamlines the analysis process.</li>
 </ul>
 
-![meme](https://github.com/amit-99/SE_Project2/blob/develop/assets/images/meme.jpg?raw=true)
+![meme](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/images/sentiment_analysis.jpg)
 
 ### How was Sentimental Analyser Pro developed?
 The complete development was achieved using the following technologies:
