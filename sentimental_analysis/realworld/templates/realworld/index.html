@@ -283,6 +283,38 @@
                   </div>
                </div>
             </section>
+            <section id="gallery" class="scrollto clearfix">
+               <div class="row no-padding-bottom clearfix">
+                  <div class="col-1">
+                     <div class="section-heading">
+                        <h2 class="section-title">Facebook Analysis</h2>
+                        <form action = "{% url "fb analysis" %}" method = "post">
+                        {% csrf_token %}
+                        <label for="blogname" class="form-label">Paste facebook URL:</label>
+                        <input type="text" id="blogname" class="line-edit" name="blogname" required>
+                        <button type="submit" id = "myButton"class="button">Analyze</button>
+                        <div id="message" class="hidden">Wait till the results are generated.</div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section id="gallery" class="scrollto clearfix">
+               <div class="row no-padding-bottom clearfix">
+                  <div class="col-1">
+                     <div class="section-heading">
+                        <h2 class="section-title">Twitter Analysis</h2>
+                        <form action = "{% url "twitter analysis" %}" method = "post">
+                        {% csrf_token %}
+                        <label for="blogname" class="form-label">Paste Twitter URL:</label>
+                        <input type="text" id="blogname" class="line-edit" name="blogname" required>
+                        <button type="submit" id = "myButton"class="button">Analyze</button>
+                        <div id="message" class="hidden">Wait till the results are generated.</div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </section>
          </main>
          <footer id="landing-footer" class="clearfix">
             <div class="row clearfix">
