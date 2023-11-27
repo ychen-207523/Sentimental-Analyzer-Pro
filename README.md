@@ -119,6 +119,7 @@ python .\sentimental_analysis\manage.py runserver
 ```
 6. Next, open your browser and type in `localhost:8000` in the search bar to open the user interface of the application.
 Now, you are good to go.
+
 ![](https://media.giphy.com/media/AgrfqPt5AyiTm/giphy.gif)
 
 ### Usage
