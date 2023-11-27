@@ -130,6 +130,41 @@ def input(request):
         note = "Please Enter the Document you want to analyze"
         return render(request, 'realworld/home.html', {'note': note})
 
+def inputimage(request):
+    if request.method == 'POST':
+        file = request.FILES['document']
+        fs = FileSystemStorage()
+        fs.save(file.name, file)
+        pathname = 'sentimental_analysis/media/'
+        extension_name = file.name
+        extension_name = extension_name[len(extension_name)-3:]
+        path = pathname+file.name
+        destination_folder = 'sentimental_analysis/media/document/'
+        shutil.copy(path, destination_folder)
+        useFile = destination_folder+file.name
+        image = cv2.imread(useFile)
+        detected_emotion = DeepFace.analyze(image)
+        
+        emotions_dict = {'happy': 0.0, 'sad': 0.0, 'neutral': 0.0}
+        for emotion in detected_emotion:
+            emotion_scores = emotion['emotion']
+            happy_score = emotion_scores['happy']
+            sad_score = emotion_scores['sad']
+            neutral_score = emotion_scores['neutral']
+
+            emotions_dict['happy'] += happy_score
+            emotions_dict['sad'] += sad_score
+            emotions_dict['neutral'] += neutral_score
+
+        total_score = sum(emotions_dict.values())
+        if total_score > 0:
+            for emotion in emotions_dict:
+                emotions_dict[emotion] /= total_score
+
+        print(emotions_dict)
+        finalText = max(emotions_dict, key=emotions_dict.get)
+        return render(request, 'realworld/resultsimage.html', {'sentiment': emotions_dict, 'text' : finalText, 'analyzed_image_path': useFile})
+
 def productanalysis(request):
     if request.method == 'POST':
         blogname = request.POST.get("blogname", "")
