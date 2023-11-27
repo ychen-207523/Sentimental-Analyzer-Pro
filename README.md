@@ -1,4 +1,4 @@
-# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/> The Sentimental Analyser Pro
+# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/>The Sentimental Analyser Pro
 ## Software Engineering Project for CSC 510
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
@@ -24,8 +24,8 @@ The Sentimental Analyser Pro is a versatile tool that can perform sentiment anal
 
 ## Table of Contents
 1. [Introduction](#intro)
-2. [C.E.L.T. Features](#feat)
-3. [How to use C.E.L.T.?](#exec)
+2. [Sentimental Analyser Pro Features](#feat)
+3. [How to use  Sentimental Analyser Pro?](#exec)
 4. [Roadmap and Progress](#roadmap)
 5. [Case Study](#casestudy)
 6. [Contributing to the product](#contribute)
