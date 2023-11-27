@@ -30,6 +30,8 @@ urlpatterns = [
     re_path(r'^textanalysis',realworld.views.textanalysis,name = 'text analysis'),
     re_path(r'^audioanalysis',realworld.views.audioanalysis,name = 'audio analysis'),
     re_path(r'^livespeechanalysis',realworld.views.livespeechanalysis,name = 'live speech analysis'),
+    re_path(r'^fbanalysis',realworld.views.fbanalysis,name = 'fb analysis'),
+    re_path(r'^twitteranalysis',realworld.views.twitteranalysis,name = 'twitter analysis'),
     re_path(r'^recordAudio', realworld.views.recordaudio, name = 'recordAudio'),
     re_path(r'^newsanalysis',realworld.views.newsanalysis,name = 'news analysis')
 ]
