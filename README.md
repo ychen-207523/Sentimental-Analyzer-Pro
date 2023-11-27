@@ -1,4 +1,4 @@
-# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/>The Sentimental Analyser Pro
+# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/>The Sentimental Analyzer Pro
 ## Software Engineering Project for CSC 510
 
 [![DOI](https://zenodo.org/badge/720907878.svg)](https://zenodo.org/doi/10.5281/zenodo.10211649)
@@ -16,7 +16,7 @@
 [![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro)
 
 ---
-The Sentimental Analyser Pro is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided using different types of input data.
+The Sentimental Analyzer Pro is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided using different types of input data.
 
 [![sentiment](https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/sentiment_3.png)](https://youtu.be/FMuVNTV_j8U)
 
@@ -24,8 +24,8 @@ The Sentimental Analyser Pro is a versatile tool that can perform sentiment anal
 
 ## Table of Contents
 1. [Introduction](#intro)
-2. [Sentimental Analyser Pro Features](#feat)
-3. [How to use  Sentimental Analyser Pro?](#exec)
+2. [Sentimental Analyzer Pro Features](#feat)
+3. [How to use  Sentimental Analyzer Pro?](#exec)
 4. [Roadmap and Progress](#roadmap)
 5. [Case Study](#casestudy)
 6. [Contributing to the product](#contribute)
@@ -36,7 +36,7 @@ The Sentimental Analyser Pro is a versatile tool that can perform sentiment anal
 <a name="intro"></a>
 ## Introduction
 
-### What is Sentimental Analyser Pro?
+### What is Sentimental Analyzer Pro?
 Sentiment analysis, also known as opinion mining, is the process of determining the sentiment or emotional tone in a piece of text, audio, or other forms of data. It involves identifying whether the sentiment expressed is positive, negative, or neutral.
 
 ### Why is it important?
@@ -47,9 +47,9 @@ Sentiment analysis, also known as opinion mining, is the process of determining 
   <li>Sentiment analysis is used in politics to understand public sentiment towards political candidates, parties, or policies. It is also used to gauge public opinion on social issues.</li>
 </ul>
 
-### Why use Sentimental Analyser Pro?
+### Why use Sentimental Analyzer Pro?
 
-The Sentimental Analyser provides the following:
+The Sentimental Analyzer provides the following:
 <ul>
   <li><b>Comprehensive Insights: </b>Different types of data sources provide diverse perspectives. An all-encompassing tool can provide a more comprehensive understanding of public sentiment.</li>
   <li><b>Multichannel Data Analysis:</b> In today's world, opinions and sentiments are expressed across various channels, including social media, customer reviews, audio recordings, and news articles. A tool that can analyze these diverse data sources offers a more accurate picture of public sentiment.</li>
@@ -58,7 +58,7 @@ The Sentimental Analyser provides the following:
 
 ![meme](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/images/sentiment_analysis.jpg)
 
-### How was Sentimental Analyser Pro developed?
+### How was Sentimental Analyzer Pro developed?
 The complete development was achieved using the following technologies:
 - Python3
 - Django
@@ -73,7 +73,7 @@ Although HTML and CSS are used for the front end, the users can merge the backen
 ---
 
 <a name="feat"></a>
-## What can Sentimental Analyser Pro do?
+## What can Sentimental Analyzer Pro do?
 |Feature|Description  |
 |--|--|
 |Product Analysis |```Sentimental analysis of Amazon product reviews```|
@@ -87,7 +87,7 @@ Although HTML and CSS are used for the front end, the users can merge the backen
 ---
 
 <a name="exec"></a>
-## How to use Sentimental Analyser Pro?
+## How to use Sentimental Analyzer Pro?
 ### Installation
 1. Clone this project:
 ```
