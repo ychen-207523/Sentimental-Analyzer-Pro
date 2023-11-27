@@ -3,17 +3,22 @@
    {% load static %}
    <head lang="en">
       <meta charset="UTF-8">
-      <title>C.E.L.T</title>
+      <title>S.A.P</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
       <link rel="shortcut icon" href="{% static "images/favicon-black.ico" %}" title="Favicon"/>
+      <link rel="stylesheet" href="{% static "css/bg.css" %}">
       <link rel="stylesheet" href="{% static "css/style.css" %}">
-      <link rel="stylesheet" href="{% static "css/namari-color.css" %}">
+      <link rel="stylesheet" href="{% static "css/nemina.css" %}">
+      <link rel="stylesheet" href="{% static "css/header.css" %}">
       <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}"">
       <link href="{% static "css/animate.css" %}" rel="stylesheet" type="text/css">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-/RSva8ME+iHQsLO+St7Xg/SJ9ufViOc6pkKAAMfvhN/EFZSC0HVivYOY1DOtTiLEooL6G6Ae2H+pfN43f8r5Gg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
    </head>
    <body>
       <style>
@@ -23,14 +28,7 @@
          margin-bottom: 10px;
          text-align: left;
          }
-         .line-edit {
-         width: 100%;
-         padding: 10px;
-         border: 1px solid #ccc;
-         border-radius: 5px;
-         margin-bottom: 0px;
-         margin-right: 4px;
-         }
+         
          .hidden {
          display: none;
          }
@@ -79,58 +77,78 @@
       </div>
       <div id="wrapper">
          <header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
-            <div id="header" class="nav-collapse">
-               <div class="row clearfix">
-                  <div class="col-1">
-                     <div id="logo">
-                        <img src="{% static "images/logo.png" %}" id="banner-logo" alt="Landing Page"/>
-                        <img src="{% static "images/logo-2.png" %}" id="navigation-logo" alt="Landing Page"/>
-                     </div>
-                     <aside>
-                        <ul class="social-icons">
-                           <li>
-                              <a target="_blank" title="YouTube" href="#" class="video" data-videoid="VLoJCemCdHg" data-videosite="youtube">
-                              <i class="fa fa-play fa-1x"></i><span>YouTube</span>
-                              </a>
-                           </li>
-                           <li>
-                              <a target="_blank" title="Github" href="https://github.com/amit-99/SE_Project2/">
-                              <i class="fab fa-github fa-1x"></i><span>Github</span>
-                              </a>
-                           </li>
-                        </ul>
-                     </aside>
-                     <div id="nav-trigger"><span></span></div>
-                     <nav id="nav-mobile"></nav>
-                  </div>
+         <div id="header" class="nav-collapse navbar">
+            <div class="row clearfix" >
+               <div class="col-1">
+                 
+                  <aside>
+                     <ul class="social-icons">
+                        
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Product Analysis</a></li>
+                        <li><a  href="#news">News Analysis</a></li>
+                        <li><a href="#live-speech">Live Speech</a></li>
+                        <li><a  href="#text">Text Analysis</a></li>
+                        <li><a href="#document">Doc. Analysis</a></li>
+                        <li><a href="#audio">Audio Analysis</a></li>
+                        
+                        <select name="social" id="media">
+                          <option value="#facebook">Social Media</option>
+                          <option value="#facebook">Facebook</option>
+                          <option value="#twitter">Twitter</option>
+                        </select>
+                        <li><a href="#image">Img Analysis</a></li>
+                        
+    
+                     </ul>
+                  </aside>
+                  <div id="nav-trigger"><span></span></div>
+                  <nav id="nav-mobile"></nav>
                </div>
             </div>
+         
+           
+            </div>
+            
+           
             <div id="banner-content" class="row clearfix">
-               <div class="col-38">
-                  <div class="section-heading">
-                     <h1>Sentiment Analysis</h1>
-                     <h2><br>Have you ever wondered what sentiments are behind the reviews on amazon or maybe what some says or what someone writes. Here we have created an elegant solution to such queries by having analysis of these sentiments from the given input. <br><br> Try our app. It takes all types of inputs: audio, text, pdfs, live speech, amazon url & news topics.</h2>
-                  </div>
+               
+               <div class="section-heading">
+                
+                 <div class="col-38">
+                   <h1 >Sentiment Analyzer Pro</h1>
+                   <div class="separator">   </div>
+                   <h2 id="head">
+                     <br>Have you ever wondered what sentiments are behind the reviews on Amazon or maybe what someone says or what someone writes. Here we have created an elegant solution to such queries by having an analysis of these sentiments from the given input. <br><br> 
+                   </h2>
+                   <div class="separator">   </div>
+                 </div>
                </div>
-            </div>
+             </div>
+             
+             <div class="sep">   </div>
          </header>
-         <main id="content">
+         
+         <main id="content" class="bgcol">
             <section id="about" class="introduction scrollto">
-               <div class="row clearfix">
-                  <div class="col-3">
+               <div class="row clearfix" >
+                  
+                     <div class="col-1-2">
                      <div class="section-heading">
                         <h2 class="section-title">About our project</h2>
-                        <p class="section-subtitle">C.E.L.T provides different online tools to cater to any sentinmental analysis needs. C.E.L.T uses a powerful sentimental analyzer which is efficient and accurate.</p>
+                        <p class="section-subtitle">Sentiment Analyzer Pro provides different online tools to cater to any sentinmental analysis needs. Sentiment Analyzer Pro uses a powerful sentimental analyzer which is efficient and accurate.</p>
                      </div>
-                  </div>
-                  <div class="col-2-3">
+                  
+                     </div>
+                  
+                  <div class="col-1-2">
                      <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
                         <div class="icon">
                            <i class="fa fa-mobile fa-2x"></i>
                         </div>
                         <div class="icon-block-description">
                            <h4>Product Analysis</h4>
-                           <p>Need feedback for an Amazon product? Just paste the URL and C.E.L.T will analyze all the comments.</p>
+                           <p>Need feedback for an Amazon product? Just paste the URL and Sentiment Analyzer Pro will analyze all the comments.</p>
                         </div>
                      </div>
                      <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.1s">
@@ -139,34 +157,7 @@
                         </div>
                         <div class="icon-block-description">
                            <h4>News Analysis</h4>
-                           <p>Want to know a sentiment of the news? Just type the news topic and C.E.L.T will analyze the news.</p>
-                        </div>
-                     </div>
-                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="icon">
-                           <i class="fa fa-file fa-2x"></i>
-                        </div>
-                        <div class="icon-block-description">
-                           <h4>Document Analysis</h4>
-                           <p>Upload a pdf or docx file and C.E.L.T. will analyze the text in it and report back the sentiments.</p>
-                        </div>
-                     </div>
-                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="icon">
-                           <i class="fa fa-font fa-2x"></i>
-                        </div>
-                        <div class="icon-block-description">
-                           <h4>Text Analysis</h4>
-                           <p>Type the text you want to analyze and C.E.L.T. will report back the sentiments.</p>
-                        </div>
-                     </div>
-                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="icon">
-                           <i class="fa fa-headphones fa-2x"></i>
-                        </div>
-                        <div class="icon-block-description">
-                           <h4>Audio Analysis</h4>
-                           <p>Upload an audio file and C.E.L.T. will analyze the audio and report back the sentiments.</p>
+                           <p>Want to know a sentiment of the news? Just type the news topic and Sentiment Analyzer Pro will analyze the news.</p>
                         </div>
                      </div>
                      <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
@@ -175,12 +166,70 @@
                         </div>
                         <div class="icon-block-description">
                            <h4>Live Speech Analysis</h4>
-                           <p>Record a live speech and C.E.L.T. will analyze a live speech and report back the sentiments.</p>
+                           <p>Record a live speech and Sentiment Analyzer Pro will analyze a live speech and report back the sentiments.</p>
                         </div>
+                     </div>
+                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="icon">
+                           <i class="fa fa-file fa-2x"></i>
+                        </div>
+                        <div class="icon-block-description">
+                           <h4>Document Analysis</h4>
+                           <p>Upload a pdf or docx file and Sentiment Analyzer Pro will analyze the text in it and report back the sentiments.</p>
+                        </div>
+                     </div>
+                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="icon">
+                           <i class="fa fa-font fa-2x"></i>
+                        </div>
+                        <div class="icon-block-description">
+                           <h4>Text Analysis</h4>
+                           <p>Type the text you want to analyze and Sentiment Analyzer Pro will report back the sentiments.</p>
+                        </div>
+                     </div>
+                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="icon">
+                           <i class="fa fa-headphones fa-2x"></i>
+                        </div>
+                        <div class="icon-block-description">
+                           <h4>Audio Analysis</h4>
+                           <p>Upload an audio file and Sentiment Analyzer Pro will analyze the audio and report back the sentiments.</p>
+                        </div>
+                     </div>
+                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="icon">
+                           <i class="fab fa-facebook fa-2x"></i>
+                        </div>
+                        <div class="icon-block-description">
+                           <h4>Facebook Analysis</h4>
+                           <p>Upload a facebook post or comment link and Sentiment Analyzer Pro will analyze the comments and report back the sentiments.</p>
+                        </div>
+                     </div>
+                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="icon">
+                           <i class="fa fa-twitter fa-2x"></i>
+                        </div>
+                        <div class="icon-block-description">
+                           <h4>Twitter Analysis</h4>
+                           <p>Upload a Twitter post or tweet link and Sentiment Analyzer Pro will analyze the comments and report back the sentiments.</p>
+                        </div>
+                     </div>
+                     <div class="col-2 icon-block icon-top wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="icon">
+                           <i class="fas fa-file-image fa-2x"></i>
+                        </div>
+                        <div class="icon-block-description">
+                           <h4>Image Analysis</h4>
+                           <p>Upload an Image and Sentiment Analyzer Pro will analyze the image and report back the sentiments felt by the person like  happy, sad, etc.</p>
+                        </div>
+                     </div>
+                     
+                    
                      </div>
                   </div>
                </div>
             </section>
+            <div class="sep">   </div>
             <section id="gallery" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1">
@@ -197,7 +246,7 @@
                   </div>
                </div>
             </section>
-            <section id="gallery" class="scrollto clearfix">
+            <section id="news" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1">
                      <div class="section-heading">
@@ -213,7 +262,7 @@
                   </div>
                </div>
             </section>
-            <section id="services" class="scrollto clearfix">
+            <section id="document" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1" style="padding-left: 0px;">
                      <div class="section-heading">
@@ -232,7 +281,7 @@
                   </div>
                </div>
             </section>
-            <section id="testimonials" class="scrollto clearfix">
+            <section id="text" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1" style="padding-left: 0px;">
                      <div class="section-heading">
@@ -247,7 +296,7 @@
                   </div>
                </div>
             </section>
-            <section id="clients" class="scrollto clearfix">
+            <section id="audio" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1" style="padding-left: 0px;">
                      <div class="section-heading">
@@ -266,7 +315,7 @@
                   </div>
                </div>
             </section>
-            <section id="pricing" class="scrollto clearfix">
+            <section id="live-speech" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1" style="padding-left: 0px;">
                      <div class="section-heading">
@@ -282,8 +331,9 @@
                      </div>
                   </div>
                </div>
+               
             </section>
-            <section id="gallery" class="scrollto clearfix">
+            <section id="facebook" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1">
                      <div class="section-heading">
@@ -299,7 +349,7 @@
                   </div>
                </div>
             </section>
-            <section id="gallery" class="scrollto clearfix">
+            <section id="twitter" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
                   <div class="col-1">
                      <div class="section-heading">
@@ -315,12 +365,32 @@
                   </div>
                </div>
             </section>
+            
          </main>
          <footer id="landing-footer" class="clearfix">
             <div class="row clearfix">
-               <p id="copyright" class="col-2">Developed by <a href="https://github.com/amit-99/SE_Project2/">Team 57</a></p>
+              <div class="col-2">
+                <p id="dev">
+                  &copy; Developed by Team 36: <a href="https://github.com/NehaSJ99/Sentimental-Analyzer-Pro">Sentimental-Analyzer-Pro</a>
+                </p>
+              </div>
+              <div class="col-2 disclaimer">
+                <div class="team-members">
+                  <p>Team Members:</p>
+                  <p>Neha Jagtap &nbsp; Pranjali Jadhav</p>
+                  <p>Swaranjali Jadhav &nbsp; Shardul Khandekar</p>
+                </div>
+              </div>
             </div>
-         </footer>
+          </footer>
+          
+          
+          
+          
+          
+          
+          
+        
       </div>
       <script src="{% static "js/jquery.1.8.3.min.js" %}"></script>
       <script src="{% static "js/wow.min.js" %}"></script>
@@ -334,15 +404,12 @@
       <script src="{% static "js/images-loaded.min.js" %}"></script>
       <script src="{% static "js/lightbox.min.js" %}"></script>
       <script src="{% static "js/site.js" %}"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
       <script>
-         document.getElementById('myButton').addEventListener('click', function() {
-         
-             var messageDiv = document.getElementById('message');
-             messageDiv.style.display = 'block';
-             setTimeout(function() {
-                 messageDiv.style.display = 'none';
-             }, 10000);
-         });
+
+       
          
          const dropContainer = document.getElementById("dropcontainer")
          const fileInput = document.getElementById("file")
@@ -424,6 +491,11 @@
              count++;
          }
          
-      </script>
+         
+
+
+     
+     
+     
    </body>
 </html>
