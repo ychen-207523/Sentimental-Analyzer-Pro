@@ -81,8 +81,8 @@ Although HTML and CSS are used for the front end, the users can merge the backen
 |Audio Analysis   |``` Sentimental analysis of audio file``` |
 |File Analysis   |``` Sentimental analysis of text file``` |
 |Live Sentimental Analysis   |``` Sentimental analysis of live recorded audio``` |
-|Facebook Post Analysis   |``` Sentimental analysis of live recorded audio``` |
-|Twitter Post Analysis   |``` Sentimental analysis of live recorded audio``` |
+|Facebook Post Analysis   |``` Sentimental analysis of Facebook Post``` |
+|Twitter Post Analysis   |``` Sentimental analysis of Twitter Post``` |
 ---
 
 <a name="exec"></a>
