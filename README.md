@@ -180,7 +180,7 @@ To Contribute to our application, please refer to [CONTRIBUTING.md](https://gith
 <a name="team"></a>
 ## Team Members
 
--Neha Jagtap
--Pranjali Jadhav
--Swaranjali Jadhav
--Shardul Khandekar
+- Neha Jagtap
+- Pranjali Jadhav
+- Swaranjali Jadhav
+- Shardul Khandekar
