@@ -1,0 +1,173 @@
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+#banner {
+  position: relative;
+  background: url("../images/banner-images/h1.jpg") no-repeat;
+  background-position: 95% 50% !important;
+  color: #333;
+  padding: 20px;
+  text-align: left;
+}
+
+#banner-content.row {
+  padding-top: 170px;
+  padding-left: 50px;
+}
+
+#wrapper {
+  background-color: white;
+  position: relative;
+}
+
+.row.disclaimer {
+  display: flex;
+}
+
+.col-2 {
+  flex: 1;
+  padding: 0 10px;
+  /* Adjust spacing between columns */
+  box-sizing: border-box;
+}
+
+.sep::before {
+  content: "\2022 \2022 \2022";
+  /* Unicode character for a bullet point */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #b24020;
+}
+
+.bgcol {
+  background-color: #f1ece5;
+}
+
+#news,
+#text,
+#live-speech,
+#twitter {
+  background-color: #f1ece5;
+}
+
+.line-edit {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 0;
+  margin-right: 4px;
+  background-color: white;
+  /* Use background-color instead of background */
+}
+
+/* Apply styles to .navbar */
+
+.navbar {
+  background-color: #f1ece5 !important;
+  color: white;
+  padding: 5px 5px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  left: 0;
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  display: inline-block;
+  padding: 3px;
+  padding-bottom: 10px;
+}
+
+.navbar li:hover a {
+  background-color: #fff;
+  color: #b24020;
+  opacity: 0.8;
+}
+
+.navbar li a:active {
+  background-color: #fff;
+  color: #b24020;
+}
+
+#pro {
+  color: #b24020;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+#dev {
+  text-align: left !important;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #333;
+  /* Adjust the color as needed */
+}
+
+/* Additional styles for the dropdown menu */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Additional styles for the new social media links */
+
+.dropdown-content a {
+  display: block;
+  color: #333;
+  margin-bottom: 6px;
+}
