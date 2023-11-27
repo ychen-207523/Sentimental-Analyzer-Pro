@@ -174,7 +174,7 @@ To Contribute to our application, please refer to [CONTRIBUTING.md](https://gith
 - Join our discord forum for updates or support or discussions. [Join Here!](https://discord.gg/xYkUnvdzP9)
 - Or just want to be part of our journey and get to know more about the Sentiment Analyser Pro and its team
 
-**Visit our web page to be part of [Sentiment Analyser Pro community](https://www.notion.so/Sentiment-Analyzer-Pro-df3c7c6680974d08bbb80ccff21a1ebb)**
+**Visit our web page to be part of [Sentiment Analyser Pro community](https://sustaining-river-90d.notion.site/Sentiment-Analyzer-Pro-df3c7c6680974d08bbb80ccff21a1ebb)**
 
 ---
 
