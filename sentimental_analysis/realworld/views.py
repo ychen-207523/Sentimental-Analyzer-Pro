@@ -22,7 +22,8 @@ from .utilityFunctions import *
 from nltk.corpus import stopwords
 from .fb_scrap import *
 from .twitter_scrap import *
-
+import cv2
+from deepface import DeepFace
 
 def pdfparser(data):
     fp = open(data, 'rb')
