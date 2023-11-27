@@ -3,17 +3,17 @@
 
 [![DOI](https://zenodo.org/badge/720907878.svg)](https://zenodo.org/doi/10.5281/zenodo.10211649)
 [![GitHub Release](https://img.shields.io/github/release/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/releases)
-![Build](https://github.com/amit-99/SE_Project2/actions/workflows/main.yml/badge.svg)
+![Build](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/main.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![Python](https://img.shields.io/badge/python-v3.11+-brightgreen.svg)  
-![GitHub contributors](https://img.shields.io/github/contributors/amit-99/SE_Project2)
+![GitHub contributors](https://img.shields.io/github/contributors/NehaSJ99/Sentimental-Analyzer-Pro)
 ![GitHub issues](https://img.shields.io/github/issues/NehaSJ99/Sentimental-Analyzer-Pro)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/NehaSJ99/Sentimental-Analyzer-Pro)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro)  
-![GitHub language count](https://img.shields.io/github/languages/count/amit-99/SE_Project2)
-![Lines of code](https://tokei.rs/b1/github/amit-99/SE_Project2)
-[![GitHub-size](https://img.shields.io/github/languages/code-size/amit-99/SE_Project2)](https://github.com/amit-99/SE_Project2)
-[![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/amit-99/SE_Project2)
+![GitHub language count](https://img.shields.io/github/languages/count/NehaSJ99/Sentimental-Analyzer-Pro)
+![Lines of code](https://tokei.rs/b1/github/NehaSJ99/Sentimental-Analyzer-Pro)
+[![GitHub-size](https://img.shields.io/github/languages/code-size/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro)
+[![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro)
 
 ---
 The Sentimental Analyser Pro is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided using different types of input data.
