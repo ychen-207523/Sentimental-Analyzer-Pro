@@ -2,7 +2,7 @@
 ## Software Engineering Project for CSC 510
 
 [![DOI](https://zenodo.org/badge/295188611.svg)](https://zenodo.org/badge/latestdoi/295188611)
-[![GitHub Release](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/releases)
+[![GitHub Release](https://img.shields.io/github/release/amit-99/SE_Project2)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/releases)
 ![Build](https://github.com/amit-99/SE_Project2/actions/workflows/main.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![Python](https://img.shields.io/badge/python-v3.11+-brightgreen.svg)  
