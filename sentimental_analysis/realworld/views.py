@@ -24,6 +24,8 @@ from .fb_scrap import *
 from .twitter_scrap import *
 import cv2
 from deepface import DeepFace
+from langdetect import detect
+from spanish_nlp import classifiers
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -202,12 +204,36 @@ def textanalysis(request):
     if request.method == 'POST':
         text_data = request.POST.get("textField", "")
         final_comment = text_data.split('.')
-        result = detailed_analysis(final_comment)
+        result = {}
         finalText = final_comment
+        if determine_language(final_comment):
+            result = detailed_analysis(final_comment)
+        else:
+            sc = classifiers.SpanishClassifier(model_name="sentiment_analysis")
+            result_string = ' '.join(final_comment)
+            result_classifier = sc.predict(result_string)
+            result = {
+                'pos': result_classifier.get('positive', 0.0),
+                'neu': result_classifier.get('neutral', 0.0),
+                'neg': result_classifier.get('negative', 0.0)
+            }
         return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
     else:
         note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
+    
+def determine_language(texts):
+    try:
+        for text in texts:
+            lang = detect(text)
+            if lang != 'en':
+                return False
+        return True
+    except Exception as e:
+        # Handle potential exceptions when using langdetect
+        print(f"Error detecting language: {e}")
+        return False
+
     
 def fbanalysis(request):
     if request.method == 'POST':       
