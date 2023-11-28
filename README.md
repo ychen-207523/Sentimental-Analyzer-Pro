@@ -19,7 +19,9 @@
 ---
 The Sentimental Analyzer Pro is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided using different types of input data.
 
-[![sentiment](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Sentiment%20Analyzer%20Pro%20(2).mp4)
+## Working Demo
+
+[![sentiment](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Sentiment%20Analyzer%20Pro%20(2).mp4)]
 
 ---
 
