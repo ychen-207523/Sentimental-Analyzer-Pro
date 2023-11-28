@@ -130,20 +130,7 @@ Now, you are good to go.
 
 <a name="usecases"></a>
 - Start the django server to get to the homepage
-https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif
-
-https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product%20Analysis%20Compressed%20(1)%20(2).gif
-
-https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument%20compress.gif
-
-https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis%20compressed.gif
-
-
-https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif
-
-
-https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif
-
+![First](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
 
 ---
 <a name="roadmap"></a>
