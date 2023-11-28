@@ -18,9 +18,7 @@ def twitter_sentiment_score():
     #print(nltk.pos_tag(text))
 
     sid = SentimentIntensityAnalyzer() 
-    tokenizer = nltk.data.load('tokenizers\punkt\english.pickle')
-
-
+    
     overall_scores = {"neg": 0, "neu": 0, "pos": 0}
     with open(text_file_path,'r') as f:
         for text in f.read().split('\n'):
