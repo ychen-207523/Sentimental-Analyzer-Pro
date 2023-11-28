@@ -130,22 +130,22 @@ Now, you are good to go.
 
 <a name="usecases"></a>
 - Start the django server to get to the homepage
-[![First](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)]
+![First](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
 
 - Amazon Product sentiment Analysis
-[![Second](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product%20Analysis%20Compressed%20(1)%20(2).gif)]
+![Second](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product%20Analysis%20Compressed%20(1)%20(2).gif)
 
 - Image and Document Sentiment Analysis
-[![Third](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument%20compress.gif)]
+![Third](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument%20compress.gif)
 
 - Facebook post Sentiment Analysis
-[![fourth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis%20compressed.gif)]
+![fourth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis%20compressed.gif)
 
 - Twitter post Sentiment Analysis
-[![fifth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)]
+![fifth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)
 
 - Multilingual Text Sentiment Analysis
-[![sixth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)]
+![sixth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)
 
 
 ---
