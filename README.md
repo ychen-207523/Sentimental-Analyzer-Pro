@@ -21,7 +21,7 @@ The Sentimental Analyzer Pro is a versatile tool that can perform sentiment anal
 
 ## Working Demo
 
-[![sentiment](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Sentiment%20Analyzer%20Pro%20(2).mp4)]
+https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Sentiment%20Analyzer%20Pro%20(2).mp4
 
 ---
 
