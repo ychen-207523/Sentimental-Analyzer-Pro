@@ -136,13 +136,13 @@ Now, you are good to go.
 ![third](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument%20compress.gif)
 
 - Facebook post Sentiment Analysis
-![Fourth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis%20compressed.gif)
+![fourth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis%20compressed.gif)
 
 - Twitter post Sentiment Analysis
 ![fifth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)
 
 - Multilingual Text Sentiment Analysis
-![Sixth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)
+![sixth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)
 
 
 ---
