@@ -54,5 +54,3 @@ wordcloud==1.9.2
 opencv-python==4.8.1.78
 deepface
 langdetect
-spanish_nlp
-transformers
