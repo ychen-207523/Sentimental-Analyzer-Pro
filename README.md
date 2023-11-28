@@ -132,9 +132,6 @@ Now, you are good to go.
 - Start the django server to get to the homepage
 ![First](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
 
-- Amazon Product Sentiment Analysis
-![Second](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product%20Analysis%20Compressed%20(1)%20(2).gif)
-
 ---
 <a name="roadmap"></a>
 ## Roadmap and Progress
