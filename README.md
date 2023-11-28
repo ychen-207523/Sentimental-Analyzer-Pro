@@ -14,7 +14,7 @@
 ![Lines of code](https://tokei.rs/b1/github/NehaSJ99/Sentimental-Analyzer-Pro)
 [![GitHub-size](https://img.shields.io/github/languages/code-size/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro)
 [![github workflow](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml)
-[![codecov](https://codecov.io/gh/lyonva/ClassMateBot/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro)
+[![codecov](https://codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro)
 
 ---
 The Sentimental Analyzer Pro is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided using different types of input data.
