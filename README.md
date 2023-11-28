@@ -127,13 +127,23 @@ Now, you are good to go.
 
 <a name="usecases"></a>
 - Start the django server to get to the homepage
-![First](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/1.gif)
+![First](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
 
 - Amazon Product sentiment Analysis
-![second](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/3.gif)
+![second](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product%20Analysis%20Compressed%20(1)%20(2).gif)
 
-- News Sentiment Analysis
-![third](https://github.com/amit-99/SE_Project2/blob/develop/assets/gifs/2.gif)
+- Image and Document Sentiment Analysis
+![third](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument%20compress.gif)
+
+- Facebook post Sentiment Analysis
+![Fourth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis%20compressed.gif)
+
+- Twitter post Sentiment Analysis
+![fifth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)
+
+- Multilingual Text Sentiment Analysis
+![Sixth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis%20comp.gif)
+
 
 ---
 <a name="roadmap"></a>
