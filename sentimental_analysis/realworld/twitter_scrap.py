@@ -1,55 +1,19 @@
-import time
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import nltk
-import io
-import unicodedata
-import numpy as np
-import re
-import os
-import string
-from numpy import linalg
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.tokenize import PunktSentenceTokenizer
-from nltk.tokenize import PunktSentenceTokenizer
-from nltk.corpus import webtext
-from nltk.stem.porter import PorterStemmer
-from nltk.stem.wordnet import WordNetLemmatizer
+import os
 
 def twitter_sentiment_score():
 
     current_directory = os.path.dirname(__file__)
 
-    text_file = 'twitt.txt'
-    
+    text_file = 'twitt.txt'   
     # Create the full path to the CSV file
     text_file_path = os.path.join(current_directory, text_file)
 
     with open(text_file_path, 'r') as f:
         text = f.read()
-        
-    sent_tokenizer = PunktSentenceTokenizer(text)
-    sents = sent_tokenizer.tokenize(text)
-
-    #print(word_tokenize(text))
-    #print(sent_tokenize(text))
-
-    porter_stemmer = PorterStemmer()
-
-    nltk_tokens = nltk.word_tokenize(text)
-
-    # for w in nltk_tokens:
-    # 	print ("Actual: % s Stem: % s" % (w, porter_stemmer.stem(w)))
-        
-
-    wordnet_lemmatizer = WordNetLemmatizer()
-    nltk_tokens = nltk.word_tokenize(text)
-
-    #for w in nltk_tokens:
-    #	print ("Actual: % s Lemma: % s" % (w, wordnet_lemmatizer.lemmatize(w)))
-        
+              
     text = nltk.word_tokenize(text)
     #print(nltk.pos_tag(text))
 
