@@ -21,7 +21,6 @@ jobs:
         echo requirements installed
     - name: Install Tokenizers
       run: |
-        pip install wheel
         pip install tokenizers
         pip install netifaces
     - name: Run the tests
