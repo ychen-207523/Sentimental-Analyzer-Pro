@@ -131,10 +131,10 @@ Now, you are good to go.
 ![First](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
 
 - Amazon Product sentiment Analysis
-![second](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product%20Analysis%20Compressed%20(1)%20(2).gif)
+![Second](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product%20Analysis%20Compressed%20(1)%20(2).gif)
 
 - Image and Document Sentiment Analysis
-![third](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument%20compress.gif)
+![Third](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument%20compress.gif)
 
 - Facebook post Sentiment Analysis
 ![fourth](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis%20compressed.gif)
