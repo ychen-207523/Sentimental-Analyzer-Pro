@@ -11,7 +11,6 @@
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/NehaSJ99/Sentimental-Analyzer-Pro)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro)  
 ![GitHub language count](https://img.shields.io/github/languages/count/NehaSJ99/Sentimental-Analyzer-Pro)
-![Lines of code](https://tokei.rs/b1/github/NehaSJ99/Sentimental-Analyzer-Pro)
 [![GitHub-size](https://img.shields.io/github/languages/code-size/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro)
 [![github workflow](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml)
 [![codecov](https://codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro)
