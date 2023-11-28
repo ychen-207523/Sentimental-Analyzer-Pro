@@ -130,7 +130,7 @@ Now, you are good to go.
 - Start the django server to get to the homepage
 ![First](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
 
-<p>Amazon Product sentiment Analysis</p>
+- Amazon Product sentiment Analysis
 ![Second](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product%20Analysis%20Compressed%20(1)%20(2).gif)
 
 - Image and Document Sentiment Analysis
