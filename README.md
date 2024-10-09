@@ -95,7 +95,7 @@ Although HTML and CSS are used for the front end, the users can merge the backen
 ```
 git clone https://github.com/ychen-207523/Sentimental-Analyzer-Pro.git 
 ```
-2. Make sure you are using Python 3.11 or higher. You can get it here: https://www.python.org/downloads/release/python-3115/
+2. Make sure you are using Python 3.10 or higher. You can get it here: https://www.python.org/downloads/release/python-3115/
 
 3. Create a Virtual Environment 
 ```
@@ -110,6 +110,7 @@ pip3 install -r requirements.txt
 ```
 pip3 install tf-keras
 pip3 install spanish_nlp
+pip3 install unidecode
 ```
 6. Install ffmpeg:  
 For Windows:  
