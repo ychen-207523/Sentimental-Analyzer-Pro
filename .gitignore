@@ -19,6 +19,7 @@ media
 
 # IntelliJ
 out/
+.idea/
 
 # Python # 
 *.py[cod] 
@@ -26,6 +27,7 @@ out/
 
 # pyenv 
 .python-version 
+env/
 
 # mypy 
 .mypy_cache/ 
