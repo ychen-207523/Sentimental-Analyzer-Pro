@@ -28,7 +28,6 @@
          margin-bottom: 10px;
          text-align: left;
          }
-         
          .hidden {
          display: none;
          }
@@ -98,8 +97,12 @@
                            <option value="#twitter">Twitter</option>
                        </select>
                         <li><a href="#image">Image Analysis</a></li>
-                        
-    
+                         {% if user.is_authenticated %}
+                             <li><a href="{% url 'logout' %}">Logout</a></li>
+                             <li style="color: black;">Welcome, {{ user.username }}</li>
+                            {% else %}
+                             <li><a href="{% url 'login' %}">Login</a></li>
+                         {% endif %}
                      </ul>
                   </aside>
                   <div id="nav-trigger"><span></span></div>
@@ -227,8 +230,8 @@
                     
                      </div>
                   </div>
-               </div>
-            </section>
+                </div>
+            </body>
             <div class="sep">   </div>
             <section id="gallery" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
@@ -385,7 +388,7 @@
                </div>
             </section>
             
-         </main>
+         </html>
          <footer id="landing-footer" class="clearfix">
             <div class="row clearfix">
               <div class="col-2">
@@ -510,11 +513,5 @@
              count++;
          }
          
-         
-
-
-     
-     
-     
    </body>
 </html>
