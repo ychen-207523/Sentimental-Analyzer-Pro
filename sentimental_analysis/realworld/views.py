@@ -26,6 +26,8 @@ import cv2
 from deepface import DeepFace
 from langdetect import detect
 from spanish_nlp import classifiers
+from nltk import pos_tag
+from nltk.tokenize import sent_tokenize
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -62,10 +64,10 @@ def get_clean_text(text):
     text = stripPunctuations(text)
     text = stripExtraWhiteSpaces(text)
     tokens = nltk.word_tokenize(text)
-    stop_words = set(stopwords.words('english'))
+    stop_words = set(stopwords.words('english')).union(['the', 'a', 'an', 'this', 'that', 'these', 'those', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'will', 'would', 'shall', 'should', 'can', 'could', 'may', 'might', 'must', 'ought', 'it', 'they', 'them', 'their', 'theirs', 'themselves', 'he', 'she', 'him', 'her', 'his', 'hers', 'himself', 'herself', 'we', 'us', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'i', 'me', 'my', 'mine', 'myself'])
     stop_words.add('rt')
     stop_words.add('')
-    newtokens = [item for item in tokens if item not in stop_words]
+    newtokens = [item for item, pos_tag in pos_tag(tokens) if item.lower() not in stop_words and pos_tag in ['NN', 'VB', 'JJ', 'RB']]
 
     textclean = ' '.join(newtokens)
     return textclean
@@ -79,16 +81,42 @@ def detailed_analysis(result):
 
     for item in result:
         cleantext = get_clean_text(str(item))
+        print(cleantext)
         sentiment = sentiment_scores(cleantext)
         pos_count += sentiment['pos']
         neu_count += sentiment['neu']
         neg_count += sentiment['neg']
-
     total = pos_count + neu_count + neg_count
-    result_dict['pos'] = (pos_count/total)
-    result_dict['neu'] = (neu_count/total)
-    result_dict['neg'] = (neg_count/total)
+    if(total>0):
+        pos_ratio = (pos_count/total)
+        neu_ratio = (neu_count/total)
+        neg_ratio = (neg_count/total)
+        result_dict['pos'] = pos_ratio
+        result_dict['neu'] = neu_ratio
+        result_dict['neg'] = neg_ratio
+    return result_dict
 
+def detailed_analysis_sentence(result):
+    sentences = sent_tokenize(result)
+    sia = SentimentIntensityAnalyzer()
+    sentences = sent_tokenize(result)
+    result_dict = {}
+    neg_count = 0
+    pos_count = 0
+    neu_count = 0
+    for sentence in sentences:
+        sentiment = sia.polarity_scores(sentence)
+        pos_count += sentiment['pos']
+        neu_count += sentiment['neu']
+        neg_count += sentiment['neg']
+    total = pos_count + neu_count + neg_count
+    if(total>0):
+        pos_ratio = (pos_count/total)
+        neu_ratio = (neu_count/total)
+        neg_ratio = (neg_count/total)
+        result_dict['pos'] = pos_ratio
+        result_dict['neu'] = neu_ratio
+        result_dict['neg'] = neg_ratio
     return result_dict
 
 def input(request):
@@ -172,30 +200,54 @@ def productanalysis(request):
     if request.method == 'POST':
         blogname = request.POST.get("blogname", "")
 
-        text_file = open(
-            "Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
-        text_file.write(blogname)
-        text_file.close()
+        # text_file = open(
+        #     "Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
+        # text_file.write(blogname)
+        # text_file.close()
 
-        spider_path = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py'
-        output_file = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json'
-        command = f"scrapy runspider \"{spider_path}\" -o \"{output_file}\" "
-        result = subprocess.run(command, shell=True)
+        # spider_path = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py'
+        # output_file = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json'
+        # command = f"scrapy runspider \"{spider_path}\" -o \"{output_file}\" "
+        # result = subprocess.run(command, shell=True)
 
-        if result.returncode == 0:
-            print("Scrapy spider executed successfully.")
-        else:
-            print("Error executing Scrapy spider.")
+        # if result.returncode == 0:
+        #     print("Scrapy spider executed successfully.")
+        # else:
+        #     print("Error executing Scrapy spider.")
        
         with open(r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json', 'r') as json_file:
             json_data = json.load(json_file)
         reviews = []
-
+        reviews2 = {
+            "pos": 0,
+            "neu": 0,
+            "neg": 0,
+        }
         for item in json_data:
             reviews.append(item['Review'])
+            r = detailed_analysis_sentence(item['Review'])
+            if(r != {}):
+                st = item['Stars']
+                if(st is not None):
+                    stars = int(float(st))
+                    if(stars != -1):
+                        if(stars >= 4):
+                            r['pos'] += 0.1
+                        elif(stars >= 2):
+                            r['neu'] += 0.1
+                        else:
+                            r['neg'] += 0.1
+                largest = 'pos'
+                if(r['neg'] > r[largest]):
+                    largest = 'neg'
+                if(r['neu'] > r[largest]):
+                    largest = 'neu'
+                reviews2[largest] += 1
+                
         finalText = reviews
+        totalReviews = reviews2['pos'] + reviews2['neu'] + reviews2['neg']
         result = detailed_analysis(reviews)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': reviews2, 'totalReviews': totalReviews})
     else:
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
