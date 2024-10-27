@@ -167,6 +167,13 @@ class AllFunctionalityTestCase(unittest.TestCase):
     def get_item(self, dictionary, key):
         return dictionary.get(key, 0)
 
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        nltk.download('vader_lexicon')
+        nltk.download('stopwords')
+        nltk.download('punkt')
+
     def test_text_analysis(self):
         string_name = "Its been a pleasure working with you! The lunch was great and the ambience was amazing"
         test_output = self.textanalysis(string_name)
@@ -196,8 +203,6 @@ class AllFunctionalityTestCase(unittest.TestCase):
         self.assertGreaterEqual(
             test_output["neg"], expected_output["neg"], message)
         # self.assertGre(test_output, expected_output)
-
-
 # main function
 if __name__ == '__main__':
     unittest.main()
