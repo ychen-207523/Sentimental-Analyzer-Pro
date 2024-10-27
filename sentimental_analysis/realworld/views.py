@@ -141,7 +141,7 @@ def input(request):
             if os.path.isfile(file_path):
                 os.remove(file_path)
 
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text': finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text': finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Please Enter the Document you want to analyze"
         return render(request, 'realworld/home.html', {'note': note})
@@ -231,7 +231,7 @@ def productanalysis(request):
         finalText = reviews
         totalReviews = reviews2['pos'] + reviews2['neu'] + reviews2['neg']
         result = detailed_analysis(reviews)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': reviews2, 'totalReviews': totalReviews})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': reviews2, 'totalReviews': totalReviews, 'showReviewsRatio': True})
     else:
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
@@ -253,7 +253,7 @@ def textanalysis(request):
                 'neu': result_classifier.get('neutral', 0.0),
                 'neg': result_classifier.get('negative', 0.0)
             }
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
@@ -298,7 +298,7 @@ def fbanalysis(request):
         finalText = reviews
 
        
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
@@ -330,7 +330,7 @@ def twitteranalysis(request):
         finalText = reviews
 
        
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
@@ -358,7 +358,7 @@ def audioanalysis(request):
             file_path = os.path.join(folder_path, file)
             if os.path.isfile(file_path):
                 os.remove(file_path)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Please Enter the audio file you want to analyze"
         return render(request, 'realworld/audio.html', {'note': note})
@@ -380,7 +380,7 @@ def livespeechanalysis(request):
             file_path = os.path.join(folder_path, file)
             if os.path.isfile(file_path):
                 os.remove(file_path)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
 
 
 @csrf_exempt
@@ -429,7 +429,7 @@ def newsanalysis(request):
             news.append(item['Summary'])
         finalText = news
         result = detailed_analysis(news)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         return render(request, 'realworld/index.html')
 

@@ -63,6 +63,8 @@
             </div>
          </header>
          <main id="content">
+            {% if showReviewsRatio %}
+            <div id="productReviews">
                <div class="tab-container">
                   <div class="tabs">
                      <button class="tab-button active" onclick="showTab('tab1')">Combined Product Analysis</button>
@@ -107,6 +109,32 @@
                   </div>
                  </div>
                </div>
+            </div>
+            {% else %}
+            <div id="nonProductReviews">
+               <section id="banner-content" class="introduction scrollto">
+                  <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px;">
+                     <h2 class="section-title">Analyzed Text</h2>
+                     <div>
+                        <textarea id="inputText" class="line-edit" rows="4" placeholder="Enter your text here" style="height: 165px"></textarea>
+                     </div>
+                  </div>
+                  <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                     <h2 class="section-title">Sentiments Distribution</h2>
+                  </div>
+                  <div>
+                     <div id="chartContainer" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                  </div>
+                  <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                     <h2 class="section-title">Sentiments Graph</h2>
+                  </div>
+                  <div>
+                     <div id="chartContainer2" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                  </div>
+               </section>
+            </div>
+            {% endif %}
+               
          </main>
         
       </div>
@@ -243,7 +271,6 @@
       <script src="{% static "js/lightbox.min.js" %}"></script>
       <script src="{% static "js/site.js" %}"></script>
       <script type="text/javascript">
-
          function createChartsGeneric() {
             var chart = new CanvasJS.Chart("chartContainer", {
                  theme: "light2",
@@ -300,57 +327,60 @@
                  }]
              });
              chart2.render();
-         }
-
+         }  
          function createChartSpecific() {
-            var chart3 = new CanvasJS.Chart("chartContainer3", {
-                 theme: "light2",
-                 backgroundColor: "white",
-                 animationEnabled: true,
-                 exportEnabled: true,
-                 borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
-                 legend: {
-                     
-                     fontSize: 16,
-                     horizontalAlign: "right",
-                     verticalAlign: "center"
-                 },
-                 data: [{
-                     type: "doughnut",
-                     innerRadius: "60%",
-                     showInLegend: true,
-                     legendText: "{label}",
-                     indexLabelFontSize: 16,
-                     indexLabel: "{label}: #percent%",
-                     toolTipContent: "{y}%",
-                     dataPoints: [
-                         { y: {{reviewsRatio | get_item:'pos'}} * 100/{{totalReviews}}, label: "Good", color: "#8BC34A" },
-                         { y: {{reviewsRatio | get_item:'neu'}} * 100/{{totalReviews}}, label: "Neutral", color: "#FFEB3B" },
-                         { y: {{reviewsRatio | get_item:'neg'}} * 100/{{totalReviews}}, label: "Bad", color: "#FF9800" }
-                     ]
-                 }]
-             });
-             chart3.render();
+               const totalReviews = {{totalReviews}} || 1; // Prevent division by zero
+               const pos = {{reviewsRatio | get_item:'pos'}} || 0;
+               const neu = {{reviewsRatio | get_item:'neu'}} || 0;
+               const neg = {{reviewsRatio | get_item:'neg'}} || 0;
+               var chart3 = new CanvasJS.Chart("chartContainer3", {
+                  theme: "light2",
+                  backgroundColor: "white",
+                  animationEnabled: true,
+                  exportEnabled: true,
+                  borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
+                  legend: {
+                        
+                        fontSize: 16,
+                        horizontalAlign: "right",
+                        verticalAlign: "center"
+                  },
+                  data: [{
+                        type: "doughnut",
+                        innerRadius: "60%",
+                        showInLegend: true,
+                        legendText: "{label}",
+                        indexLabelFontSize: 16,
+                        indexLabel: "{label}: #percent%",
+                        toolTipContent: "{y}%",
+                        dataPoints: [
+                           { y: (pos * 100)/totalReviews, label: "Good", color: "#8BC34A" },
+                           { y: (neu * 100)/totalReviews, label: "Neutral", color: "#FFEB3B" },
+                           { y: (neg * 100)/totalReviews, label: "Bad", color: "#FF9800" }
+                        ]
+                  }]
+               });
+               chart3.render();
 
-             var chart4 = new CanvasJS.Chart("chartContainer4",{
-             theme: "light2",
-             backgroundColor: "white",
-             animationEnabled: true,
-             exportEnabled: true,
-             borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
-             data: [{
-                 type: "column",
-                     explodeOnClick: true,
-                     toolTipContent: "{y} %",
-                     
-                     dataPoints: [
-                         { y: {{reviewsRatio | get_item:'pos'}} * 100/{{totalReviews}}, label: "Good", color: "#8BC34A" },
-                         { y: {{reviewsRatio | get_item:'neu'}} * 100/{{totalReviews}}, label: "Neutral", color: "#FFEB3B" },
-                         { y: {{reviewsRatio | get_item:'neg'}} * 100/{{totalReviews}}, label: "Bad", color: "#FF9800" }
-                     ]
-                 }]
-             });
-             chart4.render();
+               var chart4 = new CanvasJS.Chart("chartContainer4",{
+               theme: "light2",
+               backgroundColor: "white",
+               animationEnabled: true,
+               exportEnabled: true,
+               borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
+               data: [{
+                  type: "column",
+                        explodeOnClick: true,
+                        toolTipContent: "{y} %",
+                        
+                        dataPoints: [
+                           { y: (pos * 100)/totalReviews, label: "Good", color: "#8BC34A" },
+                           { y: (neu  * 100)/totalReviews, label: "Neutral", color: "#FFEB3B" },
+                           { y: (neg  * 100)/totalReviews, label: "Bad", color: "#FF9800" }
+                        ]
+                  }]
+               });
+               chart4.render();
          }
          window.onload = function () {
                  CanvasJS.addColorSet("piechartColors",
@@ -360,9 +390,10 @@
                  "#b39032"       
                  ]);
          
-                createChartsGeneric()
-
-               createChartSpecific()
+               createChartsGeneric()
+               if(typeof reviewsRatio !== "undefined"){
+                  createChartSpecific()
+               }
              
          }
          function showTab(tabId) {
