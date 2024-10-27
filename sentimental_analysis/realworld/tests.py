@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+
 class AuthenticationTests(TestCase):
 
     def test_register_page_status_code(self):
@@ -95,3 +96,79 @@ class AuthenticationTests(TestCase):
         })
         self.assertEqual(response.status_code, 200)
         self.assertFormError(response, 'form', 'password1', "This field is required.")
+
+    def test_login_success(self):
+        """Test if a user can log in with valid credentials."""
+        User.objects.create_user(username='testuser', password='Password123')
+        response = self.client.post(reverse('login'), {
+            'username': 'testuser',
+            'password': 'Password123'
+        })
+        self.assertEqual(response.status_code, 302)
+
+    def test_login_wrong_password(self):
+        """Test if login fails with an incorrect password."""
+        User.objects.create_user(username='TestUser', password='Password123')
+        response = self.client.post(reverse('login'), {
+            'username': 'TestUser',
+            'password': 'WrongPassword'
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Please enter a correct username and password.")
+
+    def test_login_wrong_username(self):
+        """Test if login fails with an incorrect username."""
+        User.objects.create_user(username='TestUser', password='Password123')
+        response = self.client.post(reverse('login'), {
+            'username': 'WrongUser',
+            'password': 'Password123'
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Please enter a correct username and password.")
+
+    def test_login_empty_username(self):
+        """Test if login fails with an empty username."""
+        response = self.client.post(reverse('login'), {
+            'username': '',
+            'password': 'Password123'
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "This field is required.")
+
+    def test_login_empty_password(self):
+        """Test if login fails with an empty password."""
+        response = self.client.post(reverse('login'), {
+            'username': 'Testuser',
+            'password': ''
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "This field is required.")
+
+    def test_logout(self):
+        """Test if a logged-in user can log out."""
+        user = User.objects.create_user(username='Testuser', password='Password123')
+        self.client.login(username='Testuser', password='Password123')
+        response = self.client.get(reverse('logout'))
+        self.assertEqual(response.status_code, 302)
+
+    def test_username_case_insensitive_login(self):
+        """Test if login is case-sensitive for username."""
+        User.objects.create_user(username='TestUser', password='Password123')
+        response = self.client.post(reverse('login'), {
+            'username': 'testuser',
+            'password': 'Password123'
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Please enter a correct username and password.")
+
+    def test_logout_redirect(self):
+        """Test if a logged-out user is redirected to the login page."""
+        user = User.objects.create_user(username='TestUser', password='Password123')
+        self.client.login(username='TestUser', password='Password123')
+        response = self.client.get(reverse('logout'))
+        self.assertRedirects(response, reverse('login'))
+
+    def test_homepage_not_access_for_no_authorization(self):
+        """Test if the homepage is not accessible if not logged in."""
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 302)
