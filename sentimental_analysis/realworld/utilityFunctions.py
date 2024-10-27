@@ -17,10 +17,10 @@ def stripPunctuations(text):
     return text.translate(str.maketrans('', '', string.punctuation))
 
 def stripExtraWhiteSpaces(text):
-    return text.strip()
+    return re.sub(' +',' ',text.strip())
 
 def removeSpecialChar(text):
-    return re.sub(r'\W+ ', '', text)
+    return re.sub(r'[^a-zA-Z0-9\s]+', '', text).strip()
 
 
 def sentiment_scores(sentence):

@@ -1,9 +1,11 @@
-import os
+import os, sys
 import json
 import csv
 from io import StringIO
 import subprocess
 import shutil
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import speech_recognition as sr
 from django.shortcuts import render
@@ -17,11 +19,11 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 import nltk
 from pydub import AudioSegment
-from .newsScraper import *
-from .utilityFunctions import *
+from realworld.newsScraper import *
+from realworld.utilityFunctions import *
 from nltk.corpus import stopwords
-from .fb_scrap import *
-from .twitter_scrap import *
+from realworld.fb_scrap import *
+from realworld.twitter_scrap import *
 import cv2
 from deepface import DeepFace
 from langdetect import detect
@@ -97,26 +99,9 @@ def detailed_analysis(result):
     return result_dict
 
 def detailed_analysis_sentence(result):
-    sentences = sent_tokenize(result)
     sia = SentimentIntensityAnalyzer()
-    sentences = sent_tokenize(result)
     result_dict = {}
-    neg_count = 0
-    pos_count = 0
-    neu_count = 0
-    for sentence in sentences:
-        sentiment = sia.polarity_scores(sentence)
-        pos_count += sentiment['pos']
-        neu_count += sentiment['neu']
-        neg_count += sentiment['neg']
-    total = pos_count + neu_count + neg_count
-    if(total>0):
-        pos_ratio = (pos_count/total)
-        neu_ratio = (neu_count/total)
-        neg_ratio = (neg_count/total)
-        result_dict['pos'] = pos_ratio
-        result_dict['neu'] = neu_ratio
-        result_dict['neg'] = neg_ratio
+    result_dict['compound'] = sia.polarity_scores(result)['compound']
     return result_dict
 
 def input(request):
@@ -200,20 +185,20 @@ def productanalysis(request):
     if request.method == 'POST':
         blogname = request.POST.get("blogname", "")
 
-        # text_file = open(
-        #     "Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
-        # text_file.write(blogname)
-        # text_file.close()
+        text_file = open(
+            "Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt", "w")
+        text_file.write(blogname)
+        text_file.close()
 
-        # spider_path = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py'
-        # output_file = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json'
-        # command = f"scrapy runspider \"{spider_path}\" -o \"{output_file}\" "
-        # result = subprocess.run(command, shell=True)
+        spider_path = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/amazon_review.py'
+        output_file = r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json'
+        command = f"scrapy runspider \"{spider_path}\" -o \"{output_file}\" "
+        result = subprocess.run(command, shell=True)
 
-        # if result.returncode == 0:
-        #     print("Scrapy spider executed successfully.")
-        # else:
-        #     print("Error executing Scrapy spider.")
+        if result.returncode == 0:
+            print("Scrapy spider executed successfully.")
+        else:
+            print("Error executing Scrapy spider.")
        
         with open(r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json', 'r') as json_file:
             json_data = json.load(json_file)
@@ -232,18 +217,17 @@ def productanalysis(request):
                     stars = int(float(st))
                     if(stars != -1):
                         if(stars >= 4):
-                            r['pos'] += 0.1
+                            r['compound'] += 0.1
                         elif(stars >= 2):
-                            r['neu'] += 0.1
+                           continue
                         else:
-                            r['neg'] += 0.1
-                largest = 'pos'
-                if(r['neg'] > r[largest]):
-                    largest = 'neg'
-                if(r['neu'] > r[largest]):
-                    largest = 'neu'
-                reviews2[largest] += 1
-                
+                            r['compound'] -= 0.1
+                if(r['compound'] > 0.4):
+                    reviews2['pos'] += 1
+                elif(r['compound'] < -0.4):
+                    reviews2['neg'] += 1
+                else:
+                    reviews2['neu'] +=1
         finalText = reviews
         totalReviews = reviews2['pos'] + reviews2['neu'] + reviews2['neg']
         result = detailed_analysis(reviews)
