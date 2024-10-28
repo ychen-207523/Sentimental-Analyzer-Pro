@@ -1,21 +1,13 @@
 import json
 import requests
+from bs4 import BeautifulSoup
 from newspaper import Article, Config
 
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36"
+
 def scrapNews(topicName):
-    api_key = "AIzaSyAOVoIz59KfO726SCDfccLnBw7BOq-ogWs"
-    cse_id = "d07f9f6bb24b64497"
-    query = topicName
-    num_results = 10  # Number of results to retrieve
-    base_url = "https://www.googleapis.com/customsearch/v1"
-    params = {
-        "key": api_key,
-        "cx": cse_id,
-        "q": query,
-        "num": num_results,
-    }
     article_list = []
-    response = requests.get(base_url, params=params)
+    response = getNewsData(topicName)
     results = response.json().get("items", [])
 
     for result in results:
@@ -38,3 +30,18 @@ def scrapNews(topicName):
         json.dump(article_list, json_file)
 
     print("Articles saved to news.json")
+
+# This method returns URLs to news websites matching the relevant query
+def getNewsResults(query):
+    headers = {
+        "User-Agent":user_agent
+    }
+
+    base_url = f"https://www.google.com/search?q={query}&gl=us&tbm=nws&num=100"
+    response = requests.get(base_url, headers=headers)
+    soup = BeautifulSoup(response.content, "html.parser")
+    news_results = []
+
+    for el in soup.select("div.SoaBEf"):
+        news_results.append(el.find("a")["href"])
+    return news_results
