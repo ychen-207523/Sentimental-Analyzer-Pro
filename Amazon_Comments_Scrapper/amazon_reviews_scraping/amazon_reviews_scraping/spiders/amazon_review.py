@@ -1,6 +1,7 @@
 import re
 import os
 import scrapy
+import logging
 from scrapy import Request
 
 reviews_base_url = 'https://www.amazon.com/product-reviews/{}'
@@ -26,6 +27,7 @@ def get_date_place(param):
     return date_part, place
 
 class ReviewsSpider(scrapy.Spider):
+    logging.getLogger('scrapy').setLevel(logging.WARNING)
     name = 'reviews'
     custom_settings = {
     'BOT_NAME': 'amazon_reviews_scraping',
@@ -39,9 +41,10 @@ class ReviewsSpider(scrapy.Spider):
         'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
     },
     'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
-    'DOWNLOAD_DELAY': 1,
-    'CONCURRENT_REQUESTS': 1,
-    'RETRY_TIMES': 3,
+    'DOWNLOAD_DELAY': 0.3,
+    'CONCURRENT_ITEMS': 10,
+    'CONCURRENT_REQUESTS': 5,
+    'RETRY_TIMES': 0,
     'RETRY_HTTP_CODES': [500, 503, 504, 400, 403, 404, 408],
     }
 
@@ -56,7 +59,8 @@ class ReviewsSpider(scrapy.Spider):
     my_file_handle = open('Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/ProductAnalysis.txt')
     myBaseUrl = my_file_handle.read()
     asin = extract_asin_from_url(myBaseUrl)
-
+    max_pages = 5
+    current_page = 1
     if asin:
         asin_list.append(asin)
 
@@ -87,10 +91,9 @@ class ReviewsSpider(scrapy.Spider):
             for i, text in enumerate(review_text):
                 review_text[i] = text.strip('\n').strip('\r').strip('\t').strip()
             item['Review'] = '\n'.join(review_text)
-
-
             yield item
-
-        next_page = response.xpath('//a[contains(text(),"Next page")]/@href').get()
-        if next_page:
-            yield scrapy.Request(response.urljoin(next_page), meta={'asin': asin})
+        if self.current_page < self.max_pages:
+            next_page = response.xpath('//a[contains(text(),"Next page")]/@href').get()
+            if next_page:
+                self.current_page += 1
+                yield scrapy.Request(response.urljoin(next_page), meta={'asin': asin})

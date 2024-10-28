@@ -63,26 +63,78 @@
             </div>
          </header>
          <main id="content">
-            <section id="banner-content" class="introduction scrollto">
-               <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px;">
-                  <h2 class="section-title">Analyzed Text</h2>
-                  <div>
-                     <textarea id="inputText" class="line-edit" rows="4" placeholder="Enter your text here" style="height: 165px"></textarea>
+            {% if showReviewsRatio %}
+            <div id="productReviews">
+               <div class="tab-container">
+                  <div class="tabs">
+                     <button class="tab-button active" onclick="showTab('tab1')">Combined Product Analysis</button>
+                     <button class="tab-button" onclick="showTab('tab2')">Product Analysis per Review</button>
+                 </div>
+                 <div class="tab-content">
+                  <div id="tab1" class="tab active">
+                     <section id="banner-content" class="introduction scrollto">
+                     <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px;">
+                        <h2 class="section-title">Analyzed Text</h2>
+                        <div>
+                           <textarea id="inputText" class="line-edit" rows="4" placeholder="Enter your text here" style="height: 165px"></textarea>
+                        </div>
+                     </div>
+                     <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                        <h2 class="section-title">Sentiments Distribution</h2>
+                     </div>
+                     <div>
+                        <div id="chartContainer" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                     </div>
+                     <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                        <h2 class="section-title">Sentiments Graph</h2>
+                     </div>
+                     <div>
+                        <div id="chartContainer2" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                     </div>
+                  </section>
                   </div>
+                  <div id="tab2" class="tab">
+                     <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                        <h2 class="section-title">Sentiments Distribution individual Review</h2>
+                     </div>
+                     <div>
+                        <div id="chartContainer3" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                     </div>
+                     <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                        <h2 class="section-title">Sentiments Graph individual Review</h2>
+                     </div>
+                     <div>
+                        <div id="chartContainer4" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                     </div>
+                  </div>
+                 </div>
                </div>
-               <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
-                  <h2 class="section-title">Sentiments Distribution</h2>
-               </div>
-               <div>
-                  <div id="chartContainer" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
-               </div>
-               <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
-                  <h2 class="section-title">Sentiments Graph</h2>
-               </div>
-               <div>
-                  <div id="chartContainer2" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
-               </div>
-            </section>
+            </div>
+            {% else %}
+            <div id="nonProductReviews">
+               <section id="banner-content" class="introduction scrollto">
+                  <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px;">
+                     <h2 class="section-title">Analyzed Text</h2>
+                     <div>
+                        <textarea id="inputText" class="line-edit" rows="4" placeholder="Enter your text here" style="height: 165px"></textarea>
+                     </div>
+                  </div>
+                  <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                     <h2 class="section-title">Sentiments Distribution</h2>
+                  </div>
+                  <div>
+                     <div id="chartContainer" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                  </div>
+                  <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                     <h2 class="section-title">Sentiments Graph</h2>
+                  </div>
+                  <div>
+                     <div id="chartContainer2" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
+                  </div>
+               </section>
+            </div>
+            {% endif %}
+               
          </main>
         
       </div>
@@ -103,6 +155,45 @@
          </div>
        </footer>
        <style>
+         body {
+            margin: 0;
+             padding: 25px;
+         }
+         .tab-container {
+            width: auto;
+            margin: auto;
+         }
+
+         .tabs {
+            display: flex;
+         }
+
+         .tab-button {
+            flex: 1;
+            padding: 10px;
+            background: lightgray;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+         }
+
+         .tab-button.active {
+            background: white;
+            border-bottom: 2px solid blue;
+         }
+
+         .tab-content {
+            border: 1px solid lightgray;
+            padding: 10px;
+         }
+
+         .tab {
+            display: none;
+         }
+
+         .tab.active {
+            display: block;
+         }
          #landing-footer {
             clear: both;
             text-align: center;
@@ -180,15 +271,8 @@
       <script src="{% static "js/lightbox.min.js" %}"></script>
       <script src="{% static "js/site.js" %}"></script>
       <script type="text/javascript">
-         window.onload = function () {
-                 CanvasJS.addColorSet("piechartColors",
-                 [ 
-                 "#2F4F4F",   
-                 "#b5190b",
-                 "#b39032"       
-                 ]);
-         
-                 var chart = new CanvasJS.Chart("chartContainer", {
+         function createChartsGeneric() {
+            var chart = new CanvasJS.Chart("chartContainer", {
                  theme: "light2",
                  backgroundColor: "white",
                  animationEnabled: true,
@@ -243,6 +327,96 @@
                  }]
              });
              chart2.render();
+         }  
+         function createChartSpecific() {
+               const totalReviews = {{totalReviews}} || 1; // Prevent division by zero
+               const pos = {{reviewsRatio | get_item:'pos'}} || 0;
+               const neu = {{reviewsRatio | get_item:'neu'}} || 0;
+               const neg = {{reviewsRatio | get_item:'neg'}} || 0;
+               var chart3 = new CanvasJS.Chart("chartContainer3", {
+                  theme: "light2",
+                  backgroundColor: "white",
+                  animationEnabled: true,
+                  exportEnabled: true,
+                  borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
+                  legend: {
+                        
+                        fontSize: 16,
+                        horizontalAlign: "right",
+                        verticalAlign: "center"
+                  },
+                  data: [{
+                        type: "doughnut",
+                        innerRadius: "60%",
+                        showInLegend: true,
+                        legendText: "{label}",
+                        indexLabelFontSize: 16,
+                        indexLabel: "{label}: #percent%",
+                        toolTipContent: "{y}%",
+                        dataPoints: [
+                           { y: (pos * 100)/totalReviews, label: "Good", color: "#8BC34A" },
+                           { y: (neu * 100)/totalReviews, label: "Neutral", color: "#FFEB3B" },
+                           { y: (neg * 100)/totalReviews, label: "Bad", color: "#FF9800" }
+                        ]
+                  }]
+               });
+               chart3.render();
+
+               var chart4 = new CanvasJS.Chart("chartContainer4",{
+               theme: "light2",
+               backgroundColor: "white",
+               animationEnabled: true,
+               exportEnabled: true,
+               borderColor: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)'],
+               data: [{
+                  type: "column",
+                        explodeOnClick: true,
+                        toolTipContent: "{y} %",
+                        
+                        dataPoints: [
+                           { y: (pos * 100)/totalReviews, label: "Good", color: "#8BC34A" },
+                           { y: (neu  * 100)/totalReviews, label: "Neutral", color: "#FFEB3B" },
+                           { y: (neg  * 100)/totalReviews, label: "Bad", color: "#FF9800" }
+                        ]
+                  }]
+               });
+               chart4.render();
+         }
+         window.onload = function () {
+                 CanvasJS.addColorSet("piechartColors",
+                 [ 
+                 "#2F4F4F",   
+                 "#b5190b",
+                 "#b39032"       
+                 ]);
+         
+               createChartsGeneric()
+               if(typeof reviewsRatio !== "undefined"){
+                  createChartSpecific()
+               }
+             
+         }
+         function showTab(tabId) {
+            const element = document.getElementById(tabId)
+            // Hide all tabs
+            if(!element.classList.contains('active')){
+               const tabs = document.querySelectorAll('.tab');
+               tabs.forEach(tab => {
+                  tab.classList.remove('active');
+               });
+
+               // Remove active class from all buttons
+               const buttons = document.querySelectorAll('.tab-button');
+               buttons.forEach(button => {
+                  button.classList.remove('active');
+               });
+
+               // Show the selected tab and add active class to the button
+               element.classList.add('active');
+               document.querySelector(`.tab-button[onclick*='${tabId}']`).classList.add('active');
+               createChartsGeneric()
+               createChartSpecific()
+            }
          }
       </script>
       <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
