@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from newspaper import Article, Config
 import logging
+import html
 
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36"
 
@@ -29,7 +30,8 @@ def scrapNews(topicName):
 
             # Extract summary
             if article.summary != "Please enable JS and disable any ad blocker":
-                dict["Summary"] = article.summary
+                # Unescape the HTML entities
+                dict["Summary"] = html.unescape(article.summary)
                 article_list.append(dict)
                 count -= 1
             else:
