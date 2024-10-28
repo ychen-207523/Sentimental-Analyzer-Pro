@@ -2,6 +2,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from newspaper import Article, Config
+import logging
 
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36"
 
@@ -27,7 +28,7 @@ def scrapNews(topicName):
     with open('sentimental_analysis/realworld/news.json', 'w') as json_file:
         json.dump(article_list, json_file)
 
-    print("Articles saved to news.json")
+    logging.warning("Articles saved to news.json")
 
 # This method returns URLs to news websites matching the relevant query
 def getNewsResults(query):
