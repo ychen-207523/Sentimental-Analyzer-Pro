@@ -26,9 +26,12 @@ def scrapNews(topicName):
           dict = {}
 
           # Extract summary
-          dict['Summary'] = article.summary
-          article_list.append(dict)
-          count -= 1
+          if (article.summary !=  "Please enable JS and disable any ad blocker"):
+            dict['Summary'] = article.summary
+            article_list.append(dict)
+            count -= 1
+          else:
+             logging.info(f"Skipping article as it requires JS - {url}")
       except BaseException as e:
           logging.info(f"Error occured while extracting summary of article - {url}\nError - {e}")
 
