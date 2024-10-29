@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <style>
+        .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .register-box {
+            background-color: #fff;
+            padding: 30px;
+            border: #000000 1px solid;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .register-box h2 {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .register-box form {
+            display: flex;
+            flex-direction: column;
+        }
+        .register-box input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            display: block;
+        }
+        .register-box label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            line-height: 1.5;
+        }
+        .register-box .helptext {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .register-box .errorlist li {
+            color: #9C1A1C;
+            font-size: 14px;
+        }
+        .register-box button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <div class="register-box">
+            <h2>Register</h2>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

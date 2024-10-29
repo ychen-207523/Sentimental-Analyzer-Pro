@@ -28,8 +28,10 @@ import cv2
 from deepface import DeepFace
 from langdetect import detect
 from spanish_nlp import classifiers
+from django.contrib.auth.decorators import login_required
 from nltk import pos_tag
 from nltk.tokenize import sent_tokenize
+
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -52,10 +54,11 @@ def pdfparser(data):
         if len(x) > 2:
             b = x.split()
             for i in b:
-                a += " "+i
+                a += " " + i
     final_comment = a.split('.')
     return final_comment
 
+@login_required
 def analysis(request):
     return render(request, 'realworld/index.html')
 
@@ -111,11 +114,11 @@ def input(request):
         fs.save(file.name, file)
         pathname = 'sentimental_analysis/media/'
         extension_name = file.name
-        extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+file.name
+        extension_name = extension_name[len(extension_name) - 3:]
+        path = pathname + file.name
         destination_folder = 'sentimental_analysis/media/document/'
         shutil.copy(path, destination_folder)
-        useFile = destination_folder+file.name
+        useFile = destination_folder + file.name
         result = {}
         finalText = ''
         if extension_name == 'pdf':
@@ -153,14 +156,14 @@ def inputimage(request):
         fs.save(file.name, file)
         pathname = 'sentimental_analysis/media/'
         extension_name = file.name
-        extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+file.name
+        extension_name = extension_name[len(extension_name) - 3:]
+        path = pathname + file.name
         destination_folder = 'sentimental_analysis/media/document/'
         shutil.copy(path, destination_folder)
-        useFile = destination_folder+file.name
+        useFile = destination_folder + file.name
         image = cv2.imread(useFile)
         detected_emotion = DeepFace.analyze(image)
-        
+
         emotions_dict = {'happy': 0.0, 'sad': 0.0, 'neutral': 0.0}
         for emotion in detected_emotion:
             emotion_scores = emotion['emotion']
@@ -179,7 +182,9 @@ def inputimage(request):
 
         print(emotions_dict)
         finalText = max(emotions_dict, key=emotions_dict.get)
-        return render(request, 'realworld/resultsimage.html', {'sentiment': emotions_dict, 'text' : finalText, 'analyzed_image_path': useFile})
+        return render(request, 'realworld/resultsimage.html',
+                      {'sentiment': emotions_dict, 'text': finalText, 'analyzed_image_path': useFile})
+
 
 def productanalysis(request):
     if request.method == 'POST':
@@ -199,8 +204,9 @@ def productanalysis(request):
             print("Scrapy spider executed successfully.")
         else:
             print("Error executing Scrapy spider.")
-       
-        with open(r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json', 'r') as json_file:
+
+        with open(r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json',
+                  'r') as json_file:
             json_data = json.load(json_file)
         reviews = []
         reviews2 = {
@@ -232,6 +238,7 @@ def productanalysis(request):
         totalReviews = reviews2['pos'] + reviews2['neu'] + reviews2['neg']
         result = detailed_analysis(reviews)
         return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': reviews2, 'totalReviews': totalReviews, 'showReviewsRatio': True})
+
     else:
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
@@ -257,7 +264,7 @@ def textanalysis(request):
     else:
         note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
-    
+
 def determine_language(texts):
     try:
         for text in texts:
@@ -270,12 +277,12 @@ def determine_language(texts):
         print(f"Error detecting language: {e}")
         return False
 
-    
+
 def fbanalysis(request):
-    if request.method == 'POST':       
+    if request.method == 'POST':
         current_directory = os.path.dirname(__file__)
         result = fb_sentiment_score()
-       
+
         csv_file_fb = 'fb_sentiment.csv'
         csv_file_path = os.path.join(current_directory, csv_file_fb)
 
@@ -285,8 +292,8 @@ def fbanalysis(request):
             csv_reader = csv.DictReader(csv_file)
             data = [row for row in csv_reader]
 
-        text_dict = {"reviews" : data}
-        print("text_dict:",text_dict["reviews"])
+        text_dict = {"reviews": data}
+        print("text_dict:", text_dict["reviews"])
         # Convert the list of dictionaries to a JSON array
         json_data = json.dumps(text_dict, indent=2)
 
@@ -304,10 +311,10 @@ def fbanalysis(request):
         return render(request, 'realworld/productanalysis.html', {'note': note})
 
 def twitteranalysis(request):
-    if request.method == 'POST':       
+    if request.method == 'POST':
         current_directory = os.path.dirname(__file__)
         result = twitter_sentiment_score()
-       
+
         csv_file_fb = 'twitt.csv'
         csv_file_path = os.path.join(current_directory, csv_file_fb)
 
@@ -317,8 +324,8 @@ def twitteranalysis(request):
             csv_reader = csv.DictReader(csv_file)
             data = [row for row in csv_reader]
 
-        text_dict = {"reviews" : data}
-        print("text_dict:",text_dict["reviews"])
+        text_dict = {"reviews": data}
+        print("text_dict:", text_dict["reviews"])
         # Convert the list of dictionaries to a JSON array
         json_data = json.dumps(text_dict, indent=2)
 
@@ -342,12 +349,12 @@ def audioanalysis(request):
         fs.save(file.name, file)
         pathname = "sentimental_analysis/media/"
         extension_name = file.name
-        extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+file.name
+        extension_name = extension_name[len(extension_name) - 3:]
+        path = pathname + file.name
         result = {}
         destination_folder = 'sentimental_analysis/media/audio/'
         shutil.copy(path, destination_folder)
-        useFile = destination_folder+file.name
+        useFile = destination_folder + file.name
         text = speech_to_text(useFile)
         finalText = text
         result = detailed_analysis(text)
@@ -383,6 +390,7 @@ def livespeechanalysis(request):
         return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
 
 
+
 @csrf_exempt
 def recordaudio(request):
     if request.method == 'POST':
@@ -394,12 +402,12 @@ def recordaudio(request):
 
         pathname = "sentimental_analysis/media/"
         extension_name = audio_file.name
-        extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+audio_file.name
+        extension_name = extension_name[len(extension_name) - 3:]
+        path = pathname + audio_file.name
         audioName = audio_file.name
         destination_folder = 'sentimental_analysis/media/recordedAudio/'
         shutil.copy(path, destination_folder)
-        useFile = destination_folder+audioName
+        useFile = destination_folder + audioName
         for file in files:
             file_path = os.path.join(folder_path, file)
             if os.path.isfile(file_path):
@@ -430,6 +438,7 @@ def newsanalysis(request):
         finalText = news
         result = detailed_analysis(news)
         return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
+
     else:
         return render(request, 'realworld/index.html')
 

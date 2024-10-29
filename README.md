@@ -135,6 +135,16 @@ Now, you are good to go.
 
 ![](https://media.giphy.com/media/AgrfqPt5AyiTm/giphy.gif)
 
+### Tests
+To run the frontend tests, use the following command:
+```
+python3 sentimental_analysis/manage.py test realworld
+```
+To run the backend tests, use the following command:
+```
+pytest
+```
+
 ### Usage
 
 <a name="usecases"></a>
@@ -191,7 +201,6 @@ To Contribute to our application, please refer to [CONTRIBUTING.md](https://gith
 <a name="team"></a>
 ## Team Members
 
-- Neha Jagtap
-- Pranjali Jadhav
-- Swaranjali Jadhav
-- Shardul Khandekar
+- Yunfei Chen
+- Tanuj Kulkarni
+- Shubham Vijay Tidke
