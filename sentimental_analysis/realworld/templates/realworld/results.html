@@ -306,6 +306,7 @@
              var textContent = textContent.replace(/\[/g, '');
              var textContent = textContent.replace(/\]/g, '');
              var textContent = textContent.replace(/\;/g, '');
+             var textContent = textContent.replace(/&quot|&#039;/g, "'")
              document.getElementById("inputText").value = textContent;
          
              var chart2 = new CanvasJS.Chart("chartContainer2",{
