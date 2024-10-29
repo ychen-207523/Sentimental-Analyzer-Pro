@@ -149,7 +149,7 @@ pytest
 
 <a name="usecases"></a>
 - Start the django server to get to the homepage
-![First](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
+![First](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
 
 ---
 <a name="roadmap"></a>
