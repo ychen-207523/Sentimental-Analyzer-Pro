@@ -384,7 +384,7 @@ def recordaudio(request):
 def newsanalysis(request):
     if request.method == 'POST':
         topicname = request.POST.get("topicname", "")
-        scrapNews(topicname)
+        scrapNews(topicname, 10)
 
         with open(r'sentimental_analysis/realworld/news.json', 'r') as json_file:
             json_data = json.load(json_file)
