@@ -1,6 +1,7 @@
 import logging
 import unittest
 import os, sys
+import inspect
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
@@ -54,6 +55,9 @@ class TestNewsResults(unittest.TestCase):
                 print(url)
             self.assertTrue(urlValidator(url))
 
+    def test_news_results_args(self):
+        self.assertTrue(len(inspect.getfullargspec(getNewsResults).args), 2)
+
     def test_response_relevancy(self):
         response_url = str(self.news_result_one[0]).lower()
         self.assertTrue(urlValidator(response_url))
@@ -88,6 +92,9 @@ class TestScrapNews(unittest.TestCase):
             if any(keyword in news for keyword in search_for) == False:
                 logging.warning(news)
             self.assertTrue(any(keyword in news.lower() for keyword in search_for))
+
+    def test_scrape_news_args(self):
+        self.assertTrue(len(inspect.getfullargspec(scrapNews).args), 3)
 
     def test_json_dump(self):
         self.assertNotEqual(self.json_data, None)
