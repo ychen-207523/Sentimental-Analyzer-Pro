@@ -28,7 +28,6 @@
          margin-bottom: 10px;
          text-align: left;
          }
-         
          .hidden {
          display: none;
          }
@@ -98,8 +97,12 @@
                            <option value="#twitter">Twitter</option>
                        </select>
                         <li><a href="#image">Image Analysis</a></li>
-                        
-    
+                         {% if user.is_authenticated %}
+                             <li><a href="{% url 'logout' %}">Logout</a></li>
+                             <li style="color: black;">Welcome, {{ user.username }}</li>
+                            {% else %}
+                             <li><a href="{% url 'login' %}">Login</a></li>
+                         {% endif %}
                      </ul>
                   </aside>
                   <div id="nav-trigger"><span></span></div>
@@ -227,8 +230,8 @@
                     
                      </div>
                   </div>
-               </div>
-            </section>
+                </div>
+            </body>
             <div class="sep">   </div>
             <section id="gallery" class="scrollto clearfix">
                <div class="row no-padding-bottom clearfix">
@@ -385,19 +388,18 @@
                </div>
             </section>
             
-         </main>
+         </html>
          <footer id="landing-footer" class="clearfix">
             <div class="row clearfix">
               <div class="col-2">
                 <p id="dev">
-                  &copy; Developed by Team 36: <a href="https://github.com/NehaSJ99/Sentimental-Analyzer-Pro">Sentimental-Analyzer-Pro</a>
+                    &copy; Developed by Team 22: <a href="https://github.com/ychen-207523/Sentimental-Analyzer-Pro">Sentimental-Analyzer-Pro</a>
                 </p>
               </div>
               <div class="col-2 disclaimer">
                 <div class="team-members">
                   <p>Team Members:</p>
-                  <p>Neha Jagtap &nbsp; Pranjali Jadhav</p>
-                  <p>Swaranjali Jadhav &nbsp; Shardul Khandekar</p>
+                    <p>Yunfei Chen &nbsp; Tanuj Kulkarni &nbsp; Shubham Vijay Tidke</p>
                 </div>
               </div>
             </div>
@@ -510,11 +512,5 @@
              count++;
          }
          
-         
-
-
-     
-     
-     
    </body>
 </html>

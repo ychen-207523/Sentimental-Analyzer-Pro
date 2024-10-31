@@ -1,9 +1,11 @@
-import os
+import os, sys
 import json
 import csv
 from io import StringIO
 import subprocess
 import shutil
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import speech_recognition as sr
 from django.shortcuts import render
@@ -17,15 +19,19 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 import nltk
 from pydub import AudioSegment
-from .newsScraper import *
-from .utilityFunctions import *
+from realworld.newsScraper import *
+from realworld.utilityFunctions import *
 from nltk.corpus import stopwords
-from .fb_scrap import *
-from .twitter_scrap import *
+from realworld.fb_scrap import *
+from realworld.twitter_scrap import *
 import cv2
 from deepface import DeepFace
 from langdetect import detect
 from spanish_nlp import classifiers
+from django.contrib.auth.decorators import login_required
+from nltk import pos_tag
+from nltk.tokenize import sent_tokenize
+
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -48,10 +54,11 @@ def pdfparser(data):
         if len(x) > 2:
             b = x.split()
             for i in b:
-                a += " "+i
+                a += " " + i
     final_comment = a.split('.')
     return final_comment
 
+@login_required
 def analysis(request):
     return render(request, 'realworld/index.html')
 
@@ -62,10 +69,10 @@ def get_clean_text(text):
     text = stripPunctuations(text)
     text = stripExtraWhiteSpaces(text)
     tokens = nltk.word_tokenize(text)
-    stop_words = set(stopwords.words('english'))
+    stop_words = set(stopwords.words('english')).union(['the', 'a', 'an', 'this', 'that', 'these', 'those', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'will', 'would', 'shall', 'should', 'can', 'could', 'may', 'might', 'must', 'ought', 'it', 'they', 'them', 'their', 'theirs', 'themselves', 'he', 'she', 'him', 'her', 'his', 'hers', 'himself', 'herself', 'we', 'us', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'i', 'me', 'my', 'mine', 'myself'])
     stop_words.add('rt')
     stop_words.add('')
-    newtokens = [item for item in tokens if item not in stop_words]
+    newtokens = [item for item, pos_tag in pos_tag(tokens) if item.lower() not in stop_words and pos_tag in ['NN', 'VB', 'JJ', 'RB']]
 
     textclean = ' '.join(newtokens)
     return textclean
@@ -79,16 +86,25 @@ def detailed_analysis(result):
 
     for item in result:
         cleantext = get_clean_text(str(item))
+        print(cleantext)
         sentiment = sentiment_scores(cleantext)
         pos_count += sentiment['pos']
         neu_count += sentiment['neu']
         neg_count += sentiment['neg']
-
     total = pos_count + neu_count + neg_count
-    result_dict['pos'] = (pos_count/total)
-    result_dict['neu'] = (neu_count/total)
-    result_dict['neg'] = (neg_count/total)
+    if(total>0):
+        pos_ratio = (pos_count/total)
+        neu_ratio = (neu_count/total)
+        neg_ratio = (neg_count/total)
+        result_dict['pos'] = pos_ratio
+        result_dict['neu'] = neu_ratio
+        result_dict['neg'] = neg_ratio
+    return result_dict
 
+def detailed_analysis_sentence(result):
+    sia = SentimentIntensityAnalyzer()
+    result_dict = {}
+    result_dict['compound'] = sia.polarity_scores(result)['compound']
     return result_dict
 
 def input(request):
@@ -98,11 +114,11 @@ def input(request):
         fs.save(file.name, file)
         pathname = 'sentimental_analysis/media/'
         extension_name = file.name
-        extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+file.name
+        extension_name = extension_name[len(extension_name) - 3:]
+        path = pathname + file.name
         destination_folder = 'sentimental_analysis/media/document/'
         shutil.copy(path, destination_folder)
-        useFile = destination_folder+file.name
+        useFile = destination_folder + file.name
         result = {}
         finalText = ''
         if extension_name == 'pdf':
@@ -128,7 +144,7 @@ def input(request):
             if os.path.isfile(file_path):
                 os.remove(file_path)
 
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text': finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text': finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Please Enter the Document you want to analyze"
         return render(request, 'realworld/home.html', {'note': note})
@@ -140,14 +156,14 @@ def inputimage(request):
         fs.save(file.name, file)
         pathname = 'sentimental_analysis/media/'
         extension_name = file.name
-        extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+file.name
+        extension_name = extension_name[len(extension_name) - 3:]
+        path = pathname + file.name
         destination_folder = 'sentimental_analysis/media/document/'
         shutil.copy(path, destination_folder)
-        useFile = destination_folder+file.name
+        useFile = destination_folder + file.name
         image = cv2.imread(useFile)
         detected_emotion = DeepFace.analyze(image)
-        
+
         emotions_dict = {'happy': 0.0, 'sad': 0.0, 'neutral': 0.0}
         for emotion in detected_emotion:
             emotion_scores = emotion['emotion']
@@ -166,7 +182,9 @@ def inputimage(request):
 
         print(emotions_dict)
         finalText = max(emotions_dict, key=emotions_dict.get)
-        return render(request, 'realworld/resultsimage.html', {'sentiment': emotions_dict, 'text' : finalText, 'analyzed_image_path': useFile})
+        return render(request, 'realworld/resultsimage.html',
+                      {'sentiment': emotions_dict, 'text': finalText, 'analyzed_image_path': useFile})
+
 
 def productanalysis(request):
     if request.method == 'POST':
@@ -186,16 +204,41 @@ def productanalysis(request):
             print("Scrapy spider executed successfully.")
         else:
             print("Error executing Scrapy spider.")
-       
-        with open(r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json', 'r') as json_file:
+
+        with open(r'Amazon_Comments_Scrapper/amazon_reviews_scraping/amazon_reviews_scraping/spiders/reviews.json',
+                  'r') as json_file:
             json_data = json.load(json_file)
         reviews = []
-
+        reviews2 = {
+            "pos": 0,
+            "neu": 0,
+            "neg": 0,
+        }
         for item in json_data:
             reviews.append(item['Review'])
+            r = detailed_analysis_sentence(item['Review'])
+            if(r != {}):
+                st = item['Stars']
+                if(st is not None):
+                    stars = int(float(st))
+                    if(stars != -1):
+                        if(stars >= 4):
+                            r['compound'] += 0.1
+                        elif(stars >= 2):
+                           continue
+                        else:
+                            r['compound'] -= 0.1
+                if(r['compound'] > 0.4):
+                    reviews2['pos'] += 1
+                elif(r['compound'] < -0.4):
+                    reviews2['neg'] += 1
+                else:
+                    reviews2['neu'] +=1
         finalText = reviews
+        totalReviews = reviews2['pos'] + reviews2['neu'] + reviews2['neg']
         result = detailed_analysis(reviews)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': reviews2, 'totalReviews': totalReviews, 'showReviewsRatio': True})
+
     else:
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
@@ -217,11 +260,11 @@ def textanalysis(request):
                 'neu': result_classifier.get('neutral', 0.0),
                 'neg': result_classifier.get('negative', 0.0)
             }
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
-    
+
 def determine_language(texts):
     try:
         for text in texts:
@@ -234,12 +277,12 @@ def determine_language(texts):
         print(f"Error detecting language: {e}")
         return False
 
-    
+
 def fbanalysis(request):
-    if request.method == 'POST':       
+    if request.method == 'POST':
         current_directory = os.path.dirname(__file__)
         result = fb_sentiment_score()
-       
+
         csv_file_fb = 'fb_sentiment.csv'
         csv_file_path = os.path.join(current_directory, csv_file_fb)
 
@@ -249,8 +292,8 @@ def fbanalysis(request):
             csv_reader = csv.DictReader(csv_file)
             data = [row for row in csv_reader]
 
-        text_dict = {"reviews" : data}
-        print("text_dict:",text_dict["reviews"])
+        text_dict = {"reviews": data}
+        print("text_dict:", text_dict["reviews"])
         # Convert the list of dictionaries to a JSON array
         json_data = json.dumps(text_dict, indent=2)
 
@@ -262,16 +305,16 @@ def fbanalysis(request):
         finalText = reviews
 
        
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
 
 def twitteranalysis(request):
-    if request.method == 'POST':       
+    if request.method == 'POST':
         current_directory = os.path.dirname(__file__)
         result = twitter_sentiment_score()
-       
+
         csv_file_fb = 'twitt.csv'
         csv_file_path = os.path.join(current_directory, csv_file_fb)
 
@@ -281,8 +324,8 @@ def twitteranalysis(request):
             csv_reader = csv.DictReader(csv_file)
             data = [row for row in csv_reader]
 
-        text_dict = {"reviews" : data}
-        print("text_dict:",text_dict["reviews"])
+        text_dict = {"reviews": data}
+        print("text_dict:", text_dict["reviews"])
         # Convert the list of dictionaries to a JSON array
         json_data = json.dumps(text_dict, indent=2)
 
@@ -294,7 +337,7 @@ def twitteranalysis(request):
         finalText = reviews
 
        
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
@@ -306,12 +349,12 @@ def audioanalysis(request):
         fs.save(file.name, file)
         pathname = "sentimental_analysis/media/"
         extension_name = file.name
-        extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+file.name
+        extension_name = extension_name[len(extension_name) - 3:]
+        path = pathname + file.name
         result = {}
         destination_folder = 'sentimental_analysis/media/audio/'
         shutil.copy(path, destination_folder)
-        useFile = destination_folder+file.name
+        useFile = destination_folder + file.name
         text = speech_to_text(useFile)
         finalText = text
         result = detailed_analysis(text)
@@ -322,7 +365,7 @@ def audioanalysis(request):
             file_path = os.path.join(folder_path, file)
             if os.path.isfile(file_path):
                 os.remove(file_path)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
     else:
         note = "Please Enter the audio file you want to analyze"
         return render(request, 'realworld/audio.html', {'note': note})
@@ -344,7 +387,8 @@ def livespeechanalysis(request):
             file_path = os.path.join(folder_path, file)
             if os.path.isfile(file_path):
                 os.remove(file_path)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
+
 
 
 @csrf_exempt
@@ -358,12 +402,12 @@ def recordaudio(request):
 
         pathname = "sentimental_analysis/media/"
         extension_name = audio_file.name
-        extension_name = extension_name[len(extension_name)-3:]
-        path = pathname+audio_file.name
+        extension_name = extension_name[len(extension_name) - 3:]
+        path = pathname + audio_file.name
         audioName = audio_file.name
         destination_folder = 'sentimental_analysis/media/recordedAudio/'
         shutil.copy(path, destination_folder)
-        useFile = destination_folder+audioName
+        useFile = destination_folder + audioName
         for file in files:
             file_path = os.path.join(folder_path, file)
             if os.path.isfile(file_path):
@@ -384,7 +428,7 @@ def recordaudio(request):
 def newsanalysis(request):
     if request.method == 'POST':
         topicname = request.POST.get("topicname", "")
-        scrapNews(topicname)
+        scrapNews(topicname, 10)
 
         with open(r'sentimental_analysis/realworld/news.json', 'r') as json_file:
             json_data = json.load(json_file)
@@ -393,7 +437,8 @@ def newsanalysis(request):
             news.append(item['Summary'])
         finalText = news
         result = detailed_analysis(news)
-        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
+        return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText, 'reviewsRatio': {}, 'totalReviews': 1, 'showReviewsRatio': False})
+
     else:
         return render(request, 'realworld/index.html')
 
