@@ -65,3 +65,5 @@ scikit-learn
 keras
 tensorflow
 tf-keras
+spanish_nlp
+unidecode
