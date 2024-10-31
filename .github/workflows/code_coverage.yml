@@ -19,7 +19,7 @@ jobs:
       run: |
           pip install -r requirements.txt
           python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
-          pytest --cov=./
+          pytest --cov=./ --cov-config=test/.coveragerc
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
