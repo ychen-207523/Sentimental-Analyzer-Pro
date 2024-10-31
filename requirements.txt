@@ -64,3 +64,4 @@ matplotlib~=3.9.2
 scikit-learn
 keras
 tensorflow
+tf-keras
