@@ -9,3 +9,5 @@ omit =
     pycodestyle-master/testsuite/*
     testAssignment.py
     sentimental_analysis/realworld/apps.py 
+    sentimental_analysis/realworld/tests.py
+    */__tests__/*
