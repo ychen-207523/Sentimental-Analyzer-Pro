@@ -35,7 +35,7 @@ class ReviewsSpider(scrapy.Spider):
     'NEWSPIDER_MODULE': 'amazon_reviews_scraping.spiders',
     'ROBOTSTXT_OBEY': False,
     'AUTOTHROTTLE_ENABLED': True,
-    'SCRAPEOPS_API_KEY': '941be743-6bdc-4f27-907c-dca04b5001e9',
+    'SCRAPEOPS_API_KEY': os.getenv('SCRAPEOPS_API_SECRET'),
     'SCRAPEOPS_PROXY_ENABLED': True,
     'DOWNLOADER_MIDDLEWARES': {
         'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,

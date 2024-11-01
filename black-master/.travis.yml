@@ -5,6 +5,7 @@ cache:
     - $HOME/.cache/pre-commit
 env:
   - TEST_CMD="coverage run -m unittest"
+  BLACK_API_SECRET: ${{ secrets.BLACK_API_SECRET}}
 install:
   - pip install coverage coveralls pre-commit
   - pip install -e '.[d]'

@@ -48,3 +48,5 @@ env/
 .history
 
 /sentimental_analysis/db.sqlite3
+
+/sentimental_analysis/realworld/news.json
