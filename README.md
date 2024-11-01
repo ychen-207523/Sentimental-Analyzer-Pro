@@ -1,18 +1,18 @@
-# <img src="https://github.com/amit-99/SE_Project2/blob/develop/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/>The Sentimental Analyzer Pro
+# <img src="https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/>The Sentimental Analyzer Pro
 ## Software Engineering Project for CSC 510
 
-[![DOI](https://zenodo.org/badge/720907878.svg)](https://zenodo.org/doi/10.5281/zenodo.10211649)
-[![GitHub Release](https://img.shields.io/github/release/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/releases)
-![Build](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/main.yml/badge.svg)
+[![DOI](https://zenodo.org/badge/869224666.svg)](https://doi.org/10.5281/zenodo.14004708) 
+[![GitHub Release](https://img.shields.io/github/v/release/ychen-207523/Sentimental-Analyzer-Pro)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/releases)
+[![Build](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/main.yml/badge.svg)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/actions/workflows/main.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-![Python](https://img.shields.io/badge/python-v3.11+-brightgreen.svg)  
-![GitHub contributors](https://img.shields.io/github/contributors/NehaSJ99/Sentimental-Analyzer-Pro)
-![GitHub issues](https://img.shields.io/github/issues/NehaSJ99/Sentimental-Analyzer-Pro)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/NehaSJ99/Sentimental-Analyzer-Pro)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro)  
-![GitHub language count](https://img.shields.io/github/languages/count/NehaSJ99/Sentimental-Analyzer-Pro)
-[![GitHub-size](https://img.shields.io/github/languages/code-size/NehaSJ99/Sentimental-Analyzer-Pro)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro)
-[![github workflow](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml)
+[![Python](https://img.shields.io/badge/python-v3.11+-brightgreen.svg)](https://www.python.org/)
+[![GitHub contributors](https://img.shields.io/github/contributors/ychen-207523/Sentimental-Analyzer-Pro)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/graphs/contributors)
+![GitHub Issues](https://img.shields.io/github/issues/ychen-207523/Sentimental-Analyzer-Pro)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/ychen-207523/Sentimental-Analyzer-Pro)
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/ychen-207523/Sentimental-Analyzer-Pro)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/pulls)
+![GitHub language count](https://img.shields.io/github/languages/count/ychen-207523/Sentimental-Analyzer-Pro)
+![GitHub repo size](https://img.shields.io/github/repo-size/ychen-207523/Sentimental-Analyzer-Pro)
+[![github workflow](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml)
 [![codecov](https://codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro)
 
 ---
@@ -20,7 +20,7 @@ The Sentimental Analyzer Pro is a versatile tool that can perform sentiment anal
 
 ## Working Demo
 
-https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/assets/72608245/ab03e258-69f2-43b3-91dc-da3513c9676d
+[![Watch the video](https://img.youtube.com/vi/rQOJ5UGA8WI/maxresdefault.jpg)](https://www.youtube.com/watch?v=rQOJ5UGA8WI)
 
 ---
 
@@ -58,7 +58,7 @@ The Sentimental Analyzer provides the following:
   <li><b>Cost-Efficiency:</b> Instead of using multiple specialized tools, a single tool that can handle multiple data types is cost-effective and streamlines the analysis process.</li>
 </ul>
 
-![meme](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/assets/images/sentiment_analysis.jpg)
+![meme](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/images/sentiment_analysis.jpg)
 
 ### How was Sentimental Analyzer Pro developed?
 The complete development was achieved using the following technologies:
@@ -105,14 +105,9 @@ source env/bin/activate
 4. Install dependencies for the project from the root directory of the project:
 ```
 pip3 install -r requirements.txt
+python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
 ```
-5. Install other required module
-```
-pip3 install tf-keras
-pip3 install spanish_nlp
-pip3 install unidecode
-```
-6. Install ffmpeg:  
+5. Install ffmpeg:  
 For Windows:  
 ```
 winget install ffmpeg
@@ -125,11 +120,11 @@ For Mac:
 ```
 brew install ffmpeg
 ```   
-7. Run Django Server using manage.py (Note: Make sure you are in root directory of the project.)
+6. Run Django Server using manage.py (Note: Make sure you are in root directory of the project.)
 ```
 python3 .\sentimental_analysis\manage.py runserver
 ```
-8. Next, open your browser and type in `localhost:8000` in the search bar to open the user interface of the application.
+7. Next, open your browser and type in `localhost:8000` in the search bar to open the user interface of the application.
    
 Now, you are good to go.
 
@@ -161,19 +156,19 @@ pytest
 - [x] Unit Tests were written and Test Coverage was improved
 
 ### Current Achievements
-☑️  Facebook post Analysis using Deep Learning Feature inclusion<br>
-☑️  Twitter post Feature inclusion<br>
-☑️  Text analysis for Spanish language inclusion<br>
-☑️  Image analysis Feature inclusion<br>
+☑️  Implement User Authentication to store the login history of each User<br>
+☑️  Visualize the sentiment distribution by each user comment for product analysis<br>
+☑️  Upgraded news analysis by transitioning from Google Search to Google News scraping, yielding more relevant insights<br>
 ☑️  UI Improvement for enriching User interaction with the Application<br>
+☑️  Enhance the Product Analysis by considering the number of users rated for each Product!<br>
 ☑️  Documentation Improvement for reflecting project's value accurately<br>
 ☑️  Addition of Builds and Workflows for better development activities<br>
 ☑️  Public facing webpage to get feedbacks, Raise and handle issues, Discuss & Grow with enthusiasts and supportive community<br>  
 
 ### Future Scope
-- [ ] Implement User Authentication to store the history of each User
-- [ ] Recommendation System based on Product Analysis Results 
-- [ ] Enhance the Product Analysis by considering the number of users rated for each Product!
+- [ ] Recommendation System based on Product Analysis Results
+- [ ] Add support for web scraping of dynamic, JavaScript-heavy sites to enhance data extraction
+- [ ] Provide support for more platforms for social media analysis
       
 ---  
 <a name="casestudy"></a>
@@ -183,18 +178,18 @@ We have done a Case Study for our Sentiment Analysis Project. It can be found [h
 ---
 <a name="contribute"></a>
 ## Eager to Contribute?
-To Contribute to our application, please refer to [CONTRIBUTING.md](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/blob/master/CONTRIBUTING.md)
+To Contribute to our application, please refer to [CONTRIBUTING.md](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/CONTRIBUTING.md)
 
 ---
 <a name="Connectwithus"></a>
 ## Connect with us 
-- Want to share your feedback or raise any issue [click here](https://noteforms.com/forms/sentiment-analyser-pro-uo8m1e)
+- Want to share your feedback or raise any issue [click here](https://noteforms.com/forms/sentiment-analyzer-pro-vkc5za)
 - Need instant help? discuss over community chat to get help from other community members
 - Join our mailing list for regular updates
-- Join our discord forum for updates or support or discussions. [Join Here!](https://discord.gg/xYkUnvdzP9)
+- Join our discord forum for updates or support or discussions. [Join Here!](https://discord.gg/n8AuYxpf)
 - Or just want to be part of our journey and get to know more about the Sentiment Analyser Pro and its team
 
-**Visit our web page to be part of [Sentiment Analyser Pro community](https://sustaining-river-90d.notion.site/Sentiment-Analyzer-Pro-df3c7c6680974d08bbb80ccff21a1ebb)**
+**Visit our web page to be part of [Sentiment Analyser Pro community](https://elemental-gong-941.notion.site/Team22-Sentimental-Analyzer-Pro-130bc406342580f6bc05fcc486529b93)**
 
 ---
 
@@ -204,3 +199,11 @@ To Contribute to our application, please refer to [CONTRIBUTING.md](https://gith
 - Yunfei Chen
 - Tanuj Kulkarni
 - Shubham Vijay Tidke
+
+## Citation
+
+This project is a fork of [Sentimental-Analyzer-Pro](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro) by ***NehaSJ99***.<br>
+Forked on: ***08 Oct 2024***<br>
+Original Commit Hash: ***d11a4871660aa0a26f31764d150c87f2bd5d0586***
+
+**Note:** This is an unfunded, non-profit project created for educational purposes.

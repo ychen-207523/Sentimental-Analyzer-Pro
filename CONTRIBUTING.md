@@ -1,10 +1,10 @@
-# Contributing to SENG20-G19 SE_Project1
+# Contributing to Sentimental-Analyzer-Pro
 
-Follow the set of guidelines below to contribute to SENG20-G19 SE_Project1!
+Follow the set of guidelines below to contribute to Sentimental-Analyzer-Pro!
 
 ## Code of Conduct
 
-By participating, you are expected to uphold this code. Please report unacceptable behavior to sbangal2@ncsu.edu.
+By participating, you are expected to uphold this code.
 
 Prerequistes required before starting this project
 
@@ -16,7 +16,7 @@ Prerequistes required before starting this project
  
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for SENG20-G19 SE_Project1. 
+This section guides you through submitting a bug report for Sentimental-Analyzer-Pro. 
 Following these guidelines helps maintainers and the community understand your report, reproduce the behavior and find related reports.
 
 Before Submitting A Bug Report
