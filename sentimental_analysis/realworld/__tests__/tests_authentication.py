@@ -1,9 +1,17 @@
+import os,sys
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+sys.path.append('/workspaces/Sentimental-Analyzer-Pro/sentimental_analysis/')
+print(sys.path)
+import unittest
+import pytest
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
+from settings import SECRET_KEY
 
 
-class AuthenticationTests(TestCase):
+class AuthenticationTests(unittest.TestCase):
 
     def test_register_page_status_code(self):
         """Test if the register page is accessible."""
@@ -172,3 +180,7 @@ class AuthenticationTests(TestCase):
         """Test if the homepage is not accessible if not logged in."""
         response = self.client.get('/')
         self.assertEqual(response.status_code, 302)
+
+
+if __name__ == "__main__":
+    unittest.main()
