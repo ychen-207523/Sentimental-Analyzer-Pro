@@ -4,11 +4,7 @@ name: Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on:
-  push:
-    branches: [ master, develop ]
-  pull_request:
-    branches: '*'
+on: push
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -35,6 +31,10 @@ jobs:
         pip install pylint
         pylint Amazon_Comments_Scrapper
         pylint sentimental_analysis
+    - name: Formatting with autopep
+      run: |
+          pip install autopep8
+          autopep8 $(git ls-files '**.py*') --in-place --list-fixes -j 2
     - name: Test with pytest
       run: |
         pytest
