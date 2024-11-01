@@ -146,6 +146,21 @@ pytest
 - Start the django server to get to the homepage
 ![First](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
 
+- Facebook Analysis
+![Second](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis compressed.gif>)
+
+- Product Analysis
+![Third](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product Analysis Compressed (1) (2).gif>)
+
+- Twitter Analysis
+![Fourth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis comp.gif>)
+
+- Text Analysis
+![Fifth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TextAnalysis compressed.gif>)
+
+- Image to Document
+![Sixth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument compress.gif>)
+
 ---
 <a name="roadmap"></a>
 ## Roadmap and Progress
