@@ -16,6 +16,8 @@ jobs:
         pip install pytest-cov
         echo requirements installed
     - name: Run the tests
+      env:
+        SCRAPEOPS_API_SECRET: ${{ secrets.SCRAPEOPS_API_SECRET }}
       run: |
           pip install -r requirements.txt
           python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('vader_lexicon')"
