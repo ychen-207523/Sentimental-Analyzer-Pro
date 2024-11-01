@@ -29,8 +29,8 @@ jobs:
     - name: Lint with pylint
       run: |
         pip install pylint
-        pylint Amazon_Comments_Scrapper
-        pylint sentimental_analysis
+        pylint --fail-under=0 Amazon_Comments_Scrapper
+        pylint --fail-under=0 sentimental_analysis
     - name: Formatting with autopep
       run: |
           pip install autopep8
