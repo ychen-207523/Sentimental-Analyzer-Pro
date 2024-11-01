@@ -14,6 +14,9 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/ychen-207523/Sentimental-Analyzer-Pro)
 [![github workflow](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml)
 [![codecov](https://codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro)
+[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![autopep8](https://img.shields.io/badge/code_formatter-autopep8-blue)](https://pypi.org/project/autopep8/)
+[![Static Badge](https://img.shields.io/badge/code_analysis-pylint-yellow?labelColor=grey)](https://pypi.org/project/pylint/)
 
 ---
 The Sentimental Analyzer Pro is a versatile tool that can perform sentiment analysis on different types of data, including text, audio, reviews, and news articles. Sentiment analysis is one of the fastest-growing research areas in computer science, making it challenging to keep track of all the activities in the area. In our project, we aim to achieve our goal of accurately predicting a user's sentiment by analyzing the data provided using different types of input data.
@@ -143,22 +146,22 @@ pytest
 ### Usage
 
 <a name="usecases"></a>
-- Start the django server to get to the homepage<br>
+- Start the django server to get to the homepage<br><br>
 ![First](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)<br>
 
-- Facebook Analysis<br>
+- Facebook Analysis<br><br>
 ![Second](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis compressed.gif>)<br>
 
-- Product Analysis<br>
+- Product Analysis<br><br>
 ![Third](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product Analysis Compressed (1) (2).gif>)<br>
 
-- Twitter Analysis<br>
+- Twitter Analysis<br><br>
 ![Fourth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis comp.gif>)<br>
 
-- Text Analysis<br>
+- Text Analysis<br><br>
 ![Fifth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TextAnalysis compressed.gif>)<br>
 
-- Image to Document<br>
+- Image to Document<br><br>
 ![Sixth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument compress.gif>)<br>
 
 ---
