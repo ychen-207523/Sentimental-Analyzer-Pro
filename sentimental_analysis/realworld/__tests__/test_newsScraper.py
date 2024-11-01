@@ -13,6 +13,7 @@ from django.core.exceptions import ValidationError
 query = "Artificial Intelligence"
 search_for = ["ai", "artificial", "intelligence"]
 json_path = r"sentimental_analysis/realworld/news.json"
+news_url_json = r"sentimental_analysis/realworld/__tests__/news_url.json"
 
 
 def urlValidator(url: str) -> bool:
@@ -21,15 +22,24 @@ def urlValidator(url: str) -> bool:
         val(url)
         return True
     except (ValidationError,) as e:
+        logging.warning(f'Invalid url - {url}')
         return False
 
 
 class TestNewsResults(unittest.TestCase):
+    setup_done = False
+
     @classmethod
-    def setUp(self):
-        self.news_result_one = getNewsResults(query, 1)
-        self.news_result_ten = getNewsResults(query, 10)
-        self.news_result_hundred = getNewsResults(query, 100)
+    def setUpClass(self):
+        if self.setup_done == True:
+            return
+        getNewsResults(query, 100)
+        with open(news_url_json, "r") as json_file:
+            self.news_result_hundred = json.load(json_file)
+
+        self.news_result_one = self.news_result_hundred[:1]
+        self.news_result_ten = self.news_result_hundred[:10]
+        self.setup_done = True
 
     def test_query(self):
         response = self.news_result_one
@@ -48,11 +58,9 @@ class TestNewsResults(unittest.TestCase):
         self.assertTrue(urlValidator(response_url))
 
     def test_response_url_multiple(self):
-        response_url_list = self.news_result_ten[0]
+        response_url_list = self.news_result_ten
 
         for url in response_url_list:
-            if urlValidator(url) == False:
-                print(url)
             self.assertTrue(urlValidator(url))
 
     def test_news_results_args(self):
@@ -64,15 +72,20 @@ class TestNewsResults(unittest.TestCase):
 
 
 class TestScrapNews(unittest.TestCase):
+    setup_done = False
+
     @classmethod
-    def setUp(self):
-        self.article_list_single = scrapNews(query, 1, False)
-        self.article_list_multiple = scrapNews(query, 10, False)
+    def setUpClass(self):
+        if self.setup_done == True:
+            return
         with open(json_path, "r") as json_file:
             self.json_data = json.load(json_file)
         self.news = []
         for item in self.json_data:
             self.news.append(item["Summary"])
+        self.article_list_single = self.news[:1]
+        self.article_list_multiple = self.news
+        self.setup_done = True
 
     def test_query(self):
         self.assertNotEqual(self.article_list_single, None)
@@ -114,7 +127,10 @@ class TestScrapNews(unittest.TestCase):
             if any(keyword in news for keyword in search_for) == False:
                 logging.warning(news)
                 self.assertTrue(any(keyword in news.lower() for keyword in search_for))
-
+    
+    @classmethod
+    def tearDownClass(self):
+        scrapNews(query, 1, True)
 
 if __name__ == "__main__":
     suite = unittest.TestSuite()
