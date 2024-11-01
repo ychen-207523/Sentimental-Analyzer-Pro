@@ -3,16 +3,16 @@
 
 [![DOI](https://zenodo.org/badge/869224666.svg)](https://doi.org/10.5281/zenodo.14004708) 
 [![GitHub Release](https://img.shields.io/github/v/release/ychen-207523/Sentimental-Analyzer-Pro)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/releases)
-![Build](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/main.yml/badge.svg)
+[![Build](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/main.yml/badge.svg)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/actions/workflows/main.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-![Python](https://img.shields.io/badge/python-v3.11+-brightgreen.svg)  
+[![Python](https://img.shields.io/badge/python-v3.11+-brightgreen.svg)](https://www.python.org/)
 [![GitHub contributors](https://img.shields.io/github/contributors/ychen-207523/Sentimental-Analyzer-Pro)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/graphs/contributors)
 ![GitHub Issues](https://img.shields.io/github/issues/ychen-207523/Sentimental-Analyzer-Pro)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/ychen-207523/Sentimental-Analyzer-Pro)
-[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/ychen-207523/Sentimental-Analyzer-Pro)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/pulls)  
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/ychen-207523/Sentimental-Analyzer-Pro)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/pulls)
 ![GitHub language count](https://img.shields.io/github/languages/count/ychen-207523/Sentimental-Analyzer-Pro)
 ![GitHub repo size](https://img.shields.io/github/repo-size/ychen-207523/Sentimental-Analyzer-Pro)
-[![github workflow](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml)
+[![github workflow](https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml/badge.svg)](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/actions/workflows/code_coverage.yml)
 [![codecov](https://codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NehaSJ99/Sentimental-Analyzer-Pro)
 
 ---
@@ -20,7 +20,7 @@ The Sentimental Analyzer Pro is a versatile tool that can perform sentiment anal
 
 ## Working Demo
 
-https://github.com/NehaSJ99/Sentimental-Analyzer-Pro/assets/72608245/ab03e258-69f2-43b3-91dc-da3513c9676d
+[![Watch the video](https://img.youtube.com/vi/rQOJ5UGA8WI/maxresdefault.jpg)](https://www.youtube.com/watch?v=rQOJ5UGA8WI)
 
 ---
 
@@ -189,7 +189,7 @@ To Contribute to our application, please refer to [CONTRIBUTING.md](https://gith
 - Join our discord forum for updates or support or discussions. [Join Here!](https://discord.gg/n8AuYxpf)
 - Or just want to be part of our journey and get to know more about the Sentiment Analyser Pro and its team
 
-**Visit our web page to be part of [Sentiment Analyser Pro community](https://gabby-mice-db3.notion.site/Sentiment-Analyzer-Pro-13092940d97c805885c6f748e5929efc)**
+**Visit our web page to be part of [Sentiment Analyser Pro community](https://elemental-gong-941.notion.site/Team22-Sentimental-Analyzer-Pro-130bc406342580f6bc05fcc486529b93)**
 
 ---
 
