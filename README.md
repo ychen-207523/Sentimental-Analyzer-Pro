@@ -143,23 +143,23 @@ pytest
 ### Usage
 
 <a name="usecases"></a>
-- Start the django server to get to the homepage
-![First](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)
+- Start the django server to get to the homepage<br>
+![First](https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Startup.gif)<br>
 
-- Facebook Analysis
-![Second](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis compressed.gif>)
+- Facebook Analysis<br>
+![Second](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/FacebookAnalysis compressed.gif>)<br>
 
-- Product Analysis
-![Third](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product Analysis Compressed (1) (2).gif>)
+- Product Analysis<br>
+![Third](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/Product Analysis Compressed (1) (2).gif>)<br>
 
-- Twitter Analysis
-![Fourth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis comp.gif>)
+- Twitter Analysis<br>
+![Fourth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TwitterAnalysis comp.gif>)<br>
 
-- Text Analysis
-![Fifth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TextAnalysis compressed.gif>)
+- Text Analysis<br>
+![Fifth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/TextAnalysis compressed.gif>)<br>
 
-- Image to Document
-![Sixth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument compress.gif>)
+- Image to Document<br>
+![Sixth](<https://github.com/ychen-207523/Sentimental-Analyzer-Pro/blob/master/assets/gifs/ImageToDocument compress.gif>)<br>
 
 ---
 <a name="roadmap"></a>
