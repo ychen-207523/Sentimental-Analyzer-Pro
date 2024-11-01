@@ -1,3 +1,4 @@
+numpy==1.26.4
 asgiref==3.2.10
 attrs==23.1.0
 Automat==20.2.0
@@ -57,9 +58,9 @@ langdetect~=1.0.9
 
 colorama~=0.4.6
 typing_extensions~=4.12.2
+
 setuptools~=65.5.0
 pandas~=2.2.2
-numpy~=1.26.4
 matplotlib~=3.9.2
 scikit-learn
 keras
